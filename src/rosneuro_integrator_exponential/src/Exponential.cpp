@@ -32,17 +32,33 @@ bool Exponential::configure(void) {
 	return true;
 }
 
-Eigen::VectorXf Exponential::apply(const Eigen::VectorXf & input) {
+Eigen::VectorXf Exponential::apply(const Eigen::VectorXf& input) {
 
 	/*if(input.size() != 2) {
 		ROS_WARN("[%s] Input size is not 2: only 2-class input is allowed", this->name().c_str()); 
 		return this->data_;
 	}*/
 
-	if(this->has_rejection_ == true && input.maxCoeff() <= this->rejection_)
+	if(this->has_rejection_ == true && input.maxCoeff() <= this->rejection_){
 		return this->data_;
+	}
 
 	this->data_ = this->data_ * this->alpha_ + input * (1 - this->alpha_);
+
+	/*Eigen::VectorXf vec = this->data_; //to check framework output
+	std::stringstream oss;
+    oss << "[";
+    for (size_t i = 0; i < vec.size(); i++) {
+        oss << vec[i];
+        if (i != vec.size() - 1) {
+            oss << ", ";
+        }
+    }
+    oss << "]";
+	std::string str_vect = oss.str();
+	const char * str_vect_ = str_vect.c_str();
+
+	ROS_INFO("%s", str_vect_);*/
 
 	return this->data_;
 }
@@ -54,7 +70,24 @@ bool Exponential::reset(void) {
 
 Eigen::VectorXf Exponential::uniform_vector(float value) {
 	//return Eigen::Vector2f::Constant(value);
-	return Eigen::Vector3f::Constant(value); //perchè non diventa un vettore da 3???
+	Eigen::Vector3f framework_vect = Eigen::Vector3f::Constant(value);
+
+	/*Eigen::VectorXf vec = framework_vect; //to check how the framework vector is reset
+	std::stringstream oss;
+    oss << "[";
+    for (size_t i = 0; i < vec.size(); i++) {
+        oss << vec[i];
+        if (i != vec.size() - 1) {
+            oss << ", ";
+        }
+    }
+    oss << "]";
+	std::string str_vect = oss.str();
+	const char * str_vect_ = str_vect.c_str();
+
+	ROS_INFO("%s", str_vect_);*/
+
+	return framework_vect; //perchè non diventa un vettore da 3???
 }
 
 void Exponential::setalpha(float value) {

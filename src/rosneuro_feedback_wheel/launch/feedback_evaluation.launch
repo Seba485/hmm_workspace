@@ -85,7 +85,7 @@
 		<param name="f"  value="$(arg framerate)"/>
     </node>
 
-    <node name="hmm" pkg='hmm_sim' type='hmm.py' output='screen'>  <!--form this point ahead the classification is upon 3 classes-->
+    <node name="hmm" pkg='hmm_sim' type='hmm.py'>  <!--form this point ahead the classification is upon 3 classes-->
 		<param name="f"  value="$(arg framerate)"/>
         <param name="dt" type="double" value="1.0" />
 		<param name="classes" value="$(arg classes)"/>

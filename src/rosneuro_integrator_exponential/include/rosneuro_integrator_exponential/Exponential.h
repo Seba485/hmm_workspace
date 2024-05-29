@@ -39,7 +39,8 @@ class Exponential : public GenericIntegrator {
 		float rejection_;
 		bool has_rejection_;
 		const float alpha_default_ = 0.98f;
-		Eigen::Vector2f data_;
+		//Eigen::Vector2f data_;
+		Eigen::Vector3f data_; //the output of the hmm is of length 3
 
 		dyncfg_exponential recfg_srv_;
   		dyncfg_exponential::CallbackType recfg_callback_type_;

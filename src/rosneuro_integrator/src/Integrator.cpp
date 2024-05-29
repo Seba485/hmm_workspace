@@ -1,4 +1,5 @@
 #include "rosneuro_integrator/Integrator.h"
+#include <sstream>
 
 namespace rosneuro {
 	namespace integrator {
@@ -59,7 +60,7 @@ bool Integrator::configure(void) {
 
 void Integrator::run(void) {
 
-	ros::Rate r(512);
+	ros::Rate r(512); //non dovrebbe essere 16????
 
 	rosneuro_msgs::NeuroOutput msg;
 
@@ -82,6 +83,22 @@ void Integrator::run(void) {
 void Integrator::on_received_data(const rosneuro_msgs::NeuroOutput& msg) {
 
 	this->input_  = this->vector_to_eigen(msg.softpredict.data);
+
+	/*Eigen::VectorXf vec = this->input_; //to check what actually is acquired by the node
+	std::stringstream oss;
+    oss << "[";
+    for (size_t i = 0; i < vec.size(); i++) {
+        oss << vec[i];
+        if (i != vec.size() - 1) {
+            oss << ", ";
+        }
+    }
+    oss << "]";
+	std::string str_vect = oss.str();
+	const char * str_vect_ = str_vect.c_str();
+
+	ROS_INFO("%s", str_vect_);*/
+
 	this->output_ = this->integrator_->apply(this->input_);
 	this->has_new_data_ = true;
 
