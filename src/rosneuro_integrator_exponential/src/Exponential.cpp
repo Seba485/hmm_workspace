@@ -54,7 +54,7 @@ bool Exponential::reset(void) {
 
 Eigen::VectorXf Exponential::uniform_vector(float value) {
 	//return Eigen::Vector2f::Constant(value);
-	return Eigen::Vector3f::Constant(value); //perchè non diventa un vettore da 3????
+	return Eigen::Vector3f::Constant(value); //perchè non diventa un vettore da 3???
 }
 
 void Exponential::setalpha(float value) {
