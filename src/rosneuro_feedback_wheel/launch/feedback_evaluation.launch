@@ -96,6 +96,7 @@
 	<!--classes [771 773 783]-->
 
 	<node name="integrator" pkg="rosneuro_integrator" type="integrator" output="screen"> 
+		<param name='framerate' value="512"/> 
 		<rosparam param="plugin" subst_value="True">$(arg integratorplugin)</rosparam>
 		<rosparam param="alpha" subst_value="True">$(arg alpha)</rosparam>
 		<remap from="/smr/neuroprediction" to="/smrbci/neuroprediction"/>

@@ -56,6 +56,8 @@ class Integrator {
 		bool has_new_data_;
 		bool is_first_message_;
 		
+		float framerate_;
+
 		std::string plugin_;
 		std::string integratorname_;
 

@@ -20,6 +20,9 @@ Integrator::~Integrator(void) {
 
 bool Integrator::configure(void) {
 
+	//getting framerate from the launch
+	ros::param::get("~framerate", this->framerate_);
+
 	std::string  plugin;
 
 	// Getting mandatory parameters from ROS
@@ -60,7 +63,8 @@ bool Integrator::configure(void) {
 
 void Integrator::run(void) {
 
-	ros::Rate r(512); //non dovrebbe essere 16????
+	//ros::Rate r(512)
+	ros::Rate r(framerate_);
 
 	rosneuro_msgs::NeuroOutput msg;
 
