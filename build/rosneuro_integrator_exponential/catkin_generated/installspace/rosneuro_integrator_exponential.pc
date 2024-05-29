@@ -1,0 +1,8 @@
+prefix=/home/sebastiano/hmm_workspace/install
+
+Name: rosneuro_integrator_exponential
+Description: Description of rosneuro_integrator_exponential
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lrosneuro_integrator_exponential
+Requires: roscpp std_msgs pluginlib rosneuro_msgs rosneuro_integrator

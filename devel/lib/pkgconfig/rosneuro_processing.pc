@@ -1,0 +1,8 @@
+prefix=/home/sebastiano/hmm_workspace/devel
+
+Name: rosneuro_processing
+Description: Description of rosneuro_processing
+Version: 0.0.0
+Cflags: -I/home/sebastiano/hmm_workspace/devel/include -I/home/sebastiano/hmm_workspace/src/rosneuro_processing-master/include
+Libs: -L${prefix}/lib -lrosneuro_processing
+Requires: roscpp std_msgs rosneuro_data rosneuro_msgs

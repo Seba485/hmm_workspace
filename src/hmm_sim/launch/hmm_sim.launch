@@ -1,0 +1,23 @@
+<launch>
+    <!--<rosparam command="load" file="$(find hmm_sim)/launch/parameter.yaml"/> -->
+
+    <arg name="framerate"  default='16'/>
+    <arg name="classes"      default='[771, 773, 783]'/> <!--both feet, both hand, rest-->
+	<arg name="classes_name" default='[both feet, both hand, rest]' />
+
+    <node name="static_classifier" pkg='hmm_sim' type='static_classifier.py' output='screen'>
+        <param name="f"  value="$(arg framerate)"/>
+    </node> 
+
+    <node name="traversability" pkg='hmm_sim' type='traversability.py' output='screen'>
+        <param name="f"  value="$(arg framerate)"/>
+    </node>
+
+    <node name="hmm" pkg='hmm_sim' type='hmm.py' output='screen'>
+        <param name="f"  value="$(arg framerate)"/>
+        <param name="classes" value="$(arg classes)"/>
+		<param name="classes_name" value="$(arg classes_name)"/>
+        <param name="dt" type="double" value="1.0" />
+    </node>
+    
+</launch>

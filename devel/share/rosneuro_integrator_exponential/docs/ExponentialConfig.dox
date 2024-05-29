@@ -1,0 +1,7 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~alpha" : \b [double] alpha min: 0.0, default: 0.98, max: 1.0
+- \b "~rejection" : \b [double] rejection min: 0.5, default: 0.55, max: 1.0
+

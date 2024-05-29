@@ -1,0 +1,8 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~eog_filter_fcoff1" : \b [double] Frequency 1 min: 0.0, default: 1.0, max: 256.0
+- \b "~eog_filter_fcoff2" : \b [double] Frequency 2 min: 0.0, default: 10.0, max: 256.0
+- \b "~eog_threshold" : \b [double] EOG Threshold min: 1.0, default: 30.0, max: 60.0
+

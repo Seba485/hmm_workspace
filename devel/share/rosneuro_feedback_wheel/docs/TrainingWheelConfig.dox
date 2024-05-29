@@ -1,0 +1,7 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~left_threshold" : \b [double] Left threshold min: 0.5, default: 0.7, max: 1.0
+- \b "~right_threshold" : \b [double] Right threshold min: 0.5, default: 0.7, max: 1.0
+

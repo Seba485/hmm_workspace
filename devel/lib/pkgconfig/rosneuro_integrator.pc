@@ -1,0 +1,8 @@
+prefix=/home/sebastiano/hmm_workspace/devel
+
+Name: rosneuro_integrator
+Description: Description of rosneuro_integrator
+Version: 1.0.0
+Cflags: -I/home/sebastiano/hmm_workspace/src/rosneuro_integrator/include
+Libs: -L${prefix}/lib -lrosneuro_integrator
+Requires: roscpp std_msgs pluginlib rosneuro_msgs

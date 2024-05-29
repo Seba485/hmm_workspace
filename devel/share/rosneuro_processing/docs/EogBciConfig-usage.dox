@@ -1,0 +1,9 @@
+\subsubsection usage Usage
+\verbatim
+<node name="eogbci_parameters" pkg="rosneuro_processing" type="eogbci_parameters">
+  <param name="eog_filter_fcoff1" type="double" value="1.0" />
+  <param name="eog_filter_fcoff2" type="double" value="10.0" />
+  <param name="eog_threshold" type="double" value="30.0" />
+</node>
+\endverbatim
+

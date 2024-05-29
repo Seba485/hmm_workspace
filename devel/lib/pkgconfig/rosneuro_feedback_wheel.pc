@@ -1,0 +1,8 @@
+prefix=/home/sebastiano/hmm_workspace/devel
+
+Name: rosneuro_feedback_wheel
+Description: Description of rosneuro_feedback_wheel
+Version: 0.0.1
+Cflags: -I/home/sebastiano/hmm_workspace/devel/include -I/home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include
+Libs: -L${prefix}/lib -lrosneuro_feedback_wheel
+Requires: roscpp std_msgs rosneuro_msgs

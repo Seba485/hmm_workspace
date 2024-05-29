@@ -1,0 +1,8 @@
+\subsubsection usage Usage
+\verbatim
+<node name="rosneuro_integrator_exponential" pkg="rosneuro_integrator_exponential" type="rosneuro_integrator_exponential">
+  <param name="alpha" type="double" value="0.98" />
+  <param name="rejection" type="double" value="0.55" />
+</node>
+\endverbatim
+

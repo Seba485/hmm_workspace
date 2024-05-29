@@ -1,0 +1,8 @@
+\subsubsection usage Usage
+\verbatim
+<node name="rosneuro_feedback_wheel" pkg="rosneuro_feedback_wheel" type="rosneuro_feedback_wheel">
+  <param name="left_threshold" type="double" value="0.7" />
+  <param name="right_threshold" type="double" value="0.7" />
+</node>
+\endverbatim
+
