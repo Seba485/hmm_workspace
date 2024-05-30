@@ -309,6 +309,9 @@ EMPY_SCRIPT:STRING=/usr/lib/python3/dist-packages/em.py
 //The directory containing a CMake configuration file for Eigen3.
 Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
 
+//Git command line client
+GIT_EXECUTABLE:FILEPATH=/usr/bin/git
+
 //Path to a library.
 GMOCK_LIBRARY:FILEPATH=GMOCK_LIBRARY-NOTFOUND
 
@@ -351,6 +354,9 @@ LSB_FOUND:BOOL=TRUE
 
 //Path to a program.
 LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
+
+//Path to a file.
+NDP:PATH=/usr/local/include
 
 //Path to a file.
 NEUROCHRONO_INCLUDE_DIRS:PATH=/usr/local/include
@@ -801,6 +807,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python3][v3.8.10()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//ADVANCED property for variable: GIT_EXECUTABLE
+GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 GMOCK_FROM_SOURCE_FOUND:INTERNAL=TRUE
 GMOCK_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=/usr/src/googletest/googlemock/include
 GMOCK_FROM_SOURCE_LIBRARIES:INTERNAL=gmock

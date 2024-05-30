@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/sandbox_single_thread.dir/src/sandbox_single_thread.cpp.o  -o sandbox_single_thread  -Wl,-rpath,/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-build libneurodraw.so libneurochrono.so -Wl,-Bstatic -lSDLmain -Wl,-Bdynamic -lSDL -pthread -lOpenGL -lGLX -lGLU 

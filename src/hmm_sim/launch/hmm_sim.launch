@@ -19,5 +19,10 @@
 		<param name="classes_name" value="$(arg classes_name)"/>
         <param name="dt" type="double" value="1.0" />
     </node>
+
+    <node name="bar_feedback" pkg='hmm_sim' type='bar_feedback' output='screen'>
+
+    </node>
+
     
 </launch>

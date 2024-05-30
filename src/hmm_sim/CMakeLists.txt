@@ -9,9 +9,39 @@ project(hmm_sim)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   message_generation
+  roscpp
   rospy
   std_msgs
 )
+
+#Import the neurodraw library
+find_path(NDP neurodraw PATHS ${CMAKE_BINARY_DIR})
+message(${NDP})
+if(NOT EXISTS ${CMAKE_BINARY_DIR}/neurodraw)
+
+  include(ExternalProject)
+  ExternalProject_Add(ext_neurodraw
+    GIT_REPOSITORY https://github.com/neurorobotics-iaslab/neurodraw
+    GIT_TAG main
+    PREFIX ${CMAKE_CURRENT_BINARY_DIR}/neurodraw
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/neurodraw
+  ) 
+  
+  add_library(neurodraw SHARED IMPORTED)
+  add_library(neurochrono SHARED IMPORTED)
+  
+  set_property(TARGET neurodraw PROPERTY IMPORTED_LOCATION ${CMAKE_BINARY_DIR}/neurodraw/lib/libneurodraw.so)
+  set_property(TARGET neurochrono PROPERTY IMPORTED_LOCATION ${CMAKE_BINARY_DIR}/neurodraw/lib/libneurochrono.so)
+  
+  add_dependencies(neurodraw ext_neurodraw)
+  add_dependencies(neurochrono ext_neurodraw)
+else()
+  add_library(neurodraw SHARED IMPORTED)
+  add_library(neurochrono SHARED IMPORTED)
+  
+  set_property(TARGET neurodraw PROPERTY IMPORTED_LOCATION ${CMAKE_BINARY_DIR}/neurodraw/lib/libneurodraw.so)
+  set_property(TARGET neurochrono PROPERTY IMPORTED_LOCATION ${CMAKE_BINARY_DIR}/neurodraw/lib/libneurochrono.so)
+endif()
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -103,11 +133,19 @@ generate_messages(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES hmm_input
-#  CATKIN_DEPENDS message_generation rospy std_msgs
+  INCLUDE_DIRS 
+  include
+  LIBRARIES 
+  ${PROJECT_NAME}
+  CATKIN_DEPENDS 
+  message_generation 
+  rospy 
+  std_msgs
+  message_runtime
+  roscpp
+  neurodraw
 #  DEPENDS system_lib
-   CATKIN_DEPENDS message_runtime
+
 )
 
 ###########
@@ -116,11 +154,14 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
-include
+include_directories( include
   ${catkin_INCLUDE_DIRS}
+  ${CMAKE_BINARY_DIR}/neurodraw/include
 )
 
+add_library(${PROJECT_NAME}	
+      src/Bar_feedback.cpp
+		)
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/hmm_input.cpp
@@ -150,6 +191,14 @@ include
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+
+#############
+#executable##
+#############
+add_executable(bar_feedback src/bar_feedback.cpp)
+target_link_libraries(bar_feedback ${PROJECT_NAME}
+							${catkin_LIBRARIES}
+					  		${NEURODRAW_LIBRARIES})
 
 #############
 ## Install ##

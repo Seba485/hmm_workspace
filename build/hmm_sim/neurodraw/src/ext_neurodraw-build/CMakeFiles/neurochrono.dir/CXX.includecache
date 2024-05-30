@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw/include/neurochrono/Rate.h
+thread
+-
+chrono
+-
+cmath
+-
+neurochrono/Timer.h
+/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw/include/neurochrono/neurochrono/Timer.h
+
+/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw/include/neurochrono/Timer.h
+chrono
+-
+
+/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw/src/Rate.cpp
+neurochrono/Rate.h
+/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw/src/neurochrono/Rate.h
+

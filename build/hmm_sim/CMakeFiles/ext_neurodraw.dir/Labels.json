@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/sebastiano/hmm_workspace/build/hmm_sim/CMakeFiles/ext_neurodraw"
+		},
+		{
+			"file" : "/home/sebastiano/hmm_workspace/build/hmm_sim/CMakeFiles/ext_neurodraw.rule"
+		},
+		{
+			"file" : "/home/sebastiano/hmm_workspace/build/hmm_sim/CMakeFiles/ext_neurodraw-complete.rule"
+		},
+		{
+			"file" : "/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-stamp/ext_neurodraw-install.rule"
+		},
+		{
+			"file" : "/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-stamp/ext_neurodraw-mkdir.rule"
+		},
+		{
+			"file" : "/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-stamp/ext_neurodraw-download.rule"
+		},
+		{
+			"file" : "/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-stamp/ext_neurodraw-update.rule"
+		},
+		{
+			"file" : "/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-stamp/ext_neurodraw-patch.rule"
+		},
+		{
+			"file" : "/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-stamp/ext_neurodraw-configure.rule"
+		},
+		{
+			"file" : "/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-stamp/ext_neurodraw-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"ext_neurodraw"
+		],
+		"name" : "ext_neurodraw"
+	}
+}

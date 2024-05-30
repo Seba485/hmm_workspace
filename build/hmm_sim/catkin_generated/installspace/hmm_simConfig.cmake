@@ -116,7 +116,7 @@ if(NOT "include " STREQUAL " ")
   endforeach()
 endif()
 
-set(libraries "")
+set(libraries "hmm_sim")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -185,7 +185,7 @@ foreach(t ${hmm_sim_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "message_runtime")
+set(depends "message_generation;rospy;std_msgs;message_runtime;roscpp;neurodraw")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

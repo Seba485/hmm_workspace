@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(hmm_sim_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/sebastiano/hmm_workspace/devel/include " STREQUAL " ")
+if(NOT "/home/sebastiano/hmm_workspace/devel/include;/home/sebastiano/hmm_workspace/src/hmm_sim/include " STREQUAL " ")
   set(hmm_sim_INCLUDE_DIRS "")
-  set(_include_dirs "/home/sebastiano/hmm_workspace/devel/include")
+  set(_include_dirs "/home/sebastiano/hmm_workspace/devel/include;/home/sebastiano/hmm_workspace/src/hmm_sim/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -116,7 +116,7 @@ if(NOT "/home/sebastiano/hmm_workspace/devel/include " STREQUAL " ")
   endforeach()
 endif()
 
-set(libraries "")
+set(libraries "hmm_sim")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -185,7 +185,7 @@ foreach(t ${hmm_sim_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "message_runtime")
+set(depends "message_generation;rospy;std_msgs;message_runtime;roscpp;neurodraw")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
