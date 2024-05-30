@@ -3,7 +3,9 @@
 using namespace rosneuro;
 
 bar_feedback::bar_feedback(void){ //costructor
-		this->sub_bar_ = this->nh_.subscribe("/hmm/neuroprediction", 1, &bar_feedback::on_receive_neuro_data, this);
+        //for hmm simulation:
+        //this->sub_bar_ = this->nh_.subscribe("/hmm/neuroprediction", 1, &bar_feedback::on_receive_neuro_data, this);
+		this->sub_bar_ = this->nh_.subscribe("/integrator/neuroprediction", 1, &bar_feedback::on_receive_neuro_data, this);
         this->engine_ = new neurodraw::Engine("bar_feedback");
 }
 

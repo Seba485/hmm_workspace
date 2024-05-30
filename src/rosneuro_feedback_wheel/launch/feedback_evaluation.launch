@@ -104,6 +104,12 @@
 	</node> 
 
 	<!--neurooutput pubblicato su "/integrator/neuroprediction"-->
+
+	<!--simple bar visualization: bar_feedback node-->
+	<node name="bar_feedback" pkg='hmm_sim' type='bar_feedback' output='screen'>
+
+    </node>
+
 	<!-- neurowheel node -->
 	<node name="trainingwheel" pkg="rosneuro_feedback_wheel" type="trainingwheel" output="screen">
 		<rosparam param="modality" subst_value="True">$(arg modality)</rosparam>
