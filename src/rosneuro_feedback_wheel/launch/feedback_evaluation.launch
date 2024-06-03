@@ -107,7 +107,7 @@
 
 	<!--simple bar visualization: bar_feedback node-->
 	<node name="bar_feedback" pkg='hmm_sim' type='bar_feedback' output='screen'>
-
+		<param name="sub_name" type="string" value="/integrator/neuroprediction"/>
     </node>
 
 	<!-- neurowheel node -->

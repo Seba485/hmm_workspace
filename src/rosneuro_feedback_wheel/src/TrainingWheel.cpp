@@ -17,7 +17,7 @@ TrainingWheel::TrainingWheel(void) : SingleWheel("trainingwheel"), p_nh_("~") {
 
 TrainingWheel::~TrainingWheel(void) {}
 
-bool TrainingWheel::configure(void) {
+bool TrainingWheel::configure(void) { // getting all the parameters
 
 	int mindur_active, maxdur_active, mindur_rest, maxdur_rest;
 	std::vector<float> thresholds;
@@ -89,7 +89,7 @@ bool TrainingWheel::configure(void) {
 	this->set_threshold(thresholds.at(0), Direction::Left);
 	this->set_threshold(thresholds.at(1), Direction::Right);
 
-	if(this->modality_ == Modality::Calibration) {
+	if(this->modality_ == Modality::Calibration) {      //understand difference between calibration and validation (maybe is not necessary)
 		mindur_active = this->duration_.feedback_min;
 		maxdur_active = this->duration_.feedback_max;
 		mindur_rest   = this->duration_.feedback_min;
@@ -101,7 +101,8 @@ bool TrainingWheel::configure(void) {
         maxdur_rest   = this->duration_.timeout_on_rest;
 	}
 
-	this->trialsequence_.addclass(this->classes_.at(0), this->trials_per_class_.at(0), mindur_active, maxdur_active);
+	// forming the trial sequence on the base of the parameters
+	this->trialsequence_.addclass(this->classes_.at(0), this->trials_per_class_.at(0), mindur_active, maxdur_active); 
 	this->trialsequence_.addclass(this->classes_.at(1), this->trials_per_class_.at(1), mindur_active, maxdur_active);
 	if(this->classes_.size() == 3) 
 		this->trialsequence_.addclass(this->classes_.at(2), this->trials_per_class_.at(2), mindur_rest, maxdur_rest);
@@ -167,7 +168,7 @@ void TrainingWheel::on_received_data(const rosneuro_msgs::NeuroOutput& msg) {
 }
 
 
-void TrainingWheel::run(void) {
+void TrainingWheel::run(void) { // this is the main core function colled by the node training wheel
 
 	int 	  trialnumber;
 	int 	  trialclass;
@@ -188,15 +189,15 @@ void TrainingWheel::run(void) {
 	// Begin
 	this->sleep(this->duration_.begin);
 	
-	for(auto it = this->trialsequence_.begin(); it != this->trialsequence_.end(); ++it) {
+	for(auto it = this->trialsequence_.begin(); it != this->trialsequence_.end(); ++it) { // for all the trial in the sequence
 		
 		// Getting trial information
 		trialnumber    = (it - this->trialsequence_.begin()) + 1;
-		trialclass     = (*it).classid;
-		trialduration  = (*it).duration;
-		trialdirection = this->class2direction(trialclass);
-		trialthreshold = trialdirection == Direction::Left ? thresholds_.at(0) : thresholds_.at(1);
-		targethit      = Direction::None;
+		trialclass     = (*it).classid; //eventcue of the trial
+		trialduration  = (*it).duration; //duration of the trial
+		trialdirection = this->class2direction(trialclass);  //without changing, forward-->rest
+		trialthreshold = trialdirection == Direction::Left ? thresholds_.at(0) : thresholds_.at(1); //select the threshold considered in this trial --> to change
+		targethit      = Direction::None; 
 
 		if(this->modality_ == Modality::Calibration) {
 			autopilot = trialdirection == Direction::Forward ? (Autopilot*)(&sinepilot) : (Autopilot*)(&linearpilot);
@@ -212,7 +213,7 @@ void TrainingWheel::run(void) {
 		
 		// Fixation
 		this->setevent(Events::Fixation);
-		this->show_fixation();
+		this->show_fixation();       //all the figure shown are setted in SingleWheel.cpp
 		this->sleep(this->duration_.fixation);
 		this->hide_fixation();
 		this->setevent(Events::Fixation + Events::Off);

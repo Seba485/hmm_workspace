@@ -4,6 +4,7 @@
     <arg name="framerate"  default='16'/>
     <arg name="classes"      default='[771, 773, 783]'/> <!--both feet, both hand, rest-->
 	<arg name="classes_name" default='[both feet, both hand, rest]' />
+    <arg name="th" default='0.8'/> <!--threshold for classification-->
 
     <node name="static_classifier" pkg='hmm_sim' type='static_classifier.py' output='screen'>
         <param name="f"  value="$(arg framerate)"/>
@@ -21,7 +22,8 @@
     </node>
 
     <node name="bar_feedback" pkg='hmm_sim' type='bar_feedback' output='screen'>
-
+        <param name="sub_name" type="string" value="/hmm/neuroprediction"/>
+        <param name="th" value="$(arg th)"/>
     </node>
 
     

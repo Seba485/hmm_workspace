@@ -39,6 +39,8 @@ rosneuro_msgs/NeuroOutput.h
 /home/sebastiano/hmm_workspace/src/hmm_sim/src/Bar_feedback.cpp
 hmm_sim/Bar_feedback.h
 /home/sebastiano/hmm_workspace/src/hmm_sim/src/hmm_sim/Bar_feedback.h
+ros/ros.h
+-
 
 /opt/ros/noetic/include/ros/advertise_options.h
 ros/forwards.h
