@@ -5,8 +5,8 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
-subdirs("hmm_sim")
 subdirs("rosneuro_feedback_wheel")
+subdirs("hmm_sim")
 subdirs("rosneuro_integrator")
 subdirs("rosneuro_integrator_exponential")
 subdirs("rosneuro_processing-master")

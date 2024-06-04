@@ -4,6 +4,8 @@
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o
  /home/sebastiano/hmm_workspace/src/hmm_sim/include/hmm_sim/Bar_feedback.h
  /home/sebastiano/hmm_workspace/src/hmm_sim/src/bar_feedback.cpp
+ /home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/Autopilot.h
+ /home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/TrialSequence.h
  /opt/ros/noetic/include/ros/advertise_options.h
  /opt/ros/noetic/include/ros/advertise_service_options.h
  /opt/ros/noetic/include/ros/assert.h
@@ -64,6 +66,7 @@ hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o
  /opt/ros/noetic/include/rosneuro_msgs/NeuroDataInfo.h
  /opt/ros/noetic/include/rosneuro_msgs/NeuroDataInt32.h
  /opt/ros/noetic/include/rosneuro_msgs/NeuroDecoder.h
+ /opt/ros/noetic/include/rosneuro_msgs/NeuroEvent.h
  /opt/ros/noetic/include/rosneuro_msgs/NeuroHeader.h
  /opt/ros/noetic/include/rosneuro_msgs/NeuroOutput.h
  /opt/ros/noetic/include/std_msgs/Header.h
@@ -72,12 +75,14 @@ hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o
  neurodraw/include/neurochrono/Rate.h
  neurodraw/include/neurochrono/Timer.h
  neurodraw/include/neurodraw/Arc.h
+ neurodraw/include/neurodraw/Circle.h
  neurodraw/include/neurodraw/Cross.h
  neurodraw/include/neurodraw/Engine.h
  neurodraw/include/neurodraw/EventKey.h
  neurodraw/include/neurodraw/Line.h
  neurodraw/include/neurodraw/Palette.h
  neurodraw/include/neurodraw/Rectangle.h
+ neurodraw/include/neurodraw/RegularShape.h
  neurodraw/include/neurodraw/Ring.h
  neurodraw/include/neurodraw/Shape.h
  neurodraw/include/neurodraw/Thread.h

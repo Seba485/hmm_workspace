@@ -3,6 +3,8 @@
 
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /home/sebastiano/hmm_workspace/src/hmm_sim/include/hmm_sim/Bar_feedback.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /home/sebastiano/hmm_workspace/src/hmm_sim/src/bar_feedback.cpp
+hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/Autopilot.h
+hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/TrialSequence.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /opt/ros/noetic/include/ros/advertise_options.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /opt/ros/noetic/include/ros/advertise_service_options.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /opt/ros/noetic/include/ros/assert.h
@@ -63,6 +65,7 @@ hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /opt/ros/noetic/incl
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDataInfo.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDataInt32.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDecoder.h
+hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroEvent.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroHeader.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroOutput.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /opt/ros/noetic/include/std_msgs/Header.h
@@ -71,12 +74,14 @@ hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: /opt/ros/noetic/incl
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: neurodraw/include/neurochrono/Rate.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: neurodraw/include/neurochrono/Timer.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: neurodraw/include/neurodraw/Arc.h
+hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: neurodraw/include/neurodraw/Circle.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: neurodraw/include/neurodraw/Cross.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: neurodraw/include/neurodraw/Engine.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: neurodraw/include/neurodraw/EventKey.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: neurodraw/include/neurodraw/Line.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: neurodraw/include/neurodraw/Palette.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: neurodraw/include/neurodraw/Rectangle.h
+hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: neurodraw/include/neurodraw/RegularShape.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: neurodraw/include/neurodraw/Ring.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: neurodraw/include/neurodraw/Shape.h
 hmm_sim/CMakeFiles/bar_feedback.dir/src/bar_feedback.cpp.o: neurodraw/include/neurodraw/Thread.h

@@ -20,6 +20,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/sebastiano/hmm_workspace/devel/include"
   "/home/sebastiano/hmm_workspace/src/hmm_sim/include"
+  "/home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include"
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "neurodraw/include"

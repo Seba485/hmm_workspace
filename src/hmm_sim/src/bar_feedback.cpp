@@ -7,9 +7,12 @@ int main(int argc, char** argv) {
 	// ros initialization
 	ros::init(argc, argv, "bar_feedback");
 
-	rosneuro::bar_feedback bar;
+	rosneuro::feedback::bar_feedback bar;
 
-	bar.setup_scene();
+	if (bar.configure()==false){
+		ros::shutdown();
+		return 0;
+	}
 
 	bar.run();
 

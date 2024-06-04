@@ -19,6 +19,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/sebastiano/hmm_workspace/devel/include"
   "/home/sebastiano/hmm_workspace/src/hmm_sim/include"
+  "/home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include"
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "neurodraw/include"
@@ -27,6 +28,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/sebastiano/hmm_workspace/build/hmm_sim/CMakeFiles/hmm_sim.dir/DependInfo.cmake"
+  "/home/sebastiano/hmm_workspace/build/rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

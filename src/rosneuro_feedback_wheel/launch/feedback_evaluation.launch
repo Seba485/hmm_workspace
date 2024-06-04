@@ -4,6 +4,7 @@
 	<!-- Feedback arguments -->
 		<arg name="modality" 	 default='evaluation'/>
 		<arg name="thresholds"   default='[0.9, 0.9]'/>
+		<arg name="threshold"   default='0.8'/>
 		<arg name="classes"      default='[771, 773, 783]'/> <!--both feet, both hand, rest-->
 		<arg name="classes_name" default='[both feet, both hand, rest]'/>
 		<arg name="trials"       default='[10, 10, 10]'/>
@@ -106,9 +107,14 @@
 	<!--neurooutput pubblicato su "/integrator/neuroprediction"-->
 
 	<!--simple bar visualization: bar_feedback node-->
-	<node name="bar_feedback" pkg='hmm_sim' type='bar_feedback' output='screen'>
+	<!-- bar_feedback node -->
+	<node name="bar_feedback" pkg="hmm_sim" type="bar_feedback" output="screen">
 		<param name="sub_name" type="string" value="/integrator/neuroprediction"/>
-    </node>
+		<rosparam param="modality" subst_value="True">$(arg modality)</rosparam>
+		<rosparam param="threshold" subst_value="True">$(arg threshold)</rosparam>
+		<rosparam param="classes" subst_value="True">$(arg classes)</rosparam>
+		<rosparam param="trials" subst_value="True">$(arg trials)</rosparam>
+	</node>
 
 	<!-- neurowheel node -->
 	<node name="trainingwheel" pkg="rosneuro_feedback_wheel" type="trainingwheel" output="screen">

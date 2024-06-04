@@ -185,7 +185,7 @@ foreach(t ${hmm_sim_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "message_generation;rospy;std_msgs;message_runtime;roscpp;neurodraw")
+set(depends "message_generation;rospy;std_msgs;message_runtime;roscpp;neurodraw;rosneuro_feedback_wheel")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

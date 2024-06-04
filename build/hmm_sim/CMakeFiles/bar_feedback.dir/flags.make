@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"hmm_sim\"
 
-CXX_INCLUDES = -I/home/sebastiano/hmm_workspace/devel/include -I/home/sebastiano/hmm_workspace/src/hmm_sim/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/sebastiano/hmm_workspace/build/neurodraw/include 
+CXX_INCLUDES = -I/home/sebastiano/hmm_workspace/devel/include -I/home/sebastiano/hmm_workspace/src/hmm_sim/include -I/home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/sebastiano/hmm_workspace/build/neurodraw/include 
 

@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  rosneuro_feedback_wheel
 )
 
 #Import the neurodraw library
@@ -144,6 +145,7 @@ catkin_package(
   message_runtime
   roscpp
   neurodraw
+  rosneuro_feedback_wheel
 #  DEPENDS system_lib
 
 )

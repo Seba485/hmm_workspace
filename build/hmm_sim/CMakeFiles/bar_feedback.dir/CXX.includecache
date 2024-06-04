@@ -15,12 +15,16 @@ random
 -
 ros/ros.h
 -
+cmath
+-
 neurodraw/Ring.h
 /home/sebastiano/hmm_workspace/src/hmm_sim/include/hmm_sim/neurodraw/Ring.h
 neurodraw/Arc.h
 /home/sebastiano/hmm_workspace/src/hmm_sim/include/hmm_sim/neurodraw/Arc.h
 neurodraw/Cross.h
 /home/sebastiano/hmm_workspace/src/hmm_sim/include/hmm_sim/neurodraw/Cross.h
+neurodraw/Circle.h
+/home/sebastiano/hmm_workspace/src/hmm_sim/include/hmm_sim/neurodraw/Circle.h
 neurodraw/Line.h
 /home/sebastiano/hmm_workspace/src/hmm_sim/include/hmm_sim/neurodraw/Line.h
 neurodraw/Rectangle.h
@@ -31,9 +35,13 @@ neurodraw/Palette.h
 /home/sebastiano/hmm_workspace/src/hmm_sim/include/hmm_sim/neurodraw/Palette.h
 neurodraw/EventKey.h
 /home/sebastiano/hmm_workspace/src/hmm_sim/include/hmm_sim/neurodraw/EventKey.h
-cmath
--
+rosneuro_feedback_wheel/TrialSequence.h
+/home/sebastiano/hmm_workspace/src/hmm_sim/include/hmm_sim/rosneuro_feedback_wheel/TrialSequence.h
+rosneuro_feedback_wheel/Autopilot.h
+/home/sebastiano/hmm_workspace/src/hmm_sim/include/hmm_sim/rosneuro_feedback_wheel/Autopilot.h
 rosneuro_msgs/NeuroOutput.h
+-
+rosneuro_msgs/NeuroEvent.h
 -
 
 /home/sebastiano/hmm_workspace/src/hmm_sim/src/bar_feedback.cpp
@@ -41,6 +49,22 @@ ros/ros.h
 -
 hmm_sim/Bar_feedback.h
 /home/sebastiano/hmm_workspace/src/hmm_sim/src/hmm_sim/Bar_feedback.h
+
+/home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/Autopilot.h
+random
+-
+
+/home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/TrialSequence.h
+iostream
+-
+numeric
+-
+random
+-
+algorithm
+-
+vector
+-
 
 /opt/ros/noetic/include/ros/advertise_options.h
 ros/forwards.h
@@ -760,6 +784,26 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
+/opt/ros/noetic/include/rosneuro_msgs/NeuroEvent.h
+string
+-
+vector
+-
+memory
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
+-
+rosneuro_msgs/NeuroHeader.h
+-
+
 /opt/ros/noetic/include/rosneuro_msgs/NeuroHeader.h
 string
 -
@@ -856,6 +900,12 @@ neurodraw/include/neurodraw/neurodraw/common.h
 neurodraw/Shape.h
 neurodraw/include/neurodraw/neurodraw/Shape.h
 
+neurodraw/include/neurodraw/Circle.h
+neurodraw/common.h
+neurodraw/include/neurodraw/neurodraw/common.h
+neurodraw/RegularShape.h
+neurodraw/include/neurodraw/neurodraw/RegularShape.h
+
 neurodraw/include/neurodraw/Cross.h
 neurodraw/common.h
 neurodraw/include/neurodraw/neurodraw/common.h
@@ -899,6 +949,14 @@ array
 neurodraw/include/neurodraw/Rectangle.h
 Shape.h
 neurodraw/include/neurodraw/Shape.h
+
+neurodraw/include/neurodraw/RegularShape.h
+cmath
+-
+neurodraw/common.h
+neurodraw/include/neurodraw/neurodraw/common.h
+neurodraw/Shape.h
+neurodraw/include/neurodraw/neurodraw/Shape.h
 
 neurodraw/include/neurodraw/Ring.h
 neurodraw/Arc.h
