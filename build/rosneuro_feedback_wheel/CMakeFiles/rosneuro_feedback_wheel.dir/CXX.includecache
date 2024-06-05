@@ -6,6 +6,24 @@
 
 #IncludeRegexTransform: 
 
+/home/sebastiano/hmm_workspace/devel/include/rosneuro_feedback_wheel/ControlWheelConfig.h
+dynamic_reconfigure/config_tools.h
+-
+limits
+-
+ros/node_handle.h
+-
+dynamic_reconfigure/ConfigDescription.h
+-
+dynamic_reconfigure/ParamDescription.h
+-
+dynamic_reconfigure/Group.h
+-
+dynamic_reconfigure/config_init_mutex.h
+-
+boost/any.hpp
+-
+
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_feedback_wheel/TrainingWheelConfig.h
 dynamic_reconfigure/config_tools.h
 -
@@ -27,6 +45,20 @@ boost/any.hpp
 /home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/Autopilot.h
 random
 -
+
+/home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/ControlWheel.h
+ros/ros.h
+-
+dynamic_reconfigure/server.h
+-
+rosneuro_msgs/NeuroEvent.h
+-
+rosneuro_msgs/NeuroOutput.h
+-
+rosneuro_feedback_wheel/SingleWheel.h
+/home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/rosneuro_feedback_wheel/SingleWheel.h
+rosneuro_feedback_wheel/ControlWheelConfig.h
+/home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/rosneuro_feedback_wheel/ControlWheelConfig.h
 
 /home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/SingleWheel.h
 ros/ros.h
@@ -87,6 +119,14 @@ algorithm
 -
 vector
 -
+
+/home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/src/ControlWheel.cpp
+rosneuro_feedback_wheel/ControlWheel.h
+/home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/src/rosneuro_feedback_wheel/ControlWheel.h
+
+/home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/src/SingleWheel.cpp
+rosneuro_feedback_wheel/SingleWheel.h
+/home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/src/rosneuro_feedback_wheel/SingleWheel.h
 
 /home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/src/TrainingWheel.cpp
 rosneuro_feedback_wheel/TrainingWheel.h

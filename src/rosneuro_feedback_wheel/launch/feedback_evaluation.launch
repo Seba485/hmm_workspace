@@ -117,12 +117,13 @@
 	</node>
 
 	<!-- neurowheel node -->
+	<!--
 	<node name="trainingwheel" pkg="rosneuro_feedback_wheel" type="trainingwheel" output="screen">
 		<rosparam param="modality" subst_value="True">$(arg modality)</rosparam>
 		<rosparam param="thresholds" subst_value="True">$(arg thresholds)</rosparam>
 		<rosparam param="classes" subst_value="True">$(arg classes)</rosparam>
 		<rosparam param="trials" subst_value="True">$(arg trials)</rosparam>
 	</node>
-
+	-->
 
 </launch>
