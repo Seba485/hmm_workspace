@@ -30,6 +30,10 @@ rosneuro_msgs/NeuroEvent.h
 rosneuro_integrator/GenericIntegrator.h
 /home/sebastiano/hmm_workspace/src/rosneuro_integrator/include/rosneuro_integrator/rosneuro_integrator/GenericIntegrator.h
 
+/home/sebastiano/hmm_workspace/src/rosneuro_integrator/src/GenericIntegrator.cpp
+rosneuro_integrator/GenericIntegrator.h
+/home/sebastiano/hmm_workspace/src/rosneuro_integrator/src/rosneuro_integrator/GenericIntegrator.h
+
 /home/sebastiano/hmm_workspace/src/rosneuro_integrator/src/Integrator.cpp
 rosneuro_integrator/Integrator.h
 /home/sebastiano/hmm_workspace/src/rosneuro_integrator/src/rosneuro_integrator/Integrator.h

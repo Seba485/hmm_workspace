@@ -13,7 +13,7 @@ class GenericIntegrator {
 		GenericIntegrator(void);
 		virtual ~GenericIntegrator(void);
 
-		virtual bool configure(void) = 0;
+		virtual bool configure(int n_class) = 0;
 		virtual Eigen::VectorXf apply(const Eigen::VectorXf& in) = 0;
 		virtual bool reset(void) = 0;
 

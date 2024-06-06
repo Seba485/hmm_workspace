@@ -5,14 +5,16 @@ namespace rosneuro {
 
 Exponential::Exponential(void) : p_nh_("~") {
 	this->setname("exponential");
-	this->data_ = this->uniform_vector(0.333f);
 	this->has_rejection_ = true;
 }
 
 Exponential::~Exponential(void) {
 }
 
-bool Exponential::configure(void) {
+bool Exponential::configure(int n_class) {
+
+	this->n_class_ = n_class;
+	this->data_ = this->uniform_vector(1/this->n_class_);
 	
 	float alpha, rejection;
 	
@@ -64,16 +66,17 @@ Eigen::VectorXf Exponential::apply(const Eigen::VectorXf& input) {
 }
 
 bool Exponential::reset(void) {
-	//this->data_ = this->uniform_vector(0.5f);
-	this->data_ = this->uniform_vector(0.333f);
+
+	this->data_ = this->uniform_vector(1/this->n_class_);
 	return true;
 }
 
 Eigen::VectorXf Exponential::uniform_vector(float value) {
 	//return Eigen::Vector2f::Constant(value);
-	Eigen::Vector3f framework_vect = Eigen::Vector3f::Constant(value);
+	Eigen::VectorXf framework_vect(this->n_class_);
+	framework_vect.setOnes();
 
-	/*Eigen::VectorXf vec = framework_vect; //to check how the framework vector is reset
+	/*Eigen::VectorXf vec = framework_vect*value; //to check how the framework vector is reset
 	std::stringstream oss;
     oss << "[";
     for (size_t i = 0; i < vec.size(); i++) {
@@ -88,7 +91,7 @@ Eigen::VectorXf Exponential::uniform_vector(float value) {
 
 	ROS_INFO("%s", str_vect_);*/
 
-	return framework_vect;
+	return framework_vect*value;
 }
 
 void Exponential::setalpha(float value) {

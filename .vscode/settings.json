@@ -6,5 +6,6 @@
     "python.analysis.extraPaths": [
         "/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages",
         "/opt/ros/noetic/lib/python3/dist-packages"
-    ]
+    ],
+    "C_Cpp.errorSquiggles": "disabled"
 }

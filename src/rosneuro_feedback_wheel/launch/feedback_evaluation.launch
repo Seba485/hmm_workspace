@@ -4,6 +4,7 @@
 	<!-- Feedback arguments -->
 		<arg name="modality" 	 default='evaluation'/>
 		<arg name="thresholds"   default='[0.9, 0.9]'/>
+		<arg name="n_class"      default='2'/>
 		<arg name="classes"      default='[771, 773, 783]'/>
 		<arg name="trials"       default='[10, 10, 10]'/>
 		<arg name="show_on_rest" default='True'/>
@@ -62,6 +63,7 @@
   
 	<!-- integrator node -->
 	<node name="integrator" pkg="rosneuro_integrator" type="integrator" output="screen">
+		<param name="~n_class" value="$(arg n_class)"/>
 		<rosparam param="plugin" subst_value="True">$(arg integratorplugin)</rosparam>
 		<rosparam param="alpha" subst_value="True">$(arg alpha)</rosparam>
 		<remap from="/smr/neuroprediction" to="/smrbci/neuroprediction"/>

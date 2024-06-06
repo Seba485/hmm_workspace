@@ -22,7 +22,7 @@ class Exponential : public GenericIntegrator {
 		Exponential(void);
 		~Exponential(void);
 
-		bool configure(void);
+		bool configure(int n_class);
 		Eigen::VectorXf apply(const Eigen::VectorXf& input);
 		bool reset(void);
 		void setalpha(float value);
@@ -34,13 +34,14 @@ class Exponential : public GenericIntegrator {
 		void on_request_reconfigure(rosneuro_config_exponential &config, uint32_t level);
 
 	private:
+		int n_class_;
 		ros::NodeHandle p_nh_;
 		float alpha_;
 		float rejection_;
 		bool has_rejection_;
 		const float alpha_default_ = 0.98f;
 		//Eigen::Vector2f data_;
-		Eigen::Vector3f data_; //the output of the hmm is of length 3
+		Eigen::VectorXf data_;
 
 		dyncfg_exponential recfg_srv_;
   		dyncfg_exponential::CallbackType recfg_callback_type_;

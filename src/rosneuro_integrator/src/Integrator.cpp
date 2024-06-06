@@ -20,6 +20,9 @@ Integrator::~Integrator(void) {
 
 bool Integrator::configure(void) {
 
+	//getting the number of classes
+	ros::param::get("~n_class", this->n_class_);
+
 	//getting framerate from the launch
 	ros::param::get("~framerate", this->framerate_);
 
@@ -40,7 +43,7 @@ bool Integrator::configure(void) {
 
 	this->integratorname_ = this->integrator_->name();
 
-	if(this->integrator_->configure() == false) {
+	if(this->integrator_->configure(this->n_class_) == false) {
 		ROS_ERROR("[%s] Cannot configure the integrator", this->integratorname_.c_str());
 		return false;
 	}

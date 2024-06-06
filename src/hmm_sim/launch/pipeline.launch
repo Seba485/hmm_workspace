@@ -5,6 +5,7 @@
 		<arg name="modality" 	 default='evaluation'/>
 		<arg name="thresholds"   default='[0.9, 0.9]'/>
 		<arg name="threshold"   default='0.8'/>
+		<arg name="n_class"      default='3'/>
 		<arg name="classes"      default='[771, 773, 783]'/> <!--both feet, both hand, rest-->
 		<arg name="classes_name" default='[both feet, both hand, rest]'/>
 		<arg name="trials"       default='[10, 10, 10]'/>
@@ -99,7 +100,7 @@
 	
 	<node name="integrator" pkg="rosneuro_integrator" type="integrator" output="screen"> 
 		<param name='framerate' value="512"/> 
-		<!--plugin modified: initial value = 0.3-->
+		<param name="~n_class" value="$(arg n_class)"/>
 		<rosparam param="plugin" subst_value="True">$(arg integratorplugin)</rosparam>
 		<rosparam param="alpha" subst_value="True">$(arg alpha)</rosparam>
 		<remap from="/smr/neuroprediction" to="/hmm/neuroprediction"/>
