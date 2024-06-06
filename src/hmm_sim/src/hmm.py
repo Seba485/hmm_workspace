@@ -45,6 +45,8 @@ class hmm_node:
         self.classes = [int(s) for s in self.classes]
         self.state_name = rospy.get_param("~classes_name")
         self.state_name = self.state_name[1:len(self.state_name)-1].split(', ')
+
+        self.bf_idx = self.classes.index(771) #both feet index in the probability output of the static classifier
         
         self.N_state = len(self.state_name)
 
@@ -67,8 +69,8 @@ class hmm_node:
         self.sub_T = rospy.Subscriber('traversability_output_topic',traversability_output,self.T_update)
 
     def fifo_update(self,msg: NeuroOutput):
-        #pp = np.array(msg.pp_output.data)[0] #i need only the first probability
-        pp = np.array(msg.softpredict.data)[0]
+        #pp = np.array(msg.pp_output.data)[0] #related to bothfeet
+        pp = np.array(msg.softpredict.data)[self.bf_idx]
         self.fifo = np.append(self.fifo,[pp],axis=0)
 
         if len(self.fifo)==self.buffer_len: #once the fifo is fully loaded the hmm inference start

@@ -56,6 +56,7 @@
 	
 	<!-- processing node -->
 	<node name="smrbci" pkg="rosneuro_processing" type="test_smrbci" output="screen">
+		<!--default value for n_classes = 2-->
 		<param name="~lap_path" value="$(arg lap_path)"/>
 		<param name="~decoder_path" value="$(arg decoder_path)"/>
 		<param name="~n_channels" value="$(arg n_channels)"/>
