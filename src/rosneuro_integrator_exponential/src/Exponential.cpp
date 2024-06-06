@@ -5,7 +5,7 @@ namespace rosneuro {
 
 Exponential::Exponential(void) : p_nh_("~") {
 	this->setname("exponential");
-	this->data_ = this->uniform_vector(0.5f);
+	this->data_ = this->uniform_vector(0.333f);
 	this->has_rejection_ = true;
 }
 
@@ -88,7 +88,7 @@ Eigen::VectorXf Exponential::uniform_vector(float value) {
 
 	ROS_INFO("%s", str_vect_);*/
 
-	return framework_vect; //perchè non diventa un vettore da 3???
+	return framework_vect;
 }
 
 void Exponential::setalpha(float value) {

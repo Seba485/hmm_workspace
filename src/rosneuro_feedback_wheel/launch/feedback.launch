@@ -10,16 +10,16 @@
 			
 	<!-- acquisition arguments -->
 		<arg name="plugin" default='rosneuro::EGDDevice'/>
-		<arg name="devarg" default='$(env HOME)/Desktop/test16channels.gdf'/>
+		<arg name="devarg" default='eego|EEG_MASK|0x001FFF600779CF25'/>
 		<arg name="framerate"  default='16'/>
 		<arg name="samplerate" default='512'/>
 
 	<!-- recorder -->
 		<arg name="autostart" default='true'/>
-		<arg name="filepath"  default='/home/ltonin/Desktop/' />
+		<arg name="filepath"  default='$(env HOME)/Desktop/' />
 			
 	<!-- protocol arguments -->
-		<arg name="subject"   default="xx"/>
+		<arg name="subject"   default="d6"/>
 		<arg name="task"      default="mi_bhbf"/>
 		<arg name="extra"     default=""/>
 
