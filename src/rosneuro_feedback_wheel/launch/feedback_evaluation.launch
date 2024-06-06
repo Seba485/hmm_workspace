@@ -12,7 +12,7 @@
 
 	<!-- acquisition arguments -->
 		<arg name="plugin" default='rosneuro::EGDDevice'/>
-		<arg name="devarg" default='$(env HOME)/Desktop/data.gdf'/> <!--qui il percorso file del file gdf da testare (cambia nome)-->
+		<arg name="devarg" default='eego|EEG_MASK|0x001FFF600779CF25'/> <!--qui il percorso file del file gdf da testare (cambia nome)-->
 		<arg name="framerate"  default='16'/>
 		<arg name="samplerate" default='512'/>
 
@@ -98,6 +98,7 @@
 
 	<node name="integrator" pkg="rosneuro_integrator" type="integrator" output="screen"> 
 		<param name='framerate' value="512"/> 
+		<!--plugin modified: initial value = 0.3-->
 		<rosparam param="plugin" subst_value="True">$(arg integratorplugin)</rosparam>
 		<rosparam param="alpha" subst_value="True">$(arg alpha)</rosparam>
 		<remap from="/smr/neuroprediction" to="/smrbci/neuroprediction"/>

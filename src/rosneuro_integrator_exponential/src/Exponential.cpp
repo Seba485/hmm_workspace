@@ -64,7 +64,8 @@ Eigen::VectorXf Exponential::apply(const Eigen::VectorXf& input) {
 }
 
 bool Exponential::reset(void) {
-	this->data_ = this->uniform_vector(0.5f);
+	//this->data_ = this->uniform_vector(0.5f);
+	this->data_ = this->uniform_vector(0.3f);
 	return true;
 }
 
