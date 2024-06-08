@@ -100,7 +100,9 @@ namespace rosneuro {
                 rosneuro_msgs::NeuroOutput inputmsg_;
 
                 neurodraw::Line*         zero_line_;
-                neurodraw::Line*         th_line_;
+                neurodraw::Line*         th_line_bf;
+                neurodraw::Line*         th_line_bh;
+                neurodraw::Line*         th_line_r;
                 neurodraw::Rectangle*    rigth_line_;
                 neurodraw::Rectangle*    wrong_line_;
                 neurodraw::Rectangle*    bf_bar_; //both hand bar
@@ -112,7 +114,7 @@ namespace rosneuro {
                 std::vector<float>  pp_;
                 std::vector<int>    classes_;
                 std::vector<int>    trials_per_class_;
-                float               th_;
+                std::vector<float>  th_;
                 bool                user_quit_;
                 Duration            duration_;
                 Modality            modality_;

@@ -18,18 +18,21 @@ bool bar_feedback::configure(void){
     int mindur_active, maxdur_active, mindur_rest, maxdur_rest;
 	std::string modality;
 
-	// Getting threshold
-	if(this->param_nh_.getParam("threshold", this->th_) == false) {
-		ROS_ERROR("Parameter 'threshold' is mandatory");
-		return false;
-    }
-
 	// Getting classes
 	if(this->param_nh_.getParam("classes", this->classes_) == false) {
 		ROS_ERROR("Parameter 'classes' is mandatory");
 		return false;
 	} else if(this->classes_.size() != 2 && this->classes_.size() != 3) {
 		ROS_ERROR("The provided number of classes must be 2 o 3, now it is: %ld", this->classes_.size());
+		return false;
+	}
+
+	// Getting threshold
+	if(this->param_nh_.getParam("bar_th", this->th_) == false) {
+		ROS_ERROR("Parameter 'bar_th' is mandatory");
+		return false;
+    } else if (this->th_.size() != this->classes_.size()){
+		ROS_ERROR("There has to be one treshold per class");
 		return false;
 	}
 
@@ -115,13 +118,15 @@ void bar_feedback::setup_scene(void){
     this->zero_line_ = new neurodraw::Line(-10, this->low_line_, 10, this->low_line_, neurodraw::Palette::white);
 
     //theshold line
-    this->th_line_ = new neurodraw::Line(-10, (this->th_*this->amplifier_)+this->low_line_, 10, (this->th_*this->amplifier_)+this->low_line_, neurodraw::Palette::green);
+    this->th_line_bh = new neurodraw::Line(-1.2, (this->th_[0]*this->amplifier_)+this->low_line_, -0.4, (this->th_[0]*this->amplifier_)+this->low_line_, neurodraw::Palette::blue);
+	this->th_line_bf = new neurodraw::Line(-0.4, (this->th_[1]*this->amplifier_)+this->low_line_, +0.4, (this->th_[1]*this->amplifier_)+this->low_line_, neurodraw::Palette::red);
+	this->th_line_r = new neurodraw::Line(+0.4, (this->th_[2]*this->amplifier_)+this->low_line_, +1.2, (this->th_[2]*this->amplifier_)+this->low_line_, neurodraw::Palette::yellow);
 
     //rigth event hit
-    this->rigth_line_ = new neurodraw::Rectangle(20, 0.1f, true,  neurodraw::Palette::green);
+    this->rigth_line_ = new neurodraw::Rectangle(20, 0.15f, true,  neurodraw::Palette::green);
 
     //wrong event hit
-    this->wrong_line_ = new neurodraw::Rectangle(20, 0.1f, true,  neurodraw::Palette::darkred);
+    this->wrong_line_ = new neurodraw::Rectangle(20, 0.15f, true,  neurodraw::Palette::darkred);
 
     //both feet
     this->bf_bar_ = new neurodraw::Rectangle(0.4f, this->fake_amp_, true,  neurodraw::Palette::blue);
@@ -143,12 +148,14 @@ void bar_feedback::setup_scene(void){
 
     this->circle_->move(0.0f, 0.8f);
     this->cross_->move(0.0f, 0.8f);
-    this->rigth_line_->move(0.0f, (this->th_*this->amplifier_)+this->low_line_-0.05);
-    this->wrong_line_->move(0.0f, (this->th_*this->amplifier_)+this->low_line_-0.05);
+    this->rigth_line_->move(0.0f, (0.95*this->amplifier_)+this->low_line_-0.05);
+    this->wrong_line_->move(0.0f, (0.95*this->amplifier_)+this->low_line_-0.05);
 
     //add the figure to the engine
     this->engine_->add(this->zero_line_);
-    this->engine_->add(this->th_line_);
+    this->engine_->add(this->th_line_bh);
+	this->engine_->add(this->th_line_bf);
+	this->engine_->add(this->th_line_r);
     this->engine_->add(this->bf_bar_);
     this->engine_->add(this->bh_bar_);
     this->engine_->add(this->r_bar_);
@@ -259,8 +266,6 @@ void bar_feedback::run(void){
     int 	  trialnumber;
 	int 	  trialclass;
 	int 	  trialduration;
-	float	  trialthreshold;
-	int		  hitclass;
 	int 	  boomevent;
 	int       targethit;
 	ros::Rate r(this->rate_);
@@ -276,7 +281,6 @@ void bar_feedback::run(void){
 		trialnumber    = (it - this->trialsequence_.begin()) + 1;
 		trialclass     = (*it).classid; //eventcue of the trial
 		trialduration  = (*it).duration; //duration of the trial
-		trialthreshold = this->th_;
 		targethit      = Classes::None; 
 
 		ROS_INFO("Trial %d/%d (class: %d | duration: %d ms)", trialnumber, this->trialsequence_.size(), trialclass, trialduration);
@@ -313,18 +317,21 @@ void bar_feedback::run(void){
 		this->setevent(Events::CFeedback);
 		this->reset_pp();
 		
+		// Set threshold
+		//int th_idx = std::distance(this->classes_.begin(), std::find(this->classes_.begin(), this->classes_.end(), trialclass));		
+
         // check for the surpass of the treshold
 		while(ros::ok() && this->user_quit_ == false && targethit == Classes::None) {
 
             this->update();
-			
-            if( this->pp_[0]>= this->th_) {
+
+            if( this->pp_[0]>= this->th_[0]) {
                 targethit = Classes::BothFeet;
                 break;
-            } else if( this->pp_[1]>= this->th_) {
+            } else if( this->pp_[1]>= this->th_[1]) {
                 targethit = Classes::BothHand;
                 break;
-            } else if( this->pp_[2]>= this->th_) {
+            } else if( this->pp_[2]>= this->th_[2]) {
                 targethit = Classes::Rest;
                 break;
             } else if(this->timer_.toc() >= trialduration) {

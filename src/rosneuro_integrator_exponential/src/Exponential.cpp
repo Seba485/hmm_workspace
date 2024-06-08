@@ -14,7 +14,7 @@ Exponential::~Exponential(void) {
 bool Exponential::configure(int n_class) {
 
 	this->n_class_ = n_class;
-	this->data_ = this->uniform_vector(1/this->n_class_);
+	this->data_ = this->uniform_vector(1/float(this->n_class_));
 	
 	float alpha, rejection;
 	
@@ -67,16 +67,15 @@ Eigen::VectorXf Exponential::apply(const Eigen::VectorXf& input) {
 
 bool Exponential::reset(void) {
 
-	this->data_ = this->uniform_vector(1/this->n_class_);
+	this->data_ = this->uniform_vector(1/float(this->n_class_));
 	return true;
 }
 
 Eigen::VectorXf Exponential::uniform_vector(float value) {
 	//return Eigen::Vector2f::Constant(value);
-	Eigen::VectorXf framework_vect(this->n_class_);
-	framework_vect.setOnes();
+	Eigen::VectorXf framework_vect = Eigen::VectorXf::Ones(this->n_class_);
 
-	/*Eigen::VectorXf vec = framework_vect*value; //to check how the framework vector is reset
+	/*Eigen::VectorXf vec = (framework_vect*value); //to check how the framework vector is reset
 	std::stringstream oss;
     oss << "[";
     for (size_t i = 0; i < vec.size(); i++) {

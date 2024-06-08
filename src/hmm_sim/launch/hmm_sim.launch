@@ -7,7 +7,7 @@
 
     <arg name="modality" 	 default='evaluation'/>
     <arg name="trials"       default='[10, 10, 10]'/>
-    <arg name="th" default='0.8'/> <!--threshold for classification-->
+    <arg name="bar_th"   default='[0.7, 0.7, 0.6]'/><!--threshold for classification-->
 
     <node name="static_classifier" pkg='hmm_sim' type='static_classifier.py' output='screen'>
         <param name="f"  value="$(arg framerate)"/>
@@ -27,7 +27,7 @@
     <node name="bar_feedback" pkg='hmm_sim' type='bar_feedback' output='screen'>
         <param name="sub_name" type="string" value="/hmm/neuroprediction"/>
         <rosparam param="modality" subst_value="True">$(arg modality)</rosparam>
-		<rosparam param="threshold" subst_value="True">$(arg th)</rosparam>
+		<rosparam param="bar_th" subst_value="True">$(arg bar_th)</rosparam>
 		<rosparam param="classes" subst_value="True">$(arg classes)</rosparam>
 		<rosparam param="trials" subst_value="True">$(arg trials)</rosparam>
     </node>
