@@ -17,7 +17,7 @@ if __name__ == '__main__':
     while not rospy.is_shutdown():
         msg = traversability_output()
 
-        travesability_matrix = np.ones((3,3))*1/3 
+        travesability_matrix = np.ones((3,3))*1/9 
         traversability_vector = travesability_matrix.reshape(9)
         msg.T.data = traversability_vector #once it is publishe it is parsed as a tuple
 
