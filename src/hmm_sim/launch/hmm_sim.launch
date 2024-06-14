@@ -5,7 +5,7 @@
     <arg name="classes"      default='[771, 773, 783]'/> <!--both feet, both hand, rest-->
 	<arg name="classes_name" default='[both feet, both hand, rest]' />
 
-    <arg name="modality" 	 default='evaluation'/>
+    <arg name="modality" 	 default='continuous'/>
     <arg name="trials"       default='[10, 10, 10]'/>
     <arg name="bar_th"   default='[0.7, 0.7, 0.6]'/><!--threshold for classification-->
 

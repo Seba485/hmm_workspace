@@ -61,7 +61,7 @@ namespace rosneuro {
 
             public:
                 bar_feedback(void); //constructor
-                enum class Modality {Calibration = 0, Evaluation};
+                enum class Modality {Calibration = 0, Evaluation, Continuous};
                 bool configure(void);
                 void run(void);
             
@@ -73,6 +73,8 @@ namespace rosneuro {
                 void sleep(int msec);
                 void setevent(int event);
                 void reset_pp(void);
+                void run_continuous(void);
+                void run_evaluation(void);
 
                 void show_fixation(void);
                 void hide_fixation(void);

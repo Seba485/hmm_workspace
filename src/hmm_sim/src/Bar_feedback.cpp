@@ -55,6 +55,8 @@ bool bar_feedback::configure(void){
 		this->modality_ = Modality::Calibration;
 	} else if(modality.compare("evaluation") == 0) {
 		this->modality_ = Modality::Evaluation;
+	} else if(modality.compare("continuous") == 0) {
+		this->modality_ = Modality::Continuous;
 	} else {
 		ROS_ERROR("Unknown modality provided");
 		return false;
@@ -262,6 +264,14 @@ void bar_feedback::hide_boom(void){
 }
 
 void bar_feedback::run(void){
+	if(this->modality_==Modality::Continuous){
+		this->run_continuous();
+	} else {
+		this->run_evaluation();
+	}
+}
+
+void bar_feedback::run_evaluation(void){
 
     int 	  trialnumber;
 	int 	  trialclass;
@@ -381,16 +391,15 @@ void bar_feedback::run(void){
 	if(user_quit_ == false)
 		this->sleep(this->duration_.end);
 	ROS_INFO("Protocol ended");
+    
+}
 
-
-
-    /*ros::Rate r(512);
+void bar_feedback::run_continuous(void){
+	ros::Rate r(512);
 
     while(ros::ok() && this->user_quit_==false){
         ros::spinOnce();
         this->update();
         r.sleep();
-    }*/
-    
+    }
 }
-
