@@ -23,7 +23,7 @@
 		<arg name="filepath"  default='$(env HOME)/Desktop/' /> <!--where the files are saved-->
 			
 	<!-- processing arguments -->
-		<arg name="lap_path"      default='$(env HOME)/Desktop/lapmask_antneuro_32.dat'/> <!--lapalcian filter-->
+		<arg name="lap_path"      default='$(env HOME)/Desktop/lapmask_antneuro_32.dat'/> <!--lapalcian filter: lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
 		<arg name="decoder_path"  default='$(env HOME)/Desktop/d6_bhbf_20240606.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
 		<arg name="n_channels"    default='32'/>
 		<arg name="eog_threshold" default='43.0'/> 
