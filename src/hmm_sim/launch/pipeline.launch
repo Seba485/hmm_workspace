@@ -13,7 +13,8 @@
 
 	<!-- acquisition arguments -->
 		<arg name="plugin" default='rosneuro::EGDDevice'/>
-		<arg name="devarg" default='eego|EEG_MASK|0x001FFF600779CF25'/> <!--qui il percorso file del file gdf da testare (cambia nome)-->
+		<!-- <arg name="devarg" default='eego|EEG_MASK|0x001FFF600779CF25'/> qui il percorso file del file gdf da testare (cambia nome) -->
+		<arg name="devarg" default='gtec'/>
 		<arg name="framerate"  default='16'/>
 		<arg name="samplerate" default='512'/>
 

@@ -8,17 +8,19 @@
 
 	<!-- acquisition arguments -->
 		<arg name="plugin" default='rosneuro::EGDDevice'/>
-		<arg name="devarg" default='$(env HOME)/Desktop/test16channels.gdf'/>
+		<!-- <arg name="devarg" default='$(env HOME)/Desktop/test16channels.gdf'/> -->
+		<!-- <arg name="devarg" default='eego|EEG_MASK|0x001FFF600779CF25'/> qui il percorso file del file gdf da testare (cambia nome) -->
+		<arg name="devarg" default='gtec'/>
 		<arg name="framerate"  default='16'/>
 		<arg name="samplerate" default='512'/>
 			
 	<!-- recorder -->
 		<arg name="autostart" default='true'/>
-		<arg name="filepath"  default='/home/ltonin/Desktop/' />
+		<arg name="filepath"  default='$(env HOME)/Desktop/' />
 
 	<!-- processing arguments -->
-		<arg name="lap_path"      default='$(env HOME)/Desktop/laplacian16.dat'/>
-		<arg name="decoder_path"  default='$(env HOME)/Desktop/classifier16channels.dat'/>
+		<arg name="lap_path"      default='$(env HOME)/Desktop/lapmask_antneuro_32.dat'/> <!--lapalcian filter-->
+		<arg name="decoder_path"  default='$(env HOME)/Desktop/d6_bhbf_20240606.smr.dat'/>
 		<arg name="n_channels"    default='16'/>
 		<arg name="eog_threshold" default='43.0'/> 
 

@@ -17,7 +17,7 @@
 
 	<!-- recorder -->
 		<arg name="autostart" default='true'/>
-		<arg name="filepath"  default='/home/ltonin/Desktop/' />
+		<arg name="filepath"  default='$(env HOME)/Desktop/' />
 			
 	<!-- processing arguments -->
 		<arg name="lap_path"      default='$(env HOME)/Desktop/lapmask_antneuro_32.dat'/>
