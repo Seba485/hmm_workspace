@@ -4,16 +4,17 @@
 	<!-- Feedback arguments -->
 		<arg name="modality" 	 default='evaluation'/>
 		<!--<arg name="thresholds"   default='[0.9, 0.9]'/>-->
-		<arg name="bar_th"   default='[0.7, 0.7, 0.6]'/>
+		<arg name="bar_th"   default='[0.9, 0.9, 0.8]'/>
 		<arg name="n_class"      default='3'/>
-		<arg name="classes"      default='[771, 773, 783]'/> <!--both feet, both hand, rest-->
-		<arg name="classes_name" default='[both feet, both hand, rest]'/>
+		<arg name="classes"      default='[769, 770, 783]'/> <!--both feet, both hand, rest-->
+		<arg name="classes_name" default='[first class, second class, rest]'/>
 		<arg name="trials"       default='[10, 10, 10]'/>
 		<arg name="show_on_rest" default='True'/>
 
 	<!-- acquisition arguments -->
+		
 		<arg name="plugin" default='rosneuro::EGDDevice'/>
-		<!-- <arg name="devarg" default='eego|EEG_MASK|0x001FFF600779CF25'/> qui il percorso file del file gdf da testare (cambia nome) -->
+		<!-- <arg name="devarg" default='$(env HOME)/Desktop/data.gdf'/> --> <!--qui il percorso file del file gdf da testare (cambia nome) -->
 		<arg name="devarg" default='gtec'/>
 		<arg name="framerate"  default='16'/>
 		<arg name="samplerate" default='512'/>
@@ -23,14 +24,14 @@
 		<arg name="filepath"  default='$(env HOME)/Desktop/' /> <!--where the files are saved-->
 			
 	<!-- processing arguments -->
-		<arg name="lap_path"      default='$(env HOME)/Desktop/lapmask_antneuro_32.dat'/> <!--lapalcian filter: lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
-		<arg name="decoder_path"  default='$(env HOME)/Desktop/d6_bhbf_20240606.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
-		<arg name="n_channels"    default='32'/>
+		<arg name="lap_path"      default='$(env HOME)/Desktop/laplacian16.dat'/> <!--lapalcian filter: lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
+		<arg name="decoder_path"  default='$(env HOME)/Desktop/d6_rhlh_20240620.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
+		<arg name="n_channels"    default='16'/>
 		<arg name="eog_threshold" default='43.0'/> 
 
 	<!-- control framework arguments -->
 		<arg name="integratorplugin"   default="rosneuro::integrator::Exponential"/> 
-		<arg name="alpha" 	    	 default='0.90'/> <!--peso diminuito da 0.98 a 0.90-->
+		<arg name="alpha" 	    	 default='0.95'/> <!--peso diminuito da 0.98 a 0.90-->
 
 	<!-- protocol arguments -->
 		<arg name="subject"   default="d6"/>

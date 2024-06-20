@@ -3,7 +3,7 @@
 
     <arg name="framerate"  default='16'/>
     <arg name="classes"      default='[771, 773, 783]'/> <!--both feet, both hand, rest-->
-	<arg name="classes_name" default='[both feet, both hand, rest]' />
+	<arg name="classes_name" default='[first class, second class, rest]' />
 
     <arg name="modality" 	 default='continuous'/>
     <arg name="trials"       default='[10, 10, 10]'/>

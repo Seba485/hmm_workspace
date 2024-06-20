@@ -5,25 +5,25 @@ import math
 from hmm_sim.msg import *
 from rosneuro_msgs.msg import NeuroOutput
 
-def hmm_state(data, state, state_name):
+def hmm_state(data, state, classes):
     #data
     #state --> string with the name of the state
     overall_lh = 1
-    if state==state_name[0]: #both feet
+    if state==classes[0]: #first class
         A = 10 
         B = 20
         A_1 = 5 
         B_1 = 8
         for x in data:
             overall_lh *= A*math.exp(B*(x-1)) + A_1*math.exp(B_1*(x-1))
-    elif state==state_name[1]: #both hand
+    elif state==classes[1]: #second class
         A = 10 
         B = 20
         A_1 = 5 
         B_1 = 8
         for x in data:
             overall_lh *= A*math.exp(-B*x) + A_1*math.exp(-B_1*x)
-    elif state==state_name[2]: #rest
+    elif state==classes[2]: #third class (rest)
         A = 10 
         B = 40
         A_1 = 5 
@@ -46,9 +46,10 @@ class hmm_node:
         self.state_name = rospy.get_param("~classes_name")
         self.state_name = self.state_name[1:len(self.state_name)-1].split(', ')
 
-        self.bf_idx = self.classes.index(771) #both feet index in the probability output of the static classifier
+        #self.bf_idx = self.classes.index(771) #both feet index in the probability output of the static classifier
+        self.bf_idx = 0 #first class access -> class 1 - class 2 - rest
         
-        self.N_state = len(self.state_name)
+        self.N_state = len(self.classes)
 
         self.T = np.zeros((3,3))
 
@@ -90,8 +91,8 @@ class hmm_node:
         #likelihood on the entire buffer
         likelihood_new = list()
 
-        for state in self.state_name: 
-            likelihood_new.append(hmm_state(self.fifo, state, self.state_name))
+        for state in self.classes: 
+            likelihood_new.append(hmm_state(self.fifo, state, self.classes))
         
         #normalization
         likelihood_norm = np.empty(self.N_state)

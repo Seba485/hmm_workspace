@@ -11,7 +11,8 @@
 
 	<!-- acquisition arguments -->
 		<arg name="plugin" default='rosneuro::EGDDevice'/>
-		<arg name="devarg" default='eego|EEG_MASK|0x001FFF600779CF25'/>
+		<!-- <arg name="devarg" default='eego|EEG_MASK|0x001FFF600779CF25'/> -->
+		<arg name="devarg" default='gtec'/>
 		<arg name="framerate"  default='16'/>
 		<arg name="samplerate" default='512'/>
 
@@ -20,7 +21,7 @@
 		<arg name="filepath"  default='$(env HOME)/Desktop/' />
 			
 	<!-- processing arguments -->
-		<arg name="lap_path"      default='$(env HOME)/Desktop/lapmask_antneuro_32.dat'/> <!--lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
+		<arg name="lap_path"      default='$(env HOME)/Desktop/lapmask_gtec_16.dat'/> <!--lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
 		<arg name="decoder_path"  default='$(env HOME)/Desktop/d6_bhbf_20240606.smr.dat'/>
 		<arg name="n_channels"    default='16'/>
 		<arg name="eog_threshold" default='43.0'/> 

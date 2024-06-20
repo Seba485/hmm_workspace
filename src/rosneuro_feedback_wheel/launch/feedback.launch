@@ -4,13 +4,14 @@
 	<!-- Feedback arguments -->
 		<arg name="modality" 	 default='calibration'/>
 		<arg name="thresholds"   default='[0.9, 0.9]'/>
-		<arg name="classes"      default='[771, 773, 783]'/>
-		<arg name="trials"       default='[10, 10, 10]'/>
+		<arg name="classes"      default='[769, 770]'/>
+		<arg name="trials"       default='[10, 10]'/>
 		<arg name="show_on_rest" default='True'/>
 			
 	<!-- acquisition arguments -->
 		<arg name="plugin" default='rosneuro::EGDDevice'/>
-		<arg name="devarg" default='eego|EEG_MASK|0x001FFF600779CF25'/>
+		<!--<arg name="devarg" default='eego|EEG_MASK|0x001FFF600779CF25'/> -->		
+		<arg name="devarg" default='gtec'/>
 		<arg name="framerate"  default='16'/>
 		<arg name="samplerate" default='512'/>
 

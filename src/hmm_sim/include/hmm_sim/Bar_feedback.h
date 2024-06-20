@@ -36,11 +36,11 @@ namespace rosneuro {
         };
 
         struct Classes{
-            static const int BothFeet = 771;
-            static const int BothHand = 773;
-            static const int Rest = 783;
-            static const int None = 0; //used for the target hit
-            static const int TimeOut = -1; //used for the target hit
+            int FirstClass;
+            int SecondClass;
+            int ThirdClass;
+            int None; //used for the target hit
+            int TimeOut; //used for the target hit
         };
 
         struct Duration {
@@ -119,6 +119,7 @@ namespace rosneuro {
                 std::vector<float>  th_;
                 bool                user_quit_;
                 Duration            duration_;
+                Classes             class_code_;
                 Modality            modality_;
                 TrialSequence       trialsequence_;
 
