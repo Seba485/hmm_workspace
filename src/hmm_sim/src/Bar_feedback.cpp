@@ -128,8 +128,8 @@ void bar_feedback::setup_scene(void){
 
     //theshold line
     this->th_line_bh = new neurodraw::Line(-1.2, (this->th_[0]*this->amplifier_)+this->low_line_, -0.4, (this->th_[0]*this->amplifier_)+this->low_line_, neurodraw::Palette::blue);
-	this->th_line_bf = new neurodraw::Line(+0.4, (this->th_[1]*this->amplifier_)+this->low_line_, +1.2, (this->th_[1]*this->amplifier_)+this->low_line_, neurodraw::Palette::red);
-	this->th_line_r = new neurodraw::Line(-0.4, (this->th_[2]*this->amplifier_)+this->low_line_, +0.4, (this->th_[2]*this->amplifier_)+this->low_line_, neurodraw::Palette::yellow);
+	this->th_line_bf = new neurodraw::Line(+0.4, (this->th_[2]*this->amplifier_)+this->low_line_, +1.2, (this->th_[2]*this->amplifier_)+this->low_line_, neurodraw::Palette::red);
+	this->th_line_r = new neurodraw::Line(-0.4, (this->th_[1]*this->amplifier_)+this->low_line_, +0.4, (this->th_[1]*this->amplifier_)+this->low_line_, neurodraw::Palette::yellow);
 
     //rigth event hit
     this->rigth_line_ = new neurodraw::Rectangle(20, 0.15f, true,  neurodraw::Palette::green);
@@ -193,8 +193,8 @@ void bar_feedback::on_receive_neuro_data(const rosneuro_msgs::NeuroOutput& msg){
 void bar_feedback::update(void){
 
     this->bf_bar_->move(-0.8f, this->low_line_-(this->fake_amp_/2)+(this->pp_[0]*this->amplifier_)); 
-    this->bh_bar_->move(0.8f, this->low_line_-(this->fake_amp_/2)+(this->pp_[1]*this->amplifier_));
-    this->r_bar_->move(0.0f, this->low_line_-(this->fake_amp_/2)+(this->pp_[2]*this->amplifier_));
+    this->bh_bar_->move(0.8f, this->low_line_-(this->fake_amp_/2)+(this->pp_[2]*this->amplifier_));
+    this->r_bar_->move(0.0f, this->low_line_-(this->fake_amp_/2)+(this->pp_[1]*this->amplifier_));
 }
 
 void bar_feedback::reset_pp(void){

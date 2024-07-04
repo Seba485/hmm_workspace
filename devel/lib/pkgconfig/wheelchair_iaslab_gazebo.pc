@@ -1,0 +1,8 @@
+prefix=/home/sebastiano/hmm_workspace/devel
+
+Name: wheelchair_iaslab_gazebo
+Description: Description of wheelchair_iaslab_gazebo
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

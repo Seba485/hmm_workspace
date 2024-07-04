@@ -4,7 +4,7 @@
 	<!-- Feedback arguments -->
 		<arg name="modality" 	 default='calibration'/>
 		<arg name="thresholds"   default='[0.9, 0.9]'/>
-		<arg name="classes"      default='[769, 770]'/>
+		<arg name="classes"      default='[771, 773]'/>
 		<arg name="trials"       default='[10, 10]'/>
 		<arg name="show_on_rest" default='True'/>
 			

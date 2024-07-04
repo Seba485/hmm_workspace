@@ -1,0 +1,20 @@
+<launch>
+    <!--<rosparam command="load" file="$(find hmm_sim)/launch/parameter.yaml"/> -->
+
+    <arg name="framerate"  default='16'/>
+    <arg name="traversability_mode" default="real"/> <!-- null -->    <!-- real -->
+    <arg name="min_distance" default="1"/> 
+    <arg name="right_lidar_topic" default="scan_right"/>
+    <arg name="left_lidar_topic" default="scan_left"/>
+    
+
+    <node name="traversability" pkg='hmm_sim' type='traversability.py' output='screen'>
+        <param name="f"  value="$(arg framerate)"/>
+        <param name="traversability_mode" value="$(arg traversability_mode)"/>
+        <param name="min_distance" value="$(arg min_distance)"/>
+        <param name="right_lidar_topic" value="$(arg right_lidar_topic)"/>
+        <param name="left_lidar_topic" value="$(arg left_lidar_topic)"/>
+    </node>
+
+    
+</launch>

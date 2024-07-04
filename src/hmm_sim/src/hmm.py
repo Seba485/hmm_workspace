@@ -16,14 +16,14 @@ def hmm_state(data, state, classes):
         B_1 = 8
         for x in data:
             overall_lh *= A*math.exp(B*(x-1)) + A_1*math.exp(B_1*(x-1))
-    elif state==classes[1]: #second class
+    elif state==classes[2]: #second class
         A = 10 
         B = 20
         A_1 = 5 
         B_1 = 8
         for x in data:
             overall_lh *= A*math.exp(-B*x) + A_1*math.exp(-B_1*x)
-    elif state==classes[2]: #third class (rest)
+    elif state==classes[1]: #third class (rest)
         A = 10 
         B = 40
         A_1 = 5 
@@ -62,7 +62,7 @@ class hmm_node:
         self.posterior_prec = np.ones(self.N_state)*1/self.N_state
         self.fifo_full = False
 
-        #pablisher
+        #publisher
         self.pub = rospy.Publisher('/hmm/neuroprediction', NeuroOutput, queue_size=10) #to bypass the integrator
         
         #self.sub_pp = rospy.Subscriber('classifier_output_topic',classifier_output,self.fifo_update)
@@ -109,8 +109,8 @@ class hmm_node:
         self.posterior_prec = posterior_norm   
 
         #output    
-        rospy.loginfo('Probability buffer:')
-        rospy.loginfo(str(self.fifo))
+        #rospy.loginfo('Probability buffer:')
+        #rospy.loginfo(str(self.fifo))
         rospy.loginfo('Traversability matrix:')
         rospy.loginfo(str(self.T))
         rospy.loginfo('HMM output:')

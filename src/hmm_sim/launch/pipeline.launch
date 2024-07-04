@@ -6,9 +6,9 @@
 		<!--<arg name="thresholds"   default='[0.9, 0.9]'/>-->
 		<arg name="bar_th"   default='[0.9, 0.9, 0.8]'/>
 		<arg name="n_class"      default='3'/>
-		<arg name="classes"      default='[769, 770, 783]'/> <!--both feet, both hand, rest-->
+		<arg name="classes"      default='[771, 773, 783]'/> <!--both feet, both hand, rest-->
 		<arg name="classes_name" default='[first class, second class, rest]'/>
-		<arg name="trials"       default='[10, 10, 10]'/>
+		<arg name="trials"       default='[7, 7, 7]'/>
 		<arg name="show_on_rest" default='True'/>
 
 	<!-- acquisition arguments -->
@@ -25,7 +25,7 @@
 			
 	<!-- processing arguments -->
 		<arg name="lap_path"      default='$(env HOME)/Desktop/laplacian16.dat'/> <!--lapalcian filter: lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
-		<arg name="decoder_path"  default='$(env HOME)/Desktop/d6_rhlh_20240620.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
+		<arg name="decoder_path"  default='$(env HOME)/Desktop/d6_bfbh_20240620.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
 		<arg name="n_channels"    default='16'/>
 		<arg name="eog_threshold" default='43.0'/> 
 
@@ -98,7 +98,7 @@
     </node>
 	<!--output rosneuro_msg neurooutput pubblicato su "/hmm/neuroprediction"-->
 
-	<!--classes [771 773 783]-->
+	<!--3 classes now -->
 	
 	<node name="integrator" pkg="rosneuro_integrator" type="integrator" output="screen"> 
 		<param name='framerate' value="512"/> 
