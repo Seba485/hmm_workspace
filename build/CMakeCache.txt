@@ -448,6 +448,12 @@ gennodejs_DIR:PATH=/opt/ros/noetic/share/gennodejs/cmake
 //The directory containing a CMake configuration file for genpy.
 genpy_DIR:PATH=/opt/ros/noetic/share/genpy/cmake
 
+//The directory containing a CMake configuration file for geometry_msg.
+geometry_msg_DIR:PATH=geometry_msg_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for geometry_msgs.
+geometry_msgs_DIR:PATH=/opt/ros/noetic/share/geometry_msgs/cmake
+
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/home/sebastiano/hmm_workspace/build/gtest/googlemock
 
@@ -503,6 +509,8 @@ hmm_input_SOURCE_DIR:STATIC=/home/sebastiano/hmm_workspace/src/hmm_simulation
 //Value Computed by CMake
 hmm_sim_BINARY_DIR:STATIC=/home/sebastiano/hmm_workspace/build/hmm_sim
 
+hmm_sim_DIR:PATH=
+
 //Value Computed by CMake
 hmm_sim_SOURCE_DIR:STATIC=/home/sebastiano/hmm_workspace/src/hmm_sim
 
@@ -521,11 +529,20 @@ message_generation_DIR:PATH=/opt/ros/noetic/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/noetic/share/message_runtime/cmake
 
+//The directory containing a CMake configuration file for neurodraw.
+neurodraw_DIR:PATH=neurodraw_DIR-NOTFOUND
+
 //Path to a library.
 pkgcfg_lib_WTKPROCESSING_wtkprocessing:FILEPATH=/usr/local/lib/libwtkprocessing.so
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/noetic/share/pluginlib/cmake
+
+//Value Computed by CMake
+robot_controller_BINARY_DIR:STATIC=/home/sebastiano/hmm_workspace/build/robot_controller
+
+//Value Computed by CMake
+robot_controller_SOURCE_DIR:STATIC=/home/sebastiano/hmm_workspace/src/robot_controller
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/noetic/share/rosconsole/cmake
@@ -604,6 +621,12 @@ rospy_DIR:PATH=/opt/ros/noetic/share/rospy/cmake
 
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/noetic/share/rostime/cmake
+
+//The directory containing a CMake configuration file for sensor_msg.
+sensor_msg_DIR:PATH=sensor_msg_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for sensor_msgs.
+sensor_msgs_DIR:PATH=/opt/ros/noetic/share/sensor_msgs/cmake
 
 //The directory containing a CMake configuration file for std_msg.
 std_msg_DIR:PATH=std_msg_DIR-NOTFOUND
