@@ -49,7 +49,7 @@ class traversability_node:
 
         while(not rospy.is_shutdown()):
             #rospy.loginfo('Traversability_matryx')
-            rospy.loginfo(str(self.traversability_matrix))
+            #rospy.loginfo(str(self.traversability_matrix))
 
             self.pub.publish(msg) #publish the message on the topic
             rate.sleep()

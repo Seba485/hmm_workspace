@@ -22,8 +22,8 @@ bool bar_feedback::configure(void){
 	if(this->param_nh_.getParam("classes", this->classes_) == false) {
 		ROS_ERROR("Parameter 'classes' is mandatory");
 		return false;
-	} else if(this->classes_.size() != 2 && this->classes_.size() != 3) {
-		ROS_ERROR("The provided number of classes must be 2 o 3, now it is: %ld", this->classes_.size());
+	} else if(this->classes_.size() != 3) {
+		ROS_ERROR("The provided number of classes must be 3, now it is: %ld", this->classes_.size());
 		return false;
 	}
 
@@ -31,8 +31,8 @@ bool bar_feedback::configure(void){
 	this->class_code_.None = 0;
 	this->class_code_.TimeOut = -1;
 	this->class_code_.FirstClass = this->classes_[0];
-	this->class_code_.SecondClass = this->classes_[1];
-	this->class_code_.ThirdClass = this->classes_[2];
+	this->class_code_.SecondClass = this->classes_[2];
+	this->class_code_.ThirdClass = this->classes_[1]; /* third class as rest */
 
 	// Getting threshold
 	if(this->param_nh_.getParam("bar_th", this->th_) == false) {
@@ -99,9 +99,8 @@ bool bar_feedback::configure(void){
 
 	// forming the trial sequence on the base of the parameters
 	this->trialsequence_.addclass(this->classes_.at(0), this->trials_per_class_.at(0), mindur_active, maxdur_active); 
-	this->trialsequence_.addclass(this->classes_.at(1), this->trials_per_class_.at(1), mindur_active, maxdur_active);
-	if(this->classes_.size() == 3) 
-		this->trialsequence_.addclass(this->classes_.at(2), this->trials_per_class_.at(2), mindur_rest, maxdur_rest);
+	this->trialsequence_.addclass(this->classes_.at(2), this->trials_per_class_.at(2), mindur_active, maxdur_active);
+	this->trialsequence_.addclass(this->classes_.at(1), this->trials_per_class_.at(1), mindur_rest, maxdur_rest);
 
 	
 	ROS_INFO("Total number of classes: %ld", this->classes_.size());
@@ -267,14 +266,6 @@ void bar_feedback::hide_boom(void){
     this->wrong_line_->hide();
 }
 
-void bar_feedback::run(void){
-	if(this->modality_==Modality::Continuous){
-		this->run_continuous();
-	} else {
-		this->run_evaluation();
-	}
-}
-
 void bar_feedback::run_evaluation(void){
 
     int 	  trialnumber;
@@ -329,7 +320,7 @@ void bar_feedback::run_evaluation(void){
 
 		// Send reset event
 		this->setevent(Events::CFeedback);
-		this->reset_pp();
+		//this->reset_pp(); //usless, the integrator already reset in its own based on the Event code
 		
 		// Set threshold
 		//int th_idx = std::distance(this->classes_.begin(), std::find(this->classes_.begin(), this->classes_.end(), trialclass));		
@@ -342,10 +333,10 @@ void bar_feedback::run_evaluation(void){
             if( this->pp_[0]>= this->th_[0]) {
                 targethit = this->class_code_.FirstClass;
                 break;
-            } else if( this->pp_[1]>= this->th_[1]) {
+            } else if( this->pp_[2]>= this->th_[2]) {
                 targethit = this->class_code_.SecondClass;
                 break;
-            } else if( this->pp_[2]>= this->th_[2]) {
+            } else if( this->pp_[1]>= this->th_[1]) {
                 targethit = this->class_code_.ThirdClass;
                 break;
             } else if(this->timer_.toc() >= trialduration) {
@@ -406,4 +397,13 @@ void bar_feedback::run_continuous(void){
         this->update();
         r.sleep();
     }
+}
+
+/* function called by bar_feedback.cpp */
+void bar_feedback::run(void){
+	if(this->modality_==Modality::Continuous){
+		this->run_continuous();
+	} else {
+		this->run_evaluation();
+	}
 }

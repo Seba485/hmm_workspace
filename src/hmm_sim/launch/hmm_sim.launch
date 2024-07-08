@@ -3,22 +3,30 @@
 
     <arg name="framerate"  default='16'/>
     <arg name="classes"      default='[771, 783, 773]'/> <!--both feet, rest, both hand-->
+    <!-- this order has to be maintained -->
+    <arg name="n_class" default="3"/>
+    
 	<arg name="classes_name" default='[first class, rest, second class]' />
 
     <arg name="modality" 	 default='continuous'/>
     <arg name="trials"       default='[10, 10, 10]'/>
     <arg name="bar_th"   default='[0.9, 0.8, 0.9]'/><!--threshold for classification-->
 
+    <!-- traversability -->
     <arg name="traversability_mode" default="real"/> <!-- null -->    <!-- real -->
-    <arg name="min_distance" default="1"/> <!-- minimum distance afterwhich the probability of the direction is set to zero -->
+    <arg name="min_distance" default="0.5"/> <!-- minimum distance afterwhich the probability of the direction is set to zero -->
     <arg name="right_lidar_topic" default="scan_right"/>
     <arg name="left_lidar_topic" default="scan_left"/>
+
+    <!-- control framework arguments -->
+		<arg name="integratorplugin"   default="rosneuro::integrator::Exponential"/> 
+		<arg name="alpha" 	    	 default='0.95'/> <!--peso diminuito da 0.98 a 0.90-->
 
     <node name="static_classifier" pkg='hmm_sim' type='static_classifier.py' output='screen'>
         <param name="f"  value="$(arg framerate)"/>
     </node> 
     
-    <node name="traversability" pkg='hmm_sim' type='traversability.py'>
+    <node name="traversability" pkg='hmm_sim' type='traversability.py' output='screen'>
         <param name="f"  value="$(arg framerate)"/>
         <param name="traversability_mode" value="$(arg traversability_mode)"/>
         <param name="min_distance" value="$(arg min_distance)"/>
@@ -33,12 +41,31 @@
         <param name="dt" type="double" value="1.0" />
     </node>
 
+    <node name="integrator" pkg="rosneuro_integrator" type="integrator" output='screen'> 
+		<param name='framerate' value="512"/> 
+		<param name="~n_class" value="$(arg n_class)"/>
+		<rosparam param="plugin" subst_value="True">$(arg integratorplugin)</rosparam>
+		<rosparam param="alpha" subst_value="True">$(arg alpha)</rosparam>
+		<remap from="/smr/neuroprediction" to="/hmm/neuroprediction"/>
+		<remap from="/integrated" to="/integrator/neuroprediction"/>
+	</node> 
+
+    <!-- if the modality is set to continuous no messages are published onn the event/bus so the integrator will never reset -->
     <node name="bar_feedback" pkg='hmm_sim' type='bar_feedback' output='screen'>
-        <param name="sub_name" type="string" value="/hmm/neuroprediction"/>
+        <param name="sub_name" type="string" value="/integrator/neuroprediction"/>
         <rosparam param="modality" subst_value="True">$(arg modality)</rosparam>
 		<rosparam param="bar_th" subst_value="True">$(arg bar_th)</rosparam>
 		<rosparam param="classes" subst_value="True">$(arg classes)</rosparam>
 		<rosparam param="trials" subst_value="True">$(arg trials)</rosparam>
+    </node>
+    
+    <!-- work with roslaunch robot_model_pkg room.launch -->
+    <node pkg="robot_controller" type="neuro_controller.py" name="neuro_controller">
+        <param name="neuro_topic" value="/integrator/neuroprediction"/>
+        <rosparam param="threshold" subst_value="True">$(arg bar_th)</rosparam>
+        <param name="reset_after_command" value="1"/>
+        <param name="controller_topic" value="/wcias_controller/cmd_vel"/>
+        <param name="time_of_command" value="0.4"/>
     </node>
 
     

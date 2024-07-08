@@ -2,20 +2,20 @@
 <launch>
 	
 	<!-- Feedback arguments -->
-		<arg name="modality" 	 default='evaluation'/>
+		<arg name="modality" 	 default='evaluation'/> <!-- evaluatio, calibration, continuous -->
 		<!--<arg name="thresholds"   default='[0.9, 0.9]'/>-->
-		<arg name="bar_th"   default='[0.9, 0.9, 0.8]'/>
+		<arg name="bar_th"   default='[0.9, 0.8, 0.9]'/>
 		<arg name="n_class"      default='3'/>
-		<arg name="classes"      default='[771, 773, 783]'/> <!--both feet, both hand, rest-->
-		<arg name="classes_name" default='[first class, second class, rest]'/>
+		<arg name="classes"      default='[771, 783, 773]'/> <!--both feet, rest, both hand-->
+		<arg name="classes_name" default='[first class, rest, second class]'/>
 		<arg name="trials"       default='[7, 7, 7]'/>
 		<arg name="show_on_rest" default='True'/>
 
 	<!-- acquisition arguments -->
 		
 		<arg name="plugin" default='rosneuro::EGDDevice'/>
-		<!-- <arg name="devarg" default='$(env HOME)/Desktop/data.gdf'/> --> <!--qui il percorso file del file gdf da testare (cambia nome) -->
-		<arg name="devarg" default='gtec'/>
+		<arg name="devarg" default='$(env HOME)/Desktop/data.gdf'/> <!--gdf file-->
+		<!-- <arg name="devarg" default='gtec'/> -->
 		<arg name="framerate"  default='16'/>
 		<arg name="samplerate" default='512'/>
 
@@ -65,6 +65,12 @@
 		<param name="~n_channels" value="$(arg n_channels)"/>
 	</node>
 	
+	<!-- traversability node -->
+	<arg name="traversability_mode" default="null"/> <!-- null -->    <!-- real -->
+    <arg name="min_distance" default="1"/> <!-- minimum distance afterwhich the probability of the direction is set to zero -->
+    <arg name="right_lidar_topic" default="scan_right"/>
+    <arg name="left_lidar_topic" default="scan_left"/>
+
 	<!--input rosneuro_msg neurooutput in "neuroprediction" topic
 		# NeuroOutput Message
 
@@ -88,6 +94,10 @@
 	
     <node name="traversability" pkg='hmm_sim' type='traversability.py' output='screen'>
 		<param name="f"  value="$(arg framerate)"/>
+        <param name="traversability_mode" value="$(arg traversability_mode)"/>
+        <param name="min_distance" value="$(arg min_distance)"/>
+        <param name="right_lidar_topic" value="$(arg right_lidar_topic)"/>
+        <param name="left_lidar_topic" value="$(arg left_lidar_topic)"/>
     </node>
 
     <node name="hmm" pkg='hmm_sim' type='hmm.py'> 
