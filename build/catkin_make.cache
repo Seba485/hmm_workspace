@@ -1,2 +1,2 @@
-hmm_sim:rosneuro_feedback_wheel:rosneuro_integrator:rosneuro_integrator_exponential:rosneuro_processing-master
+hmm_sim:occupancy_grid_python-master:robot_controller:rosneuro_feedback_wheel:rosneuro_integrator:rosneuro_integrator_exponential:rosneuro_processing-master
 -DCATKIN_DEVEL_PREFIX=/home/sebastiano/hmm_workspace/devel -DCMAKE_INSTALL_PREFIX=/home/sebastiano/hmm_workspace/install -G Unix Makefiles

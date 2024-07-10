@@ -136,6 +136,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/sebastiano/hmm_workspace/build/rosneuro_integrator/cmake_install.cmake")
   include("/home/sebastiano/hmm_workspace/build/rosneuro_integrator_exponential/cmake_install.cmake")
   include("/home/sebastiano/hmm_workspace/build/rosneuro_processing-master/cmake_install.cmake")
+  include("/home/sebastiano/hmm_workspace/build/occupancy_grid_python-master/cmake_install.cmake")
+  include("/home/sebastiano/hmm_workspace/build/robot_controller/cmake_install.cmake")
 
 endif()
 
