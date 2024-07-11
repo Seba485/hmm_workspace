@@ -5,9 +5,11 @@ using namespace rosneuro::feedback;
 
 bar_feedback::bar_feedback(void) : param_nh_("~"){ //costructor
         
-        this->pub_ = this->nh_.advertise<rosneuro_msgs::NeuroEvent>("/events/bus", 1);
+        this->pub_event = this->nh_.advertise<rosneuro_msgs::NeuroEvent>("/events/bus", 1);
+		this->pub_hard = this->nh_.advertise<rosneuro_msgs::NeuroOutput>("/bar_feedback/hard_prediction", 1);
         ros::param::get("~sub_name", this->sub_name_);
 		this->sub_bar_ = this->nh_.subscribe(this->sub_name_, 1, &bar_feedback::on_receive_neuro_data, this);
+		this->sub_status_ = this->nh_.subscribe("/robot_status", 1, &bar_feedback::on_receive_robot_status, this);
         
         this->engine_ = new neurodraw::Engine("bar_feedback");
         this->engine_->on_keyboard(&bar_feedback::on_keyboard_event, this);
@@ -64,8 +66,10 @@ bool bar_feedback::configure(void){
 		this->modality_ = Modality::Evaluation;
 	} else if(modality.compare("continuous") == 0) {
 		this->modality_ = Modality::Continuous;
+	} else if(modality.compare("robot_sim") == 0) {
+		this->modality_ = Modality::Robot_sim;
 	} else {
-		ROS_ERROR("Unknown modality provided");
+		ROS_ERROR("Unknown modality provided, only known: robot_sim, continuous, evaluation, calibration");
 		return false;
 	}
 
@@ -119,7 +123,7 @@ void bar_feedback::setup_scene(void){
 
     this->low_line_ = -0.8;
     this->amplifier_ = 1.4;
-    this->reset_pp();
+	this->pp_ = {0.33, 0.33, 0.33};
     this->fake_amp_ = 100;
 
     //base line
@@ -189,6 +193,10 @@ void bar_feedback::on_receive_neuro_data(const rosneuro_msgs::NeuroOutput& msg){
     this->update();
 }
 
+void bar_feedback::on_receive_robot_status(const hmm_sim::reset_command& msg){
+	this->reset_flag_ = msg.data.data;
+}
+
 void bar_feedback::update(void){
 
     this->bf_bar_->move(-0.8f, this->low_line_-(this->fake_amp_/2)+(this->pp_[0]*this->amplifier_)); 
@@ -196,8 +204,12 @@ void bar_feedback::update(void){
     this->r_bar_->move(0.0f, this->low_line_-(this->fake_amp_/2)+(this->pp_[1]*this->amplifier_));
 }
 
-void bar_feedback::reset_pp(void){
+void bar_feedback::reset_pp(void){  //manual reset of probability, this function can be called only after the scene setup
     this->pp_ = {0.33, 0.33, 0.33};
+
+	this->bf_bar_->move(-0.8f, this->low_line_-(this->fake_amp_/2)+(0.33*this->amplifier_)); 
+    this->bh_bar_->move(0.8f, this->low_line_-(this->fake_amp_/2)+(0.33*this->amplifier_));
+    this->r_bar_->move(0.0f, this->low_line_-(this->fake_amp_/2)+(0.33*this->amplifier_));
 }
 
 void bar_feedback::on_keyboard_event(const neurodraw::KeyboardEvent& event){
@@ -219,7 +231,7 @@ void bar_feedback::setevent(int event) {
 
 	this->event_msg_.header.stamp = ros::Time::now();
 	this->event_msg_.event = event;
-	this->pub_.publish(this->event_msg_);
+	this->pub_event.publish(this->event_msg_);
 }
 
 //fixation cross related function
@@ -399,10 +411,61 @@ void bar_feedback::run_continuous(void){
     }
 }
 
+void bar_feedback::run_robot_sim(void){
+	ros::Rate r(512);
+
+	while(ros::ok() && this->user_quit_==false){
+		std::vector<int> hard_classification = {0, 0, 0};
+
+        this->update();
+
+		if( this->pp_[0]>= this->th_[0]) {
+			hard_classification[0] = 1;
+			this->publish_command_and_wait(hard_classification, this->class_code_.FirstClass);
+			
+		} else if( this->pp_[2]>= this->th_[2]) {
+			hard_classification[2] = 1;
+			this->publish_command_and_wait(hard_classification, this->class_code_.SecondClass);
+			
+		} else if( this->pp_[1]>= this->th_[1]) {
+			hard_classification[1] = 1;
+			this->publish_command_and_wait(hard_classification, this->class_code_.ThirdClass);
+			
+		}
+
+		ros::spinOnce();
+        r.sleep();
+    }
+
+}
+
+void bar_feedback::publish_command_and_wait(std::vector<int> hard_classification, int class_code){
+	this->bar_hard_.hardpredict.data = hard_classification;
+	this->pub_hard.publish(this->bar_hard_);
+
+	this->setevent(Events::CFeedback); //for reset
+	this->reset_pp(); //it has manual built in reset
+
+	ros::Rate r(512);
+	while (this->reset_flag_==true){
+		// Send reset event
+		this->show_cue(class_code);
+		//ros::spinOnce();  //with this the barr will keep chainging also during the wait
+		r.sleep();
+	}
+
+	this->setevent(Events::CFeedback);
+	this->setevent(Events::Hit);
+	this->hide_cue();
+}
+
 /* function called by bar_feedback.cpp */
 void bar_feedback::run(void){
 	if(this->modality_==Modality::Continuous){
 		this->run_continuous();
+	}
+	else if (this->modality_==Modality::Robot_sim){
+		this->run_robot_sim();
 	} else {
 		this->run_evaluation();
 	}

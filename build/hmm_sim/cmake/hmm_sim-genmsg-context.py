@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg;/home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg"
+messages_str = "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg;/home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg;/home/sebastiano/hmm_workspace/src/hmm_sim/msg/reset_command.msg"
 services_str = ""
 pkg_name = "hmm_sim"
 dependencies_str = "std_msgs"

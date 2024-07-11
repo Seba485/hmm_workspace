@@ -55,13 +55,14 @@ include hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/progress.make
 
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp: /home/sebastiano/hmm_workspace/devel/include/hmm_sim/classifier_output.h
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp: /home/sebastiano/hmm_workspace/devel/include/hmm_sim/traversability_output.h
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp: /home/sebastiano/hmm_workspace/devel/include/hmm_sim/reset_command.h
 
 
 /home/sebastiano/hmm_workspace/devel/include/hmm_sim/classifier_output.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/sebastiano/hmm_workspace/devel/include/hmm_sim/classifier_output.h: /home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg
 /home/sebastiano/hmm_workspace/devel/include/hmm_sim/classifier_output.h: /opt/ros/noetic/share/std_msgs/msg/MultiArrayLayout.msg
-/home/sebastiano/hmm_workspace/devel/include/hmm_sim/classifier_output.h: /opt/ros/noetic/share/std_msgs/msg/MultiArrayDimension.msg
 /home/sebastiano/hmm_workspace/devel/include/hmm_sim/classifier_output.h: /opt/ros/noetic/share/std_msgs/msg/Float32MultiArray.msg
+/home/sebastiano/hmm_workspace/devel/include/hmm_sim/classifier_output.h: /opt/ros/noetic/share/std_msgs/msg/MultiArrayDimension.msg
 /home/sebastiano/hmm_workspace/devel/include/hmm_sim/classifier_output.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from hmm_sim/classifier_output.msg"
 	cd /home/sebastiano/hmm_workspace/src/hmm_sim && /home/sebastiano/hmm_workspace/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg -Ihmm_sim:/home/sebastiano/hmm_workspace/src/hmm_sim/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p hmm_sim -o /home/sebastiano/hmm_workspace/devel/include/hmm_sim -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -69,15 +70,23 @@ hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp: /home/sebastiano/hmm_workspace
 /home/sebastiano/hmm_workspace/devel/include/hmm_sim/traversability_output.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/sebastiano/hmm_workspace/devel/include/hmm_sim/traversability_output.h: /home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg
 /home/sebastiano/hmm_workspace/devel/include/hmm_sim/traversability_output.h: /opt/ros/noetic/share/std_msgs/msg/MultiArrayLayout.msg
-/home/sebastiano/hmm_workspace/devel/include/hmm_sim/traversability_output.h: /opt/ros/noetic/share/std_msgs/msg/MultiArrayDimension.msg
 /home/sebastiano/hmm_workspace/devel/include/hmm_sim/traversability_output.h: /opt/ros/noetic/share/std_msgs/msg/Float32MultiArray.msg
+/home/sebastiano/hmm_workspace/devel/include/hmm_sim/traversability_output.h: /opt/ros/noetic/share/std_msgs/msg/MultiArrayDimension.msg
 /home/sebastiano/hmm_workspace/devel/include/hmm_sim/traversability_output.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from hmm_sim/traversability_output.msg"
 	cd /home/sebastiano/hmm_workspace/src/hmm_sim && /home/sebastiano/hmm_workspace/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg -Ihmm_sim:/home/sebastiano/hmm_workspace/src/hmm_sim/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p hmm_sim -o /home/sebastiano/hmm_workspace/devel/include/hmm_sim -e /opt/ros/noetic/share/gencpp/cmake/..
 
+/home/sebastiano/hmm_workspace/devel/include/hmm_sim/reset_command.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/sebastiano/hmm_workspace/devel/include/hmm_sim/reset_command.h: /home/sebastiano/hmm_workspace/src/hmm_sim/msg/reset_command.msg
+/home/sebastiano/hmm_workspace/devel/include/hmm_sim/reset_command.h: /opt/ros/noetic/share/std_msgs/msg/Bool.msg
+/home/sebastiano/hmm_workspace/devel/include/hmm_sim/reset_command.h: /opt/ros/noetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from hmm_sim/reset_command.msg"
+	cd /home/sebastiano/hmm_workspace/src/hmm_sim && /home/sebastiano/hmm_workspace/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sebastiano/hmm_workspace/src/hmm_sim/msg/reset_command.msg -Ihmm_sim:/home/sebastiano/hmm_workspace/src/hmm_sim/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p hmm_sim -o /home/sebastiano/hmm_workspace/devel/include/hmm_sim -e /opt/ros/noetic/share/gencpp/cmake/..
+
 hmm_sim_generate_messages_cpp: hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp
 hmm_sim_generate_messages_cpp: /home/sebastiano/hmm_workspace/devel/include/hmm_sim/classifier_output.h
 hmm_sim_generate_messages_cpp: /home/sebastiano/hmm_workspace/devel/include/hmm_sim/traversability_output.h
+hmm_sim_generate_messages_cpp: /home/sebastiano/hmm_workspace/devel/include/hmm_sim/reset_command.h
 hmm_sim_generate_messages_cpp: hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/build.make
 
 .PHONY : hmm_sim_generate_messages_cpp

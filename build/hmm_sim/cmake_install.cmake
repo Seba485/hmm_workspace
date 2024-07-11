@@ -41,6 +41,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hmm_sim/msg" TYPE FILE FILES
     "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg"
     "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg"
+    "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/reset_command.msg"
     )
 endif()
 

@@ -22,6 +22,7 @@
 
 #include <rosneuro_msgs/NeuroOutput.h>
 #include <rosneuro_msgs/NeuroEvent.h>
+#include <hmm_sim/reset_command.h>
 
 namespace rosneuro {
     namespace feedback{
@@ -61,12 +62,14 @@ namespace rosneuro {
 
             public:
                 bar_feedback(void); //constructor
-                enum class Modality {Calibration = 0, Evaluation, Continuous};
+                enum class Modality {Calibration = 0, Evaluation, Continuous, Robot_sim};
                 bool configure(void);
                 void run(void);
             
             protected:
                 void on_receive_neuro_data(const rosneuro_msgs::NeuroOutput& msg);
+                void on_receive_robot_status(const hmm_sim::reset_command& msg);
+                void publish_command_and_wait(std::vector<int> hard_classification, int class_code);
                 void update(void);
                 void setup_scene(void);
                 virtual void on_keyboard_event(const neurodraw::KeyboardEvent& event);
@@ -75,6 +78,7 @@ namespace rosneuro {
                 void reset_pp(void);
                 void run_continuous(void);
                 void run_evaluation(void);
+                void run_robot_sim(void);
 
                 void show_fixation(void);
                 void hide_fixation(void);
@@ -89,6 +93,7 @@ namespace rosneuro {
                 float   amplifier_;
 
                 bool show_on_rest_;
+                bool reset_flag_ = false;
 
                 ros::NodeHandle         nh_;
                 ros::NodeHandle         param_nh_;
@@ -96,10 +101,14 @@ namespace rosneuro {
                 
                 std::string         sub_name_;
                 ros::Subscriber 	sub_bar_;
-                ros::Publisher      pub_;
+                ros::Subscriber 	sub_status_;
+                ros::Publisher      pub_event;
+                ros::Publisher      pub_hard;
 
                 rosneuro_msgs::NeuroEvent  event_msg_;
                 rosneuro_msgs::NeuroOutput inputmsg_;
+                rosneuro_msgs::NeuroOutput bar_hard_;
+
 
                 neurodraw::Line*         zero_line_;
                 neurodraw::Line*         th_line_bf;

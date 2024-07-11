@@ -55,34 +55,43 @@ include hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/progress.make
 
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_py: /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_classifier_output.py
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_py: /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_traversability_output.py
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_py: /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_reset_command.py
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_py: /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/__init__.py
 
 
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_classifier_output.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_classifier_output.py: /home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_classifier_output.py: /opt/ros/noetic/share/std_msgs/msg/MultiArrayLayout.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_classifier_output.py: /opt/ros/noetic/share/std_msgs/msg/MultiArrayDimension.msg
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_classifier_output.py: /opt/ros/noetic/share/std_msgs/msg/Float32MultiArray.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_classifier_output.py: /opt/ros/noetic/share/std_msgs/msg/MultiArrayDimension.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG hmm_sim/classifier_output"
 	cd /home/sebastiano/hmm_workspace/build/hmm_sim && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg -Ihmm_sim:/home/sebastiano/hmm_workspace/src/hmm_sim/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p hmm_sim -o /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg
 
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_traversability_output.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_traversability_output.py: /home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_traversability_output.py: /opt/ros/noetic/share/std_msgs/msg/MultiArrayLayout.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_traversability_output.py: /opt/ros/noetic/share/std_msgs/msg/MultiArrayDimension.msg
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_traversability_output.py: /opt/ros/noetic/share/std_msgs/msg/Float32MultiArray.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_traversability_output.py: /opt/ros/noetic/share/std_msgs/msg/MultiArrayDimension.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG hmm_sim/traversability_output"
 	cd /home/sebastiano/hmm_workspace/build/hmm_sim && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg -Ihmm_sim:/home/sebastiano/hmm_workspace/src/hmm_sim/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p hmm_sim -o /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg
+
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_reset_command.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_reset_command.py: /home/sebastiano/hmm_workspace/src/hmm_sim/msg/reset_command.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_reset_command.py: /opt/ros/noetic/share/std_msgs/msg/Bool.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG hmm_sim/reset_command"
+	cd /home/sebastiano/hmm_workspace/build/hmm_sim && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/sebastiano/hmm_workspace/src/hmm_sim/msg/reset_command.msg -Ihmm_sim:/home/sebastiano/hmm_workspace/src/hmm_sim/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p hmm_sim -o /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg
 
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/__init__.py: /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_classifier_output.py
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/__init__.py: /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_traversability_output.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for hmm_sim"
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/__init__.py: /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_reset_command.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python msg __init__.py for hmm_sim"
 	cd /home/sebastiano/hmm_workspace/build/hmm_sim && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg --initpy
 
 hmm_sim_generate_messages_py: hmm_sim/CMakeFiles/hmm_sim_generate_messages_py
 hmm_sim_generate_messages_py: /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_classifier_output.py
 hmm_sim_generate_messages_py: /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_traversability_output.py
+hmm_sim_generate_messages_py: /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_reset_command.py
 hmm_sim_generate_messages_py: /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/__init__.py
 hmm_sim_generate_messages_py: hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/build.make
 

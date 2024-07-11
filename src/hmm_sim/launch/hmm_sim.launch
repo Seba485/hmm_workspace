@@ -8,38 +8,41 @@
     
 	<arg name="classes_name" default='[first class, rest, second class]' />
 
-    <arg name="modality" 	 default='continuous'/>
+    <!-- bar feedback -->
+    <arg name="modality" 	 default='robot_sim'/> <!-- continuous, calibration, evaluation, robot_sim -->
     <arg name="trials"       default='[10, 10, 10]'/>
     <arg name="bar_th"   default='[0.9, 0.8, 0.9]'/><!--threshold for classification-->
 
     <!-- traversability -->
-    <arg name="framerate"  default='16'/>
     <arg name="traversability_mode" default="real"/> <!-- null -->    <!-- real -->
     <arg name="max_distance" default="3"/>
-    <arg name="min_distance" default="0.8"/> <!-- minimum distance after which the probability of the direction is set to zero -->
-    <arg name="right_lidar_topic" default="scan_right"/>
-    <arg name="left_lidar_topic" default="scan_left"/>
+    <arg name="odom_topic" default="/odometry/filtered"/>
+    <arg name="costmap_2d_topic" default="/move_base/local_costmap/costmap"/>
 
     <!-- control framework arguments -->
-		<arg name="integratorplugin"   default="rosneuro::integrator::Exponential"/> 
-		<arg name="alpha" 	    	 default='0.95'/> <!--peso diminuito da 0.98 a 0.90-->
+    <arg name="integratorplugin"   default="rosneuro::integrator::Exponential"/> 
+    <arg name="alpha" 	    	 default='0.95'/> <!--peso diminuito da 0.98 a 0.90-->
 
-    <node name="static_classifier" pkg='hmm_sim' type='static_classifier.py' output='screen'>
+    <!-- robot controller -->
+    <arg name="move_base_status" default="move_base/status"/>
+    <arg name="controller_topic" default="/move_base_simple/goal"/>
+    <arg name="reset_after_command" default="1"/>
+    <arg name="hard_class_topic" default="/bar_feedback/hard_prediction"/>
+
+    <node name="static_classifier" pkg='hmm_sim' type='static_classifier.py'>
         <param name="f"  value="$(arg framerate)"/>
     </node> 
     
-    <node name="traversability" pkg='hmm_sim' type='traversability.py' output='screen'>
+    <node name="traversability" pkg='hmm_sim' type='traversability.py'>
         <param name="f"  value="$(arg framerate)"/>
         <param name="traversability_mode" value="$(arg traversability_mode)"/>
-        <param name="costmap_2d_topic" value="/move_base/local_costmap/costmap"/>
+        <param name="costmap_2d_topic" value="$(arg costmap_2d_topic)"/>
+        <param name="odom_topic" value="$(arg odom_topic)"/>
         <param name="max_distance"  value="$(arg max_distance)"/>
-        <param name="right_lidar_topic" value="$(arg right_lidar_topic)"/>
-        <param name="left_lidar_topic" value="$(arg left_lidar_topic)"/>
-        <param name="min_distance" value="$(arg min_distance)"/>
     </node>
 
 
-    <node name="hmm" pkg='hmm_sim' type='hmm.py' output='screen'>
+    <node name="hmm" pkg='hmm_sim' type='hmm.py' >
         <param name="f"  value="$(arg framerate)"/>
         <param name="classes" value="$(arg classes)"/>
 		<param name="classes_name" value="$(arg classes_name)"/>
@@ -65,13 +68,14 @@
     </node>
     
     <!-- work with roslaunch wheelchair_iaslab_gazebo room.launch -->
-    <!-- <node pkg="robot_controller" type="neuro_controller.py" name="neuro_controller">
-        <param name="neuro_topic" value="/integrator/neuroprediction"/>
-        <rosparam param="threshold" subst_value="True">$(arg bar_th)</rosparam>
-        <param name="reset_after_command" value="1"/>
-        <param name="controller_topic" value="/wcias_controller/cmd_vel"/>
-        <param name="time_of_command" value="0.4"/>
-    </node> -->
+    <node pkg="robot_controller" type="neuro_controller.py" name="neuro_controller" output='screen'>
+        <param name="hard_class_topic" value="$(arg hard_class_topic)"/>
+        <param name="reset_after_command" value="$(arg reset_after_command)"/>
+        <param name="odom_topic" value="$(arg odom_topic)"/>
+        <param name="move_base_status" value="$(arg move_base_status)"/>
+        <param name="controller_topic" value="$(arg controller_topic)"/>
+    
+    </node>
 
 
 

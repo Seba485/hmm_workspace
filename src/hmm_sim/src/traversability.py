@@ -18,10 +18,11 @@ class traversability_node:
         self.mode = rospy.get_param("~traversability_mode")
         self.f = rospy.get_param("~f")
         self.depth = rospy.get_param("~max_distance")
-        self.min_distance = rospy.get_param("~min_distance")
+        #self.min_distance = rospy.get_param("~min_distance")
         self.map_topic = rospy.get_param("~costmap_2d_topic")
-        self.right_lidar_topic = rospy.get_param("~right_lidar_topic")
-        self.left_lidar_topic = rospy.get_param("~left_lidar_topic")
+        self.odom_topic = rospy.get_param("~odom_topic")
+        #self.right_lidar_topic = rospy.get_param("~right_lidar_topic")
+        #self.left_lidar_topic = rospy.get_param("~left_lidar_topic")
 
         #check on param
         if(self.mode!="real" and self.mode!="null"):
@@ -29,14 +30,14 @@ class traversability_node:
             rospy.signal_shutdown()
 
         #initialization
-        self.traversability_matrix = np.ones((3,3))*1/9
+        self.traversability_matrix = np.ones((3,3))*1/3
         self.orientation = 0.0
 
         self.front_angle = np.array([-30*math.pi/180, 30*math.pi/180])
-        self.right_angle = np.array([-160*math.pi/180, -30*math.pi/180])
-        self.left_angle = np.array([30*math.pi/180, 160*math.pi/180])
+        self.right_angle = np.array([-100*math.pi/180, -30*math.pi/180])
+        self.left_angle = np.array([30*math.pi/180, 100*math.pi/180])
 
-        self.direction_denied = np.ones(3)
+        #self.direction_denied = np.ones(3)
         
     
         #publisher
@@ -44,9 +45,9 @@ class traversability_node:
 
         #subscribers
         if self.mode=="real":
-            self.odometry_sub = rospy.Subscriber("/odometry/filtered", Odometry, self.orientation_update)
-            self.sub_right = rospy.Subscriber(self.right_lidar_topic, LaserScan, self.right_lidar_update)
-            self.sub_left = rospy.Subscriber(self.left_lidar_topic, LaserScan, self.left_lidar_update)
+            self.odometry_sub = rospy.Subscriber(self.odom_topic, Odometry, self.orientation_update)
+            #self.sub_right = rospy.Subscriber(self.right_lidar_topic, LaserScan, self.right_lidar_update)
+            #self.sub_left = rospy.Subscriber(self.left_lidar_topic, LaserScan, self.left_lidar_update)
 
             self.ogm = OccupancyGridManager(self.map_topic, subscribe_to_updates=True)
 
@@ -60,7 +61,8 @@ class traversability_node:
             
     def orientation_update(self, msg: Odometry):
         quternion_list = [msg.pose.pose.orientation.x, msg.pose.pose.orientation.y, msg.pose.pose.orientation.z, msg.pose.pose.orientation.w]
-        self.orientation = tf.transformations.euler_from_quaternion(quternion_list)[2] #rad respect to x
+        self.orientation = tf.transformations.euler_from_quaternion(quternion_list)[2] #rad respect to y
+
 
     def right_lidar_update(self, msg: LaserScan):
         start_idx = abs(math.floor((50*math.pi/180+self.right_angle[0]+abs(msg.angle_min))/msg.angle_increment))
@@ -138,7 +140,7 @@ class traversability_node:
                 prob_vector = abs(prob_vector - np.sum(prob_vector))
 
                 #put to zero the closed directions
-                prob_vector = prob_vector * self.direction_denied
+                #prob_vector = prob_vector * self.direction_denied
 
                 #normalize the probability vector
                 prob_vector = prob_vector/np.sum(prob_vector) if np.sum(prob_vector)!=0 else np.zeros(3)
@@ -163,8 +165,8 @@ class traversability_node:
                 right_vect = np.zeros(3)
 
             self.traversability_matrix = np.vstack((left_vect,front_vect,right_vect))
-            print_vect = np.vstack((np.array(["sx", "c", "dx"]),np.around(self.traversability_matrix,3)))
-            rospy.loginfo(str(print_vect))
+            """ print_vect = np.vstack((np.array(["sx", "c", "dx"]),np.around(self.traversability_matrix,3)))
+            rospy.loginfo(str(print_vect)) """
 
             msg = traversability_output()
             traversability_vector = self.traversability_matrix.reshape(9)

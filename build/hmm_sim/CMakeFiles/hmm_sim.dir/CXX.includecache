@@ -6,6 +6,24 @@
 
 #IncludeRegexTransform: 
 
+/home/sebastiano/hmm_workspace/devel/include/hmm_sim/reset_command.h
+string
+-
+vector
+-
+memory
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Bool.h
+-
+
 /home/sebastiano/hmm_workspace/src/hmm_sim/include/hmm_sim/Bar_feedback.h
 numeric
 -
@@ -42,6 +60,8 @@ rosneuro_feedback_wheel/Autopilot.h
 rosneuro_msgs/NeuroOutput.h
 -
 rosneuro_msgs/NeuroEvent.h
+-
+hmm_sim/reset_command.h
 -
 
 /home/sebastiano/hmm_workspace/src/hmm_sim/src/Bar_feedback.cpp
@@ -844,6 +864,22 @@ rosneuro_msgs/NeuroDataFloat.h
 rosneuro_msgs/NeuroDataInt32.h
 -
 rosneuro_msgs/NeuroDecoder.h
+-
+
+/opt/ros/noetic/include/std_msgs/Bool.h
+string
+-
+vector
+-
+memory
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
 -
 
 /opt/ros/noetic/include/std_msgs/Header.h

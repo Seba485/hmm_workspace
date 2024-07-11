@@ -109,7 +109,7 @@ void Integrator::on_received_data(const rosneuro_msgs::NeuroOutput& msg) {
 	this->output_ = this->integrator_->apply(this->input_);
 	this->has_new_data_ = true;
 
-	Eigen::VectorXf vec = this->output_; //to check what actually is the output of the node
+	/* Eigen::VectorXf vec = this->output_; //to check what actually is the output of the node
 	std::stringstream oss;
     oss << "[";
     for (size_t i = 0; i < vec.size(); i++) {
@@ -122,7 +122,7 @@ void Integrator::on_received_data(const rosneuro_msgs::NeuroOutput& msg) {
 	std::string str_vect = oss.str();
 	const char * str_vect_ = str_vect.c_str();
 
-	ROS_INFO("%s", str_vect_);
+	ROS_INFO("%s", str_vect_); */
 
 	this->msgoutput_.neuroheader = msg.neuroheader;
 	

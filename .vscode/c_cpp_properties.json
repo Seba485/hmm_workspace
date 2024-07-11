@@ -15,7 +15,8 @@
                 "/home/sebastiano/hmm_workspace/src/rosneuro_integrator_exponential/include/**",
                 "/home/sebastiano/hmm_workspace/src/rosneuro_integrator_exponential/include/**",
                 "/home/sebastiano/hmm_workspace/src/rosneuro_processing-master/include/**",
-                "${workspaceFolder}/src/rosneuro_feedback_wheel/include/**"
+                "${workspaceFolder}/src/rosneuro_feedback_wheel/include/**",
+                "${workspaceFolder}/devel/include"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",
