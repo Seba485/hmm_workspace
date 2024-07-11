@@ -194,7 +194,7 @@ void bar_feedback::on_receive_neuro_data(const rosneuro_msgs::NeuroOutput& msg){
 }
 
 void bar_feedback::on_receive_robot_status(const hmm_sim::reset_command& msg){
-	this->reset_flag_ = msg.data.data;
+	this->action_flag_ = msg.data.data;
 }
 
 void bar_feedback::update(void){
@@ -416,7 +416,6 @@ void bar_feedback::run_robot_sim(void){
 
 	while(ros::ok() && this->user_quit_==false){
 		std::vector<int> hard_classification = {0, 0, 0};
-
         this->update();
 
 		if( this->pp_[0]>= this->th_[0]) {
@@ -432,9 +431,8 @@ void bar_feedback::run_robot_sim(void){
 			this->publish_command_and_wait(hard_classification, this->class_code_.ThirdClass);
 			
 		}
-
+		r.sleep();
 		ros::spinOnce();
-        r.sleep();
     }
 
 }
@@ -444,17 +442,17 @@ void bar_feedback::publish_command_and_wait(std::vector<int> hard_classification
 	this->pub_hard.publish(this->bar_hard_);
 
 	this->setevent(Events::CFeedback); //for reset
-	this->reset_pp(); //it has manual built in reset
+	
 
 	ros::Rate r(512);
-	while (this->reset_flag_==true){
+	while (this->action_flag_==true){
 		// Send reset event
 		this->show_cue(class_code);
-		//ros::spinOnce();  //with this the barr will keep chainging also during the wait
 		r.sleep();
+		ros::spinOnce();
+		this->reset_pp(); //it has manual built in reset
 	}
 
-	this->setevent(Events::CFeedback);
 	this->setevent(Events::Hit);
 	this->hide_cue();
 }

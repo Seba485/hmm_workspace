@@ -93,7 +93,7 @@ namespace rosneuro {
                 float   amplifier_;
 
                 bool show_on_rest_;
-                bool reset_flag_ = false;
+                bool action_flag_ = false;
 
                 ros::NodeHandle         nh_;
                 ros::NodeHandle         param_nh_;

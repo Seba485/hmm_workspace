@@ -20,7 +20,6 @@ class neuro_controller_node:
         self.odom_topic = rospy.get_param("~odom_topic") #/odometry/filtered
         self.move_base_status_topic = rospy.get_param("~move_base_status") #move_base/status
         self.hard_class_topic = rospy.get_param("~hard_class_topic") #bar_feedback/hard_class
-        self.reset_flag = rospy.get_param("~reset_after_command")
         self.pub_topic = rospy.get_param("~controller_topic") #geometry_msgs/PoseStamped 
 
         #initialization
@@ -34,11 +33,6 @@ class neuro_controller_node:
         self.forward_step = 2
 
         self.goal_reached = 0
-
-        #check on param
-        if self.reset_flag!=0 and self.reset_flag!=1:
-            rospy.logerr("Reset_after_command must be 0 (off) or 1 (on)") 
-            rospy.signal_shutdown()
     
         #subpcriber and publisher
         self.pub_status = rospy.Publisher('/robot_status', reset_command, queue_size=1)
@@ -142,11 +136,12 @@ class neuro_controller_node:
 
     def wait_until_reached(self):
         reset_cmd = reset_command()
+        
+        reset_cmd.data.data = True
+        self.pub_status.publish(reset_cmd)
 
         while self.goal_reached==0:
-            if self.reset_flag==1:
-                reset_cmd.data.data = True
-                self.pub_status.publish(reset_cmd)
+            pass
         #once out of the loop the flag is set to 1, in order to keep an other command the flag has to be set to zero again
         self.goal_reached = 0
         reset_cmd.data.data = False

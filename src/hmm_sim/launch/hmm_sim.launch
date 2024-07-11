@@ -26,10 +26,9 @@
     <!-- robot controller -->
     <arg name="move_base_status" default="move_base/status"/>
     <arg name="controller_topic" default="/move_base_simple/goal"/>
-    <arg name="reset_after_command" default="1"/>
     <arg name="hard_class_topic" default="/bar_feedback/hard_prediction"/>
 
-    <node name="static_classifier" pkg='hmm_sim' type='static_classifier.py'>
+    <node name="static_classifier" pkg='hmm_sim' type='static_classifier.py' output="screen">
         <param name="f"  value="$(arg framerate)"/>
     </node> 
     
@@ -70,7 +69,6 @@
     <!-- work with roslaunch wheelchair_iaslab_gazebo room.launch -->
     <node pkg="robot_controller" type="neuro_controller.py" name="neuro_controller" output='screen'>
         <param name="hard_class_topic" value="$(arg hard_class_topic)"/>
-        <param name="reset_after_command" value="$(arg reset_after_command)"/>
         <param name="odom_topic" value="$(arg odom_topic)"/>
         <param name="move_base_status" value="$(arg move_base_status)"/>
         <param name="controller_topic" value="$(arg controller_topic)"/>
