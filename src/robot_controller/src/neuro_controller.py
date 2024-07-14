@@ -15,6 +15,7 @@ class neuro_controller_node:
 
     def __init__(self):
         rospy.init_node('neuro_controller')
+        rospy.sleep(3)
 
         #get param
         self.odom_topic = rospy.get_param("~odom_topic") #/odometry/filtered
@@ -82,7 +83,7 @@ class neuro_controller_node:
         cmd.header.stamp = rospy.Time.now()
         cmd.header.frame_id = "wcias_odom"
 
-        if hard_pp[0]==1: #sx (1 forward, 2 on the left)
+        if hard_pp[2]==1: #sx (1 forward, 2 on the left)
             
             x, y = self.polar_to_xy(self.turn_mode, self.turn_angle)
             cmd.pose.position.x = x
@@ -117,7 +118,7 @@ class neuro_controller_node:
             self.wait_until_reached()
 
             
-        elif hard_pp[2]==1: #dx
+        elif hard_pp[0]==1: #dx
 
             x, y = self.polar_to_xy(self.turn_mode, -self.turn_angle)
             cmd.pose.position.x = x
@@ -140,8 +141,10 @@ class neuro_controller_node:
         reset_cmd.data.data = True
         self.pub_status.publish(reset_cmd)
 
+        start_time = rospy.get_time()
         while self.goal_reached==0:
-            pass
+            if (rospy.get_time()-start_time)>3:
+                break
         #once out of the loop the flag is set to 1, in order to keep an other command the flag has to be set to zero again
         self.goal_reached = 0
         reset_cmd.data.data = False

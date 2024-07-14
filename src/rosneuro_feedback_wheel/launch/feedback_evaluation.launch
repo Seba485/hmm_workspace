@@ -3,10 +3,10 @@
 	
 	<!-- Feedback arguments -->
 		<arg name="modality" 	 default='evaluation'/>
-		<arg name="thresholds"   default='[0.9, 0.9]'/>
+		<arg name="thresholds"   default='[0.75, 0.75]'/>
 		<arg name="n_class"      default='2'/>
-		<arg name="classes"      default='[771, 773, 783]'/>
-		<arg name="trials"       default='[10, 10, 10]'/>
+		<arg name="classes"      default='[773, 771]'/>
+		<arg name="trials"       default='[10, 10]'/>
 		<arg name="show_on_rest" default='True'/>
 
 	<!-- acquisition arguments -->
@@ -21,8 +21,8 @@
 		<arg name="filepath"  default='$(env HOME)/Desktop/' />
 			
 	<!-- processing arguments -->
-		<arg name="lap_path"      default='$(env HOME)/Desktop/lapmask_gtec_16.dat'/> <!--lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
-		<arg name="decoder_path"  default='$(env HOME)/Desktop/d6_bhbf_20240606.smr.dat'/>
+		<arg name="lap_path"      default='$(env HOME)/Desktop/laplacian16.dat'/> <!--lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
+		<arg name="decoder_path"  default='$(env HOME)/Desktop/d6_bhbf_20240712.smr.dat'/>
 		<arg name="n_channels"    default='16'/>
 		<arg name="eog_threshold" default='43.0'/> 
 

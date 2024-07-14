@@ -28,6 +28,7 @@ namespace rosneuro {
     namespace feedback{
 
         struct Events {
+        static const int Rest       = 783;
         static const int Start 		= 1;
         static const int Fixation 	= 786;
         static const int CFeedback 	= 781;
@@ -124,6 +125,10 @@ namespace rosneuro {
 
                 std::vector<float>  pp_;
                 std::vector<int>    classes_;
+                int                 ref_class_;
+                int                 ref_idx;
+                int                 rest_idx;
+                int                 other_idx;
                 std::vector<int>    trials_per_class_;
                 std::vector<float>  th_;
                 bool                user_quit_;

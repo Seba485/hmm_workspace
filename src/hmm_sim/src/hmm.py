@@ -43,13 +43,26 @@ class hmm_node:
         self.classes = rospy.get_param("~classes")
         self.classes = self.classes[1:len(self.classes)-1].split(', ')
         self.classes = [int(s) for s in self.classes]
+        ref_class = rospy.get_param("~ref_class") #the one that make the left turn
+        self.N_state = rospy.get_param("~n_class")
         self.state_name = rospy.get_param("~classes_name")
         self.state_name = self.state_name[1:len(self.state_name)-1].split(', ')
 
-        #self.bf_idx = self.classes.index(771) #both feet index in the probability output of the static classifier
-        self.bf_idx = 0 #first class access -> class 1 - class 2 - rest
+        #check on param
+        if len(self.classes)!=3:
+            rospy.signal_shutdown("classes must be three")
         
-        self.N_state = len(self.classes)
+        if (ref_class not in self.classes or ref_class == 783): 
+            rospy.signal_shutdown("The reference class (for the left turn) has to be one of the available classes and not the rest one")
+
+        self.ref_idx = self.classes.index(ref_class)
+
+        #sort classes in order to deal with the traversability matrix   sx-rest-dx
+        classes_temp = list()
+        classes_temp.append(self.classes[self.ref_idx])                                  #0
+        classes_temp.append(self.classes[self.state_name.index("rest")])                 #1
+        classes_temp.append(self.classes[3-self.ref_idx-self.state_name.index("rest")])  #2
+        self.classes = classes_temp
 
         self.T = np.zeros((3,3))
 
@@ -71,7 +84,12 @@ class hmm_node:
 
     def fifo_update(self,msg: NeuroOutput):
         #pp = np.array(msg.pp_output.data)[0] #related to bothfeet
-        pp = np.array(msg.softpredict.data)[self.bf_idx]
+        ref_idx = self.ref_idx if self.ref_idx <= 1 else 1 
+        #if self.ref_is 2 that means that the ref class has been written in the third position of the classes array
+        #the classifier is a binary classifier, that means that the probability array has only 0 and 1 as acceptable index
+        #if im performing a both hand vs both feet i might have a classes array as [773 783 771], if the ref is 771 the real index for the 
+        #bynary classifier output is 1 and not 2
+        pp = np.array(msg.softpredict.data)[ref_idx]
         self.fifo = np.append(self.fifo,[pp],axis=0)
 
         if len(self.fifo)==self.buffer_len: #once the fifo is fully loaded the hmm inference start
@@ -93,6 +111,8 @@ class hmm_node:
 
         for state in self.classes: 
             likelihood_new.append(hmm_state(self.fifo, state, self.classes))
+
+        likelihood_new = np.array(likelihood_new)
         
         #normalization
         likelihood_norm = np.empty(self.N_state)
@@ -115,7 +135,7 @@ class hmm_node:
         rospy.loginfo(str(self.T))
         rospy.loginfo('HMM output:')
         rospy.loginfo(str(np.round(posterior_norm,4)))
-        rospy.loginfo('Class--> '+self.state_name[np.argmax(posterior_norm)])   
+        rospy.loginfo('Class--> '+self.state_name[np.argmax(posterior_norm)])
 
         #publish
         msg_pub = NeuroOutput()
@@ -124,12 +144,12 @@ class hmm_node:
         msg_pub.softpredict.data = tuple(posterior_norm)
         hard_pred = np.zeros(len(posterior_norm), dtype=np.int32)
         hard_pred[np.argmax(posterior_norm)] = 1
-        msg.hardpredict.data = tuple(hard_pred)
+        msg_pub.hardpredict.data = tuple(hard_pred)
 
 
         msg_pub.decoder.classes = tuple(self.classes)
-        msg.decoder.path = msg.decoder.path
-        msg.decoder.type = msg.decoder.type
+        msg_pub.decoder.path = msg.decoder.path
+        msg_pub.decoder.type = msg.decoder.type
 
         self.pub.publish(msg_pub)
       

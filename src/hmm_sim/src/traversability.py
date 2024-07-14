@@ -165,8 +165,8 @@ class traversability_node:
                 right_vect = np.zeros(3)
 
             self.traversability_matrix = np.vstack((left_vect,front_vect,right_vect))
-            """ print_vect = np.vstack((np.array(["sx", "c", "dx"]),np.around(self.traversability_matrix,3)))
-            rospy.loginfo(str(print_vect)) """
+            print_vect = np.vstack((np.array(["sx", "c", "dx"]),np.around(self.traversability_matrix,3)))
+            rospy.loginfo(str(print_vect))
 
             msg = traversability_output()
             traversability_vector = self.traversability_matrix.reshape(9)

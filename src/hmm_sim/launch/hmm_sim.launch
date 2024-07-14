@@ -1,20 +1,21 @@
 <launch>
     <!--<rosparam command="load" file="$(find hmm_sim)/launch/parameter.yaml"/> -->
 
+    <!-- hmm node -->
     <arg name="framerate"  default='16'/>
     <arg name="classes"      default='[771, 783, 773]'/> <!--both feet, rest, both hand-->
-    <!-- this order has to be maintained -->
+    <arg name="ref_class" default="773"/> <!-- class that turn left -->
     <arg name="n_class" default="3"/>
     
 	<arg name="classes_name" default='[first class, rest, second class]' />
 
     <!-- bar feedback -->
-    <arg name="modality" 	 default='robot_sim'/> <!-- continuous, calibration, evaluation, robot_sim -->
+    <arg name="modality" 	 default='continuous'/> <!-- continuous, calibration, evaluation, robot_sim -->
     <arg name="trials"       default='[10, 10, 10]'/>
     <arg name="bar_th"   default='[0.9, 0.8, 0.9]'/><!--threshold for classification-->
 
     <!-- traversability -->
-    <arg name="traversability_mode" default="real"/> <!-- null -->    <!-- real -->
+    <arg name="traversability_mode" default="null"/> <!-- null -->    <!-- real -->
     <arg name="max_distance" default="3"/>
     <arg name="odom_topic" default="/odometry/filtered"/>
     <arg name="costmap_2d_topic" default="/move_base/local_costmap/costmap"/>
@@ -28,7 +29,7 @@
     <arg name="controller_topic" default="/move_base_simple/goal"/>
     <arg name="hard_class_topic" default="/bar_feedback/hard_prediction"/>
 
-    <node name="static_classifier" pkg='hmm_sim' type='static_classifier.py' output="screen">
+    <node name="static_classifier" pkg='hmm_sim' type='static_classifier.py'>
         <param name="f"  value="$(arg framerate)"/>
     </node> 
     
@@ -41,8 +42,10 @@
     </node>
 
 
-    <node name="hmm" pkg='hmm_sim' type='hmm.py' >
+    <node name="hmm" pkg='hmm_sim' type='hmm.py'>
         <param name="f"  value="$(arg framerate)"/>
+        <param name="ref_class" value="$(arg ref_class)"/>
+        <param name="n_class" value="$(arg n_class)"/>
         <param name="classes" value="$(arg classes)"/>
 		<param name="classes_name" value="$(arg classes_name)"/>
         <param name="dt" type="double" value="1.0" />
@@ -60,6 +63,7 @@
     <!-- if the modality is set to continuous no messages are published onn the event/bus so the integrator will never reset -->
     <node name="bar_feedback" pkg='hmm_sim' type='bar_feedback' output='screen'>
         <param name="sub_name" type="string" value="/integrator/neuroprediction"/>
+        <param name="ref_class" value="$(arg ref_class)"/>
         <rosparam param="modality" subst_value="True">$(arg modality)</rosparam>
 		<rosparam param="bar_th" subst_value="True">$(arg bar_th)</rosparam>
 		<rosparam param="classes" subst_value="True">$(arg classes)</rosparam>

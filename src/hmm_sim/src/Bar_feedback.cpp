@@ -29,12 +29,40 @@ bool bar_feedback::configure(void){
 		return false;
 	}
 
+	if(this->param_nh_.getParam("ref_class", this->ref_class_) == false) {
+		ROS_ERROR("Parameter 'ref_class' is mandatory");
+		return false;
+	}else{
+		auto it = std::find(this->classes_.begin(), this->classes_.end(), this->ref_class_);
+
+		if (it == this->classes_.end() || this->ref_class_==783) {
+			ROS_ERROR("ref_class must be one of the available classes and not the rest (783)");
+			return false;
+		}
+	}
+
+	this->ref_idx = 0;
+	for (int i = 0; i<this->classes_.size(); i++){
+		if (this->classes_[i]==this->ref_class_) {
+			this->ref_idx = i;
+		}
+	}
+
+	this->rest_idx = 0;
+	for (int i = 0; i<this->classes_.size(); i++){
+		if (this->classes_[i]==Events::Rest) {
+			this->rest_idx = i;
+		}
+	}
+
+	this->other_idx = 3-this->rest_idx-this->ref_idx;
+
 	// insert the clases code in the structure
 	this->class_code_.None = 0;
 	this->class_code_.TimeOut = -1;
-	this->class_code_.FirstClass = this->classes_[0];
-	this->class_code_.SecondClass = this->classes_[2];
-	this->class_code_.ThirdClass = this->classes_[1]; /* third class as rest */
+	this->class_code_.FirstClass = this->classes_[ref_idx];
+	this->class_code_.SecondClass = this->classes_[this->other_idx];
+	this->class_code_.ThirdClass = this->classes_[rest_idx];
 
 	// Getting threshold
 	if(this->param_nh_.getParam("bar_th", this->th_) == false) {
@@ -130,9 +158,9 @@ void bar_feedback::setup_scene(void){
     this->zero_line_ = new neurodraw::Line(-10, this->low_line_, 10, this->low_line_, neurodraw::Palette::white);
 
     //theshold line
-    this->th_line_bh = new neurodraw::Line(-1.2, (this->th_[0]*this->amplifier_)+this->low_line_, -0.4, (this->th_[0]*this->amplifier_)+this->low_line_, neurodraw::Palette::blue);
-	this->th_line_bf = new neurodraw::Line(+0.4, (this->th_[2]*this->amplifier_)+this->low_line_, +1.2, (this->th_[2]*this->amplifier_)+this->low_line_, neurodraw::Palette::red);
-	this->th_line_r = new neurodraw::Line(-0.4, (this->th_[1]*this->amplifier_)+this->low_line_, +0.4, (this->th_[1]*this->amplifier_)+this->low_line_, neurodraw::Palette::yellow);
+    this->th_line_bh = new neurodraw::Line(-1.2, (this->th_[this->ref_idx]*this->amplifier_)+this->low_line_, -0.4, (this->th_[this->ref_idx]*this->amplifier_)+this->low_line_, neurodraw::Palette::blue);
+	this->th_line_bf = new neurodraw::Line(+0.4, (this->th_[this->other_idx]*this->amplifier_)+this->low_line_, +1.2, (this->th_[this->other_idx]*this->amplifier_)+this->low_line_, neurodraw::Palette::red);
+	this->th_line_r = new neurodraw::Line(-0.4, (this->th_[this->rest_idx]*this->amplifier_)+this->low_line_, +0.4, (this->th_[this->rest_idx]*this->amplifier_)+this->low_line_, neurodraw::Palette::yellow);
 
     //rigth event hit
     this->rigth_line_ = new neurodraw::Rectangle(20, 0.15f, true,  neurodraw::Palette::green);
@@ -189,7 +217,7 @@ void bar_feedback::setup_scene(void){
 }
 
 void bar_feedback::on_receive_neuro_data(const rosneuro_msgs::NeuroOutput& msg){
-    this->pp_ = msg.softpredict.data;
+    this->pp_ = msg.softpredict.data; //this is already tidy up due to the hmm node [ref_class, rest, othe_class]
     this->update();
 }
 
@@ -441,18 +469,18 @@ void bar_feedback::publish_command_and_wait(std::vector<int> hard_classification
 	this->bar_hard_.hardpredict.data = hard_classification;
 	this->pub_hard.publish(this->bar_hard_);
 
-	this->setevent(Events::CFeedback); //for reset
+	this->setevent(Events::CFeedback); //for reset the integrator
 	
-
 	ros::Rate r(512);
 	while (this->action_flag_==true){
 		// Send reset event
 		this->show_cue(class_code);
 		r.sleep();
 		ros::spinOnce();
-		this->reset_pp(); //it has manual built in reset
 	}
 
+	this->setevent(Events::CFeedback); //for reset the integrator
+	this->reset_pp(); //it has manual built in reset
 	this->setevent(Events::Hit);
 	this->hide_cue();
 }
