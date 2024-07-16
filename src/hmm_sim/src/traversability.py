@@ -7,7 +7,7 @@ from nav_msgs.msg import Odometry
 from sensor_msgs.msg import LaserScan 
 import tf
 
-from occupancy_grid_python import OccupancyGridManager
+from occupancy_grid_python import OccupancyGridManager    
 
 class traversability_node:
     def __init__(self):
@@ -34,8 +34,8 @@ class traversability_node:
         self.orientation = 0.0
 
         self.front_angle = np.array([-30*math.pi/180, 30*math.pi/180])
-        self.right_angle = np.array([-100*math.pi/180, -30*math.pi/180])
-        self.left_angle = np.array([30*math.pi/180, 100*math.pi/180])
+        self.right_angle = np.array([-100*math.pi/180, -45*math.pi/180])
+        self.left_angle = np.array([45*math.pi/180, 100*math.pi/180])
 
         #self.direction_denied = np.ones(3)
         
@@ -100,7 +100,6 @@ class traversability_node:
         while angle<=angle_range[1]:
             dist = 0
             while dist<=max_distance:
-                dist += self.dist_resolution
                 grid_cell = self.polar_to_grid_xy(dist, angle)
                 if not (grid_cell in scanned_cell_set) and self.ogm.is_in_gridmap(grid_cell[0], grid_cell[1]):
                     scanned_cell_set.add(grid_cell)
@@ -108,10 +107,11 @@ class traversability_node:
                     cumulative_occupancy += self.ogm.get_cost_from_costmap_x_y(grid_cell[0], grid_cell[1])
                 else:
                     pass
+                dist += self.dist_resolution
             angle += self.angle_resolution
         #rospy.loginfo(cumulative_occupancy)
         
-        return cumulative_occupancy/len(scanned_cell_set)
+        return cumulative_occupancy
 
 
 
@@ -132,18 +132,20 @@ class traversability_node:
             rospy.loginfo(self.ogm.get_world_x_y(199, 199))
             rospy.loginfo(self.ogm.get_world_x_y(102, 135)) """
 
-            prob_vector = np.array([left_view, front_view, right_view])
+            occupacy_vector = np.array([left_view, front_view, right_view])
             
-            if np.sum(prob_vector)==0: #all the direction are open
+            if np.sum(occupacy_vector)==0: #all the direction are open
                 prob_vector = np.ones(3)*1/3
-            else:
-                prob_vector = abs(prob_vector - np.sum(prob_vector))
+            else: 
+                occupacy_prob = occupacy_vector/sum(occupacy_vector) #probability of occupacy
+                reverse_occupacy = abs(occupacy_vector - sum(occupacy_vector)) #this is the absolute value
+
+                prob_vector = (1-occupacy_prob) * reverse_occupacy/np.sum(reverse_occupacy)
+                #if a direction is strongly occupied 1-occupacy_prob is really low and further kill the reverce occupacy probability
+                #viceversa if a direction is mostly free the 1-occupacy region is near 1 (or equal to 1) and do not modify the reverce occupacy probability
 
                 #put to zero the closed directions
                 #prob_vector = prob_vector * self.direction_denied
-
-                #normalize the probability vector
-                prob_vector = prob_vector/np.sum(prob_vector) if np.sum(prob_vector)!=0 else np.zeros(3)
             
             #matrix
             left_vect = prob_vector * np.array([1.4, 1, 1])

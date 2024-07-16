@@ -1,10 +1,10 @@
 (cl:defpackage hmm_sim-msg
   (:use )
   (:export
+   "<ACTION_STATUS>"
+   "ACTION_STATUS"
    "<CLASSIFIER_OUTPUT>"
    "CLASSIFIER_OUTPUT"
-   "<RESET_COMMAND>"
-   "RESET_COMMAND"
    "<TRAVERSABILITY_OUTPUT>"
    "TRAVERSABILITY_OUTPUT"
   ))

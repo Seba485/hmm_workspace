@@ -4,12 +4,11 @@ from geometry_msgs.msg import PoseStamped
 from rosneuro_msgs.msg import*
 from nav_msgs.msg import Odometry
 from actionlib_msgs.msg import GoalStatusArray
-from hmm_sim.msg import reset_command
+from hmm_sim.msg import action_status
 import numpy as np
 import tf
-import math
-
 import tf.transformations
+import math
 
 class neuro_controller_node:
 
@@ -18,6 +17,7 @@ class neuro_controller_node:
         rospy.sleep(3)
 
         #get param
+        self.mode = rospy.get_param("~modality")
         self.odom_topic = rospy.get_param("~odom_topic") #/odometry/filtered
         self.move_base_status_topic = rospy.get_param("~move_base_status") #move_base/status
         self.hard_class_topic = rospy.get_param("~hard_class_topic") #bar_feedback/hard_class
@@ -36,7 +36,7 @@ class neuro_controller_node:
         self.goal_reached = 0
     
         #subpcriber and publisher
-        self.pub_status = rospy.Publisher('/robot_status', reset_command, queue_size=1)
+        self.pub_status = rospy.Publisher('/robot_status', action_status, queue_size=1)
         self.pub_cmd = rospy.Publisher(self.pub_topic, PoseStamped, queue_size=1)
 
         self.sub_odom = rospy.Subscriber(self.odom_topic, Odometry, self.odom_update)
@@ -47,7 +47,7 @@ class neuro_controller_node:
 
     def odom_update(self, msg: Odometry):
         quternion_list = [msg.pose.pose.orientation.x, msg.pose.pose.orientation.y, msg.pose.pose.orientation.z, msg.pose.pose.orientation.w]
-        self.wc_orientation = tf.transformations.euler_from_quaternion(quternion_list)[2] #rad respect to y (roll pitch -> yaw <-)
+        self.wc_orientation = tf.transformations.euler_from_quaternion(quternion_list)[2] #rad respect to x (roll pitch -> yaw <-)
         self.wc_pos = np.array([msg.pose.pose.position.x, msg.pose.pose.position.y, msg.pose.pose.position.z])
     
     def move_base_status(self, msg: GoalStatusArray):
@@ -61,12 +61,12 @@ class neuro_controller_node:
         RECALLING (7): The goal is being recalled.
         RECALLED (8): The goal was recalled.
         LOST (9): The goal was lost. """
-        if len(msg.status_list)!=0:
+        if len(msg.status_list)!=0 :
             status = msg.status_list[-1].status #the last status
             if status==3:
                 self.goal_reached = 1
             elif status==4 or status==5 or status==2:
-                rospy.signal_shutdown('Command failed')   
+                rospy.signal_shutdown('Command failed')
 
 
     def polar_to_xy(self, mode, angle):
@@ -77,13 +77,13 @@ class neuro_controller_node:
         return (x, y)
 
     def on_receive_data(self, msg: NeuroOutput):
-        hard_pp = msg.hardpredict.data
+        hard_pp = msg.hardpredict.data  #class order has alredy been set in bar_feedback node
 
         cmd = PoseStamped()
         cmd.header.stamp = rospy.Time.now()
         cmd.header.frame_id = "wcias_odom"
 
-        if hard_pp[2]==1: #sx (1 forward, 2 on the left)
+        if hard_pp[0]==1: #sx (1 forward, 2 on the left)
             
             x, y = self.polar_to_xy(self.turn_mode, self.turn_angle)
             cmd.pose.position.x = x
@@ -118,7 +118,7 @@ class neuro_controller_node:
             self.wait_until_reached()
 
             
-        elif hard_pp[0]==1: #dx
+        elif hard_pp[2]==1: #dx
 
             x, y = self.polar_to_xy(self.turn_mode, -self.turn_angle)
             cmd.pose.position.x = x
@@ -136,19 +136,26 @@ class neuro_controller_node:
             self.wait_until_reached()
 
     def wait_until_reached(self):
-        reset_cmd = reset_command()
-        
-        reset_cmd.data.data = True
-        self.pub_status.publish(reset_cmd)
+        action_flag = action_status()
+        action_flag.data.data = True
+        self.pub_status.publish(action_flag)
 
-        start_time = rospy.get_time()
-        while self.goal_reached==0:
-            if (rospy.get_time()-start_time)>3:
-                break
-        #once out of the loop the flag is set to 1, in order to keep an other command the flag has to be set to zero again
-        self.goal_reached = 0
-        reset_cmd.data.data = False
-        self.pub_status.publish(reset_cmd)
+        self.goal_reached = 0 #so that it enter the cycle
+
+        if self.mode=="evaluation": #for the discrete driving
+            while self.goal_reached==0:
+                self.pub_status.publish(action_flag)
+                pass
+        else: #for the countinuous driving
+            start_time = rospy.get_time()
+            while self.goal_reached==0:
+                self.pub_status.publish(action_flag)
+                if (rospy.get_time()-start_time)>3:
+                    break
+
+        action_flag = action_status()
+        action_flag.data.data = False
+        self.pub_status.publish(action_flag)
 
     
     def run(self):

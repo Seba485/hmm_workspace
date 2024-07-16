@@ -1,8 +1,12 @@
 <?xml version="1.0"?>
 <launch>
+
+	<!-- for testig the framework efficacy with in the gazebo enviroment (commenting the neuro_controller node the robot will still) -->
 	
 	<!-- Feedback arguments -->
 		<arg name="modality" 	 default='evaluation'/> <!-- evaluatio, calibration, continuous -->
+		<arg name="eval_type" default="2"/> <!-- 1->1 direction free, 2->2 direction free -->
+		
 		<!--<arg name="thresholds"   default='[0.9, 0.9]'/>-->
 		<arg name="bar_th"   default='[0.9, 0.85, 0.9]'/>
 		<arg name="n_class"      default='3'/>
@@ -15,8 +19,8 @@
 	<!-- acquisition arguments -->
 		
 		<arg name="plugin" default='rosneuro::EGDDevice'/>
-		<!-- <arg name="devarg" default='$(env HOME)/Desktop/data.gdf'/> --> <!--gdf file-->
-		<arg name="devarg" default='gtec'/>
+		<arg name="devarg" default='$(env HOME)/Desktop/data.gdf'/> <!--gdf file-->
+		<!-- <arg name="devarg" default='gtec'/> -->
 		<arg name="framerate"  default='16'/>
 		<arg name="samplerate" default='512'/>
 
@@ -36,7 +40,7 @@
 
 	<!-- protocol arguments -->
 		<arg name="subject"   default="d6"/>
-		<arg name="task"      default="mi_bfbh_hmm_static"/>
+		<arg name="task"      default="mi_bfbh_hmm"/>
 		<arg name="extra"     default=""/>
 			
 	<!-- Protocol parameters -->
@@ -67,10 +71,15 @@
 	</node>
 	
 	<!-- traversability node -->
-	<arg name="traversability_mode" default="null"/> <!-- null -->    <!-- real -->
-	<arg name="max_distance" default="3"/>
+	<arg name="traversability_mode" default="real"/> <!-- null -->    <!-- real -->
+	<arg name="max_distance" default="2"/>
     <arg name="odom_topic" default="/odometry/filtered"/>
     <arg name="costmap_2d_topic" default="/move_base/local_costmap/costmap"/>
+
+	<!-- robot controller -->
+    <arg name="move_base_status" default="/move_base/status"/>
+    <arg name="controller_topic" default="/move_base_simple/goal"/>
+    <arg name="hard_class_topic" default="/bar_feedback/hard_prediction"/>
 
 	<!--input rosneuro_msg neurooutput in "neuroprediction" topic
 		# NeuroOutput Message
@@ -93,7 +102,7 @@
 	
 	<!--inserisci qui il nodo del hmm-->
 	
-    <node name="traversability" pkg='hmm_sim' type='traversability.py'>
+    <node name="traversability" pkg='hmm_sim' type='traversability.py' output="screen">
         <param name="f"  value="$(arg framerate)"/>
         <param name="traversability_mode" value="$(arg traversability_mode)"/>
         <param name="costmap_2d_topic" value="$(arg costmap_2d_topic)"/>
@@ -134,16 +143,22 @@
 		<rosparam param="trials" subst_value="True">$(arg trials)</rosparam>
 	</node>
 	
-	
-	<!-- neurowheel node -->
-	<!--
-	<node name="trainingwheel" pkg="rosneuro_feedback_wheel" type="trainingwheel" output="screen">
-		<rosparam param="modality" subst_value="True">$(arg modality)</rosparam>
-		<rosparam param="thresholds" subst_value="True">$(arg thresholds)</rosparam>
-		<rosparam param="classes" subst_value="True">$(arg classes)</rosparam>
-		<rosparam param="trials" subst_value="True">$(arg trials)</rosparam>
-	</node>
-	-->
+	<!-- work with roslaunch wheelchair_iaslab_gazebo room.launch -->
+	<!-- uncomment to move the wheelchair in gazebo -->
+    <!-- <node pkg="robot_controller" type="neuro_controller.py" name="neuro_controller" output='screen'>
+        <param name="hard_class_topic" value="$(arg hard_class_topic)"/>
+        <param name="odom_topic" value="$(arg odom_topic)"/>
+        <param name="move_base_status" value="$(arg move_base_status)"/>
+        <param name="controller_topic" value="$(arg controller_topic)"/>
+        <param name="modality" value="$(arg modality)"/>
+    </node> -->
+
+
+	<!-- work with roslaunch wheelchair_iaslab_gazebo room.launch -->
+    <node pkg="hmm_sim" type="obstacle_spawner.py" name="obstacle_spawner" output='screen'>
+        <param name="odom_topic" value="$(arg odom_topic)"/>
+		<param name="eval_type" value="$(arg eval_type)"/>
+    </node>
 	
 
 </launch>

@@ -3,7 +3,7 @@
 
     <arg name="framerate"  default='16'/>
     <arg name="traversability_mode" default="real"/> <!-- null -->    <!-- real -->
-    <arg name="max_distance" default="3"/>
+    <arg name="max_distance" default="1.5"/>
     <arg name="min_distance" default="0.8"/> <!-- minimum distance after which the probability of the direction is set to zero -->
     <arg name="right_lidar_topic" default="scan_right"/>
     <arg name="left_lidar_topic" default="scan_left"/>

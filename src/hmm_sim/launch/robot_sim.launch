@@ -1,8 +1,10 @@
 <?xml version="1.0"?>
 <launch>
+
+	<!-- continuous control of the robot -->
 	
 	<!-- Feedback arguments -->
-		<arg name="modality" 	 default='robot_sim'/> <!-- evaluatio, calibration, continuous robot_sim-->
+		<arg name="modality" 	 default='robot_sim'/> <!-- evaluatio, calibration, continuous, robot_sim-->
 		<arg name="bar_th"   default='[0.75, 0.8, 0.9]'/>
 		<arg name="n_class"      default='3'/>
 		<arg name="classes"      default='[771, 783, 773]'/> <!--both feet, rest, both hand-->

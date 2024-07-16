@@ -1,5 +1,6 @@
 # Hashes of file build rules.
 ab35c9d76a7698d8db5356b3cae7ac07 /home/sebastiano/hmm_workspace/devel/include/hmm_input/hmm_input.h
+f24f5de3580709f7ea97d3e8208fca7f /home/sebastiano/hmm_workspace/devel/include/hmm_sim/action_status.h
 01c366626e70ca7d55a8617ea7f506cd /home/sebastiano/hmm_workspace/devel/include/hmm_sim/classifier_output.h
 c37b5ea67c47092e775bfb36dda7fa06 /home/sebastiano/hmm_workspace/devel/include/hmm_sim/hmm_input.h
 7de72b54bca80805e83e65048e1ec215 /home/sebastiano/hmm_workspace/devel/include/hmm_sim/reset_command.h
@@ -11,16 +12,19 @@ c5132cf27a94aba9fa320d4821e30c46 /home/sebastiano/hmm_workspace/devel/include/ro
 10d3b3e28d038eaff33605391e0869c5 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_input/msg/__init__.py
 a77df38fc8aaf2b55689d341f434fdeb /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_input/msg/_hmm_input.py
 dc75fd3e10d199712bc16d56d4099401 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/__init__.py
+d70ba0c07f3e640f27438300d728f3c3 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_action_status.py
 f98633a11583a528246a5d96ec3131f6 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_classifier_output.py
 1a957cd67571812d8102ca04a815ba1f /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_hmm_input.py
 44091cc3f6076974d7de38bfb884fdb2 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_reset_command.py
 b80736513ad99114b12eb4c7e05e5a41 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/hmm_sim/msg/_traversability_output.py
 835af990c5282c71882a949fced7c478 /home/sebastiano/hmm_workspace/devel/share/common-lisp/ros/hmm_input/msg/hmm_input.lisp
+51266e8c34a90682607b3a0ec1f9529c /home/sebastiano/hmm_workspace/devel/share/common-lisp/ros/hmm_sim/msg/action_status.lisp
 e5266a93e393cbbd10d2181cceac7bb2 /home/sebastiano/hmm_workspace/devel/share/common-lisp/ros/hmm_sim/msg/classifier_output.lisp
 9f5ba50f19485e54d73fae064419930a /home/sebastiano/hmm_workspace/devel/share/common-lisp/ros/hmm_sim/msg/hmm_input.lisp
 e96bde1bfaddfe06422b4d8d7b9b7a12 /home/sebastiano/hmm_workspace/devel/share/common-lisp/ros/hmm_sim/msg/reset_command.lisp
 be6b32fcb700b58d2eaa040bbecad606 /home/sebastiano/hmm_workspace/devel/share/common-lisp/ros/hmm_sim/msg/traversability_output.lisp
 dc4371495cbc1bbd6e1f78ff0fe7104c /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_input/msg/hmm_input.js
+0ea6facbf0a675bfe03581fd1a015466 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/action_status.js
 ca42d0bd6bcc8c797931be038fd8b369 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/classifier_output.js
 467c7063e09dd3ce91e093a4a0add9eb /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/hmm_input.js
 fbc7daa5d52b6bd9c447e824012c345b /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/reset_command.js
@@ -28,14 +32,15 @@ fbc7daa5d52b6bd9c447e824012c345b /home/sebastiano/hmm_workspace/devel/share/genn
 439a5cf1c6bca915a26b01f579bdbd4c /home/sebastiano/hmm_workspace/devel/share/roseus/ros/hmm_input/manifest.l
 dd8805e836c87475ec2e65d629cf8c1f /home/sebastiano/hmm_workspace/devel/share/roseus/ros/hmm_input/msg/hmm_input.l
 078c9e5f8e6850e151ac4aec28cb0315 /home/sebastiano/hmm_workspace/devel/share/roseus/ros/hmm_sim/manifest.l
+e811b00b0517d8670cb1829b1c59fda1 /home/sebastiano/hmm_workspace/devel/share/roseus/ros/hmm_sim/msg/action_status.l
 7423773f24496b5deba91a13cc383c5c /home/sebastiano/hmm_workspace/devel/share/roseus/ros/hmm_sim/msg/classifier_output.l
 962de5d3cc27e8236fde64b173b4a0be /home/sebastiano/hmm_workspace/devel/share/roseus/ros/hmm_sim/msg/hmm_input.l
 e04afbddbd82622a75b9446a372ae258 /home/sebastiano/hmm_workspace/devel/share/roseus/ros/hmm_sim/msg/reset_command.l
 845ba77f9f5c87dd88b5691181cb62de /home/sebastiano/hmm_workspace/devel/share/roseus/ros/hmm_sim/msg/traversability_output.l
 5ff8dceaa54eb98ef38cdc7132e71be5 CMakeFiles/clean_test_results
-389ad6f4ee563ca9a0af5ef87de88370 hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output
-42f1e191e5d6a44d43b9392a1bd869d0 hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command
-7a30c10d748331920b50ac87e02a8cc2 hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output
+3f8f297560118d8c89fe65ad84278385 hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status
+3cbc98aaea7420275702bbfdc21485fa hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output
+3bd83cc49f15057451d2921b47126fbc hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output
 7c41d21e50705ce46244a9b34dc5311a hmm_sim/CMakeFiles/ext_neurodraw-complete
 2c86fd85c4ede598946cc484483dec73 hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp
 2c86fd85c4ede598946cc484483dec73 hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus

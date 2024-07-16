@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
+  "/home/sebastiano/hmm_workspace/devel/include/hmm_sim/action_status.h"
   "/home/sebastiano/hmm_workspace/devel/include/hmm_sim/classifier_output.h"
-  "/home/sebastiano/hmm_workspace/devel/include/hmm_sim/reset_command.h"
   "/home/sebastiano/hmm_workspace/devel/include/hmm_sim/traversability_output.h"
   "CMakeFiles/hmm_sim_generate_messages_cpp"
 )

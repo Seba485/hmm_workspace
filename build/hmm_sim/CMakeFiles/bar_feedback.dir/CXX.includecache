@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/sebastiano/hmm_workspace/devel/include/hmm_sim/reset_command.h
+/home/sebastiano/hmm_workspace/devel/include/hmm_sim/action_status.h
 string
 -
 vector
@@ -61,7 +61,7 @@ rosneuro_msgs/NeuroOutput.h
 -
 rosneuro_msgs/NeuroEvent.h
 -
-hmm_sim/reset_command.h
+hmm_sim/action_status.h
 -
 
 /home/sebastiano/hmm_workspace/src/hmm_sim/src/bar_feedback.cpp

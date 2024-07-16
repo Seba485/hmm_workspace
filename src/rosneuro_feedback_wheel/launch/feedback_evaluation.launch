@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <launch>
+
+	<!-- two class feedback evaluation wheel (for testing the classifier without the framework) -->
 	
 	<!-- Feedback arguments -->
 		<arg name="modality" 	 default='evaluation'/>

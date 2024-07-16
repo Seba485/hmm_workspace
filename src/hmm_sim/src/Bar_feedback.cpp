@@ -7,6 +7,8 @@ bar_feedback::bar_feedback(void) : param_nh_("~"){ //costructor
         
         this->pub_event = this->nh_.advertise<rosneuro_msgs::NeuroEvent>("/events/bus", 1);
 		this->pub_hard = this->nh_.advertise<rosneuro_msgs::NeuroOutput>("/bar_feedback/hard_prediction", 1);
+		this->pub_cue_class = this->nh_.advertise<rosneuro_msgs::NeuroOutput>("/bar_feedback/cue_class", 1);
+
         ros::param::get("~sub_name", this->sub_name_);
 		this->sub_bar_ = this->nh_.subscribe(this->sub_name_, 1, &bar_feedback::on_receive_neuro_data, this);
 		this->sub_status_ = this->nh_.subscribe("/robot_status", 1, &bar_feedback::on_receive_robot_status, this);
@@ -100,6 +102,9 @@ bool bar_feedback::configure(void){
 		ROS_ERROR("Unknown modality provided, only known: robot_sim, continuous, evaluation, calibration");
 		return false;
 	}
+
+	//getting traversability modality (if real that means that the simulation is running)
+	this->param_nh_.getParam("traversability_mode", this->T_mode_);
 
 	// Getting show on rest
 	ros::param::param("~show_on_rest", this->show_on_rest_, true);
@@ -221,8 +226,8 @@ void bar_feedback::on_receive_neuro_data(const rosneuro_msgs::NeuroOutput& msg){
     this->update();
 }
 
-void bar_feedback::on_receive_robot_status(const hmm_sim::reset_command& msg){
-	this->action_flag_ = msg.data.data;
+void bar_feedback::on_receive_robot_status(const hmm_sim::action_status& msg){
+	this->action_flag_ = msg.data.data; //if neuro_controller is not publishing on the topic, it is set to false (se the bar_feedback.h file in include folder)
 }
 
 void bar_feedback::update(void){
@@ -306,7 +311,7 @@ void bar_feedback::hide_boom(void){
     this->wrong_line_->hide();
 }
 
-void bar_feedback::run_evaluation(void){
+void bar_feedback::run_evaluation(void){ //the evaluation can support also the evaluation in gazebo
 
     int 	  trialnumber;
 	int 	  trialclass;
@@ -347,8 +352,22 @@ void bar_feedback::run_evaluation(void){
 		// Cue
 		this->setevent(trialclass);
 		this->show_cue(trialclass);
-		this->sleep(this->duration_.cue);
-		this->setevent(trialclass + Events::Off);
+
+				//publish in hot encoded format the class of cue in hardpredicted.data variable of the NeuroOutput message
+				//for the obstacle_spawner.py node (gazebo simulation)
+				std::vector<int> cue_hot_encoding = {0, 0, 0}; //sx, rest, dx
+				if( trialclass== this->class_code_.FirstClass) {
+					cue_hot_encoding[0] = 1;
+				} else if( trialclass == this->class_code_.SecondClass) {
+					cue_hot_encoding[2] = 1;
+				} else if( trialclass == this->class_code_.ThirdClass) {
+					cue_hot_encoding[1] = 1;
+				}
+				this->cue_class_.hardpredict.data = cue_hot_encoding;
+				this->pub_cue_class.publish(this->cue_class_);
+				
+				this->sleep(this->duration_.cue);
+				this->setevent(trialclass + Events::Off);
 		
 		if(ros::ok() == false || this->user_quit_ == true) break;
 
@@ -360,7 +379,7 @@ void bar_feedback::run_evaluation(void){
 
 		// Send reset event
 		this->setevent(Events::CFeedback);
-		//this->reset_pp(); //usless, the integrator already reset in its own based on the Event code
+		this->reset_pp(); //usless but actually usefull to avoid overshoots, the integrator already reset in its own based on the Event code
 		
 		// Set threshold
 		//int th_idx = std::distance(this->classes_.begin(), std::find(this->classes_.begin(), this->classes_.end(), trialclass));		
@@ -368,16 +387,20 @@ void bar_feedback::run_evaluation(void){
         // check for the surpass of the treshold
 		while(ros::ok() && this->user_quit_ == false && targethit == this->class_code_.None) {
 
+			this->hard_classification = {0, 0, 0};  //for the neuro_controller (gazebo simulation)
             this->update();
 
             if( this->pp_[0]>= this->th_[0]) {
                 targethit = this->class_code_.FirstClass;
+				this->hard_classification[0] = 1;
                 break;
             } else if( this->pp_[2]>= this->th_[2]) {
                 targethit = this->class_code_.SecondClass;
+				this->hard_classification[2] = 1;
                 break;
             } else if( this->pp_[1]>= this->th_[1]) {
                 targethit = this->class_code_.ThirdClass;
+				this->hard_classification[1] = 1;
                 break;
             } else if(this->timer_.toc() >= trialduration) {
                 targethit = this->class_code_.TimeOut;
@@ -396,8 +419,6 @@ void bar_feedback::run_evaluation(void){
 		this->setevent(boomevent);
 		this->show_boom(boomevent);
 		this->sleep(this->duration_.boom);
-		this->hide_boom();
-		this->setevent(boomevent + Events::Off);
 
 		//this->setevent(Events::Start + Events::Off);
 
@@ -410,15 +431,23 @@ void bar_feedback::run_evaluation(void){
 				break;
 		}
 
+		//for gazebo simulation
+		if (boomevent==Events::Hit){ //command to the neuro_controller
+			this->publish_command_and_wait(this->hard_classification, trialclass);
+		}
+
+		this->hide_boom();
+		this->setevent(boomevent + Events::Off);		
+
 		if(ros::ok() == false || this->user_quit_ == true) break;
 
 		// Inter trial interval
 		this->hide_cue();
 		this->reset_pp();
-        this->update();
 		this->sleep(this->duration_.iti);
 
 		if(ros::ok() == false || this->user_quit_ == true) break;
+
 
 	}
 
@@ -469,19 +498,18 @@ void bar_feedback::publish_command_and_wait(std::vector<int> hard_classification
 	this->bar_hard_.hardpredict.data = hard_classification;
 	this->pub_hard.publish(this->bar_hard_);
 
-	this->setevent(Events::CFeedback); //for reset the integrator
-	
+	this->sleep(100); //dalay so that the node is able to read the action_status message
+	ros::spinOnce();
+
+	this->show_cue(class_code);
 	ros::Rate r(512);
 	while (this->action_flag_==true){
-		// Send reset event
-		this->show_cue(class_code);
-		r.sleep();
 		ros::spinOnce();
+		r.sleep();
 	}
 
 	this->setevent(Events::CFeedback); //for reset the integrator
 	this->reset_pp(); //it has manual built in reset
-	this->setevent(Events::Hit);
 	this->hide_cue();
 }
 

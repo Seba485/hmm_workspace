@@ -168,21 +168,21 @@ hmm_sim/preinstall:
 # Recursive "clean" directory target.
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/clean
-hmm_sim/clean: hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/bar_feedback.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_genpy.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/clean
-hmm_sim/clean: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_gencpp.dir/clean
+hmm_sim/clean: hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/clean
+hmm_sim/clean: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/clean
+hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/clean
+hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_geneus.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/clean
-hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_geneus.dir/clean
-hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/clean
 
 .PHONY : hmm_sim/clean
 
@@ -1479,8 +1479,8 @@ hmm_sim/CMakeFiles/hmm_sim.dir/clean:
 # All Build rule for target.
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/all: rosneuro_feedback_wheel/CMakeFiles/std_msgs_generate_messages_py.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/all
-hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/all
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/depend
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=30,31,32,33 "Built target hmm_sim_generate_messages_py"
@@ -1502,33 +1502,6 @@ hmm_sim_generate_messages_py: hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.di
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/clean:
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/clean
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/clean
-
-#=============================================================================
-# Target rules for target hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir
-
-# All Build rule for target.
-hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/all:
-	$(MAKE) -f hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/build.make hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/depend
-	$(MAKE) -f hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/build.make hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
-.PHONY : hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/all
-
-# Build rule for subdir invocation for target.
-hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
-.PHONY : hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-# Convenience name for target.
-_catkin_empty_exported_target: hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-.PHONY : _catkin_empty_exported_target
-
-# clean rule for target.
-hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	$(MAKE) -f hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/build.make hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 #=============================================================================
 # Target rules for target hmm_sim/CMakeFiles/bar_feedback.dir
@@ -1622,8 +1595,8 @@ hmm_sim/CMakeFiles/hmm_sim_genpy.dir/clean:
 # All Build rule for target.
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all: rosneuro_feedback_wheel/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/all
-hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/all
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/depend
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=27,28,29 "Built target hmm_sim_generate_messages_nodejs"
@@ -1672,33 +1645,6 @@ _hmm_sim_generate_messages_check_deps_classifier_output: hmm_sim/CMakeFiles/_hmm
 hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/clean:
 	$(MAKE) -f hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/build.make hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/clean
 .PHONY : hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/clean
-
-#=============================================================================
-# Target rules for target hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir
-
-# All Build rule for target.
-hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/all:
-	$(MAKE) -f hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/build.make hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/depend
-	$(MAKE) -f hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/build.make hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num= "Built target _hmm_sim_generate_messages_check_deps_reset_command"
-.PHONY : hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/all
-
-# Build rule for subdir invocation for target.
-hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
-.PHONY : hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/rule
-
-# Convenience name for target.
-_hmm_sim_generate_messages_check_deps_reset_command: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/rule
-
-.PHONY : _hmm_sim_generate_messages_check_deps_reset_command
-
-# clean rule for target.
-hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/clean:
-	$(MAKE) -f hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/build.make hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/clean
-.PHONY : hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/clean
 
 #=============================================================================
 # Target rules for target hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir
@@ -1755,13 +1701,67 @@ hmm_sim/CMakeFiles/hmm_sim_gencpp.dir/clean:
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_gencpp.dir/clean
 
 #=============================================================================
+# Target rules for target hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir
+
+# All Build rule for target.
+hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/all:
+	$(MAKE) -f hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/build.make hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/depend
+	$(MAKE) -f hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/build.make hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
+.PHONY : hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/all
+
+# Build rule for subdir invocation for target.
+hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
+.PHONY : hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+# Convenience name for target.
+_catkin_empty_exported_target: hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+.PHONY : _catkin_empty_exported_target
+
+# clean rule for target.
+hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/clean:
+	$(MAKE) -f hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/build.make hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+#=============================================================================
+# Target rules for target hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir
+
+# All Build rule for target.
+hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/all:
+	$(MAKE) -f hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/build.make hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/depend
+	$(MAKE) -f hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/build.make hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num= "Built target _hmm_sim_generate_messages_check_deps_action_status"
+.PHONY : hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/all
+
+# Build rule for subdir invocation for target.
+hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
+.PHONY : hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/rule
+
+# Convenience name for target.
+_hmm_sim_generate_messages_check_deps_action_status: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/rule
+
+.PHONY : _hmm_sim_generate_messages_check_deps_action_status
+
+# clean rule for target.
+hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/clean:
+	$(MAKE) -f hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/build.make hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/clean
+.PHONY : hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/clean
+
+#=============================================================================
 # Target rules for target hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir
 
 # All Build rule for target.
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/all: rosneuro_feedback_wheel/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/all
-hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/all
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/depend
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=17,18,19 "Built target hmm_sim_generate_messages_cpp"
@@ -1785,13 +1785,67 @@ hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/clean:
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/clean
 
 #=============================================================================
+# Target rules for target hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir
+
+# All Build rule for target.
+hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/build.make hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/depend
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/build.make hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num= "Built target hmm_sim_gennodejs"
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/all
+
+# Build rule for subdir invocation for target.
+hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/rule
+
+# Convenience name for target.
+hmm_sim_gennodejs: hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/rule
+
+.PHONY : hmm_sim_gennodejs
+
+# clean rule for target.
+hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/clean:
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/build.make hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/clean
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/clean
+
+#=============================================================================
+# Target rules for target hmm_sim/CMakeFiles/hmm_sim_geneus.dir
+
+# All Build rule for target.
+hmm_sim/CMakeFiles/hmm_sim_geneus.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_geneus.dir/build.make hmm_sim/CMakeFiles/hmm_sim_geneus.dir/depend
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_geneus.dir/build.make hmm_sim/CMakeFiles/hmm_sim_geneus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num= "Built target hmm_sim_geneus"
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_geneus.dir/all
+
+# Build rule for subdir invocation for target.
+hmm_sim/CMakeFiles/hmm_sim_geneus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/hmm_sim_geneus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_geneus.dir/rule
+
+# Convenience name for target.
+hmm_sim_geneus: hmm_sim/CMakeFiles/hmm_sim_geneus.dir/rule
+
+.PHONY : hmm_sim_geneus
+
+# clean rule for target.
+hmm_sim/CMakeFiles/hmm_sim_geneus.dir/clean:
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_geneus.dir/build.make hmm_sim/CMakeFiles/hmm_sim_geneus.dir/clean
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_geneus.dir/clean
+
+#=============================================================================
 # Target rules for target hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir
 
 # All Build rule for target.
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all: rosneuro_feedback_wheel/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/all
-hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/all
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/depend
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=24,25,26 "Built target hmm_sim_generate_messages_lisp"
@@ -1820,8 +1874,8 @@ hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/clean:
 # All Build rule for target.
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all: rosneuro_feedback_wheel/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/all
-hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_reset_command.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/all
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/depend
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=20,21,22,23 "Built target hmm_sim_generate_messages_eus"
@@ -1870,60 +1924,6 @@ hmm_sim_genlisp: hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/rule
 hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/clean:
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/clean
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/clean
-
-#=============================================================================
-# Target rules for target hmm_sim/CMakeFiles/hmm_sim_geneus.dir
-
-# All Build rule for target.
-hmm_sim/CMakeFiles/hmm_sim_geneus.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_geneus.dir/build.make hmm_sim/CMakeFiles/hmm_sim_geneus.dir/depend
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_geneus.dir/build.make hmm_sim/CMakeFiles/hmm_sim_geneus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num= "Built target hmm_sim_geneus"
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_geneus.dir/all
-
-# Build rule for subdir invocation for target.
-hmm_sim/CMakeFiles/hmm_sim_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/hmm_sim_geneus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_geneus.dir/rule
-
-# Convenience name for target.
-hmm_sim_geneus: hmm_sim/CMakeFiles/hmm_sim_geneus.dir/rule
-
-.PHONY : hmm_sim_geneus
-
-# clean rule for target.
-hmm_sim/CMakeFiles/hmm_sim_geneus.dir/clean:
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_geneus.dir/build.make hmm_sim/CMakeFiles/hmm_sim_geneus.dir/clean
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_geneus.dir/clean
-
-#=============================================================================
-# Target rules for target hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir
-
-# All Build rule for target.
-hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/build.make hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/depend
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/build.make hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num= "Built target hmm_sim_gennodejs"
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/all
-
-# Build rule for subdir invocation for target.
-hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/rule
-
-# Convenience name for target.
-hmm_sim_gennodejs: hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/rule
-
-.PHONY : hmm_sim_gennodejs
-
-# clean rule for target.
-hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/clean:
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/build.make hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/clean
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/clean
 
 #=============================================================================
 # Target rules for target rosneuro_integrator/CMakeFiles/integrator.dir

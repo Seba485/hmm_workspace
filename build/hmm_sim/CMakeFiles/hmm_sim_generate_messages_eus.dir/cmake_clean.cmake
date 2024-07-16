@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "/home/sebastiano/hmm_workspace/devel/share/roseus/ros/hmm_sim/manifest.l"
+  "/home/sebastiano/hmm_workspace/devel/share/roseus/ros/hmm_sim/msg/action_status.l"
   "/home/sebastiano/hmm_workspace/devel/share/roseus/ros/hmm_sim/msg/classifier_output.l"
-  "/home/sebastiano/hmm_workspace/devel/share/roseus/ros/hmm_sim/msg/reset_command.l"
   "/home/sebastiano/hmm_workspace/devel/share/roseus/ros/hmm_sim/msg/traversability_output.l"
   "CMakeFiles/hmm_sim_generate_messages_eus"
 )

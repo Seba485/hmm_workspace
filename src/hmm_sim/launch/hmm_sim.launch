@@ -4,18 +4,18 @@
     <!-- hmm node -->
     <arg name="framerate"  default='16'/>
     <arg name="classes"      default='[771, 783, 773]'/> <!--both feet, rest, both hand-->
+    <!-- rest is always involved: hardcoded in hmm.py node -->
     <arg name="ref_class" default="773"/> <!-- class that turn left -->
     <arg name="n_class" default="3"/>
-    
 	<arg name="classes_name" default='[first class, rest, second class]' />
 
     <!-- bar feedback -->
-    <arg name="modality" 	 default='continuous'/> <!-- continuous, calibration, evaluation, robot_sim -->
+    <arg name="modality" 	 default="robot_sim"/> <!-- continuous (no control), calibration, evaluation (classic evaluation + discrete control of the robot), robot_sim (continuous control of the robot)-->
     <arg name="trials"       default='[10, 10, 10]'/>
-    <arg name="bar_th"   default='[0.9, 0.8, 0.9]'/><!--threshold for classification-->
+    <arg name="bar_th"   default='[0.5, 0.5, 0.5]'/><!--threshold for classification-->
 
     <!-- traversability -->
-    <arg name="traversability_mode" default="null"/> <!-- null -->    <!-- real -->
+    <arg name="traversability_mode" default="real"/> <!-- null -->    <!-- real -->
     <arg name="max_distance" default="3"/>
     <arg name="odom_topic" default="/odometry/filtered"/>
     <arg name="costmap_2d_topic" default="/move_base/local_costmap/costmap"/>
@@ -25,7 +25,7 @@
     <arg name="alpha" 	    	 default='0.95'/> <!--peso diminuito da 0.98 a 0.90-->
 
     <!-- robot controller -->
-    <arg name="move_base_status" default="move_base/status"/>
+    <arg name="move_base_status" default="/move_base/status"/>
     <arg name="controller_topic" default="/move_base_simple/goal"/>
     <arg name="hard_class_topic" default="/bar_feedback/hard_prediction"/>
 
@@ -33,7 +33,7 @@
         <param name="f"  value="$(arg framerate)"/>
     </node> 
     
-    <node name="traversability" pkg='hmm_sim' type='traversability.py'>
+    <node name="traversability" pkg='hmm_sim' type='traversability.py' output="screen">
         <param name="f"  value="$(arg framerate)"/>
         <param name="traversability_mode" value="$(arg traversability_mode)"/>
         <param name="costmap_2d_topic" value="$(arg costmap_2d_topic)"/>
@@ -76,7 +76,12 @@
         <param name="odom_topic" value="$(arg odom_topic)"/>
         <param name="move_base_status" value="$(arg move_base_status)"/>
         <param name="controller_topic" value="$(arg controller_topic)"/>
-    
+        <param name="modality" value="$(arg modality)"/>
+    </node>
+
+    <node pkg="hmm_sim" type="obstacle_spawner.py" name="obstacle_spawner" output='screen'>
+        <param name="odom_topic" value="$(arg odom_topic)"/>
+
     </node>
 
 

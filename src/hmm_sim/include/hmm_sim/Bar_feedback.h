@@ -22,7 +22,7 @@
 
 #include <rosneuro_msgs/NeuroOutput.h>
 #include <rosneuro_msgs/NeuroEvent.h>
-#include <hmm_sim/reset_command.h>
+#include <hmm_sim/action_status.h>
 
 namespace rosneuro {
     namespace feedback{
@@ -69,7 +69,7 @@ namespace rosneuro {
             
             protected:
                 void on_receive_neuro_data(const rosneuro_msgs::NeuroOutput& msg);
-                void on_receive_robot_status(const hmm_sim::reset_command& msg);
+                void on_receive_robot_status(const hmm_sim::action_status& msg);
                 void publish_command_and_wait(std::vector<int> hard_classification, int class_code);
                 void update(void);
                 void setup_scene(void);
@@ -95,6 +95,8 @@ namespace rosneuro {
 
                 bool show_on_rest_;
                 bool action_flag_ = false;
+                std::string T_mode_ = "null";
+                std::vector<int> hard_classification = {0, 0, 0};
 
                 ros::NodeHandle         nh_;
                 ros::NodeHandle         param_nh_;
@@ -105,10 +107,12 @@ namespace rosneuro {
                 ros::Subscriber 	sub_status_;
                 ros::Publisher      pub_event;
                 ros::Publisher      pub_hard;
+                ros::Publisher      pub_cue_class;
 
                 rosneuro_msgs::NeuroEvent  event_msg_;
                 rosneuro_msgs::NeuroOutput inputmsg_;
                 rosneuro_msgs::NeuroOutput bar_hard_;
+                rosneuro_msgs::NeuroOutput cue_class_;
 
 
                 neurodraw::Line*         zero_line_;
