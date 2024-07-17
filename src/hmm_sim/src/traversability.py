@@ -16,7 +16,7 @@ class traversability_node:
 
         #get param
         self.mode = rospy.get_param("~traversability_mode")
-        self.f = rospy.get_param("~f")
+        self.f = rospy.get_param("framerate")
         self.depth = rospy.get_param("~max_distance")
         #self.min_distance = rospy.get_param("~min_distance")
         self.map_topic = rospy.get_param("~costmap_2d_topic")

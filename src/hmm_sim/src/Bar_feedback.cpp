@@ -23,7 +23,7 @@ bool bar_feedback::configure(void){
 	std::string modality;
 
 	// Getting classes
-	if(this->param_nh_.getParam("classes", this->classes_) == false) {
+	if(ros::param::get("classes", this->classes_) == false) {
 		ROS_ERROR("Parameter 'classes' is mandatory");
 		return false;
 	} else if(this->classes_.size() != 3) {
@@ -31,7 +31,7 @@ bool bar_feedback::configure(void){
 		return false;
 	}
 
-	if(this->param_nh_.getParam("ref_class", this->ref_class_) == false) {
+	if(ros::param::get("ref_class", this->ref_class_) == false) {
 		ROS_ERROR("Parameter 'ref_class' is mandatory");
 		return false;
 	}else{
@@ -85,7 +85,7 @@ bool bar_feedback::configure(void){
 	}
 	
 	// Getting modality 
-	if(this->param_nh_.getParam("modality", modality) == false) {
+	if(ros::param::get("modality", modality) == false) {
 		ROS_ERROR("Parameter 'modality' is mandatory");
 		return false;
 	}

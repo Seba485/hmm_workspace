@@ -27,7 +27,7 @@ def hmm_state(data, state, classes):
         A = 10 
         B = 40
         A_1 = 5 
-        B_1 = 5
+        B_1 = 8
         for x in data:
             overall_lh *= (A*math.exp(-B*x) + A_1*math.exp(-B_1*x) + A*math.exp(B*(x-1)) + A_1*math.exp(B_1*(x-1)))/2
     else:
@@ -40,10 +40,8 @@ class hmm_node:
         rospy.init_node('hmm')
 
         #get param
-        self.classes = rospy.get_param("~classes")
-        self.classes = self.classes[1:len(self.classes)-1].split(', ')
-        self.classes = [int(s) for s in self.classes]
-        ref_class = rospy.get_param("~ref_class") #the one that make the left turn
+        self.classes = rospy.get_param("classes")
+        ref_class = rospy.get_param("ref_class") #the one that make the left turn
         self.N_state = rospy.get_param("~n_class")
         self.state_name = rospy.get_param("~classes_name")
         self.state_name = self.state_name[1:len(self.state_name)-1].split(', ')
@@ -67,7 +65,7 @@ class hmm_node:
         self.T = np.zeros((3,3))
 
         self.dt = rospy.get_param("~dt")#s
-        self.f = rospy.get_param("~f")#Hz
+        self.f = rospy.get_param("framerate")#Hz
         self.buffer_len = self.dt*self.f
 
         #initialization

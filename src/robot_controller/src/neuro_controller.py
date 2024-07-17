@@ -17,7 +17,7 @@ class neuro_controller_node:
         rospy.sleep(3)
 
         #get param
-        self.mode = rospy.get_param("~modality")
+        self.mode = rospy.get_param("modality")
         self.odom_topic = rospy.get_param("~odom_topic") #/odometry/filtered
         self.move_base_status_topic = rospy.get_param("~move_base_status") #move_base/status
         self.hard_class_topic = rospy.get_param("~hard_class_topic") #bar_feedback/hard_class
