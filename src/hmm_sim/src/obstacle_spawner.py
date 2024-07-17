@@ -69,7 +69,6 @@ class obstacle_spawner:
         self.cue_class_idx = 1
         self.model_name = "obstacle"
         self.obstacle_namespace = "obstacle"
-        self.obstacle_present = False
 
         #subs
         self.sub_odom = rospy.Subscriber(self.odom_topic, Odometry, self.odom_update)
@@ -160,10 +159,9 @@ class obstacle_spawner:
                     ob_pose.position.y = self.dist*math.sin(angle) + self.wc_pos[1] 
                     self.spawn_model_proxy(self.model_name, self.h_xml, self.obstacle_namespace, ob_pose, "world")
         
-        self.obstacle_present = True
         
     def on_start_delete_obstacle(self, msg:NeuroEvent):
-        if msg.event == 1 and self.obstacle_present==True: #start
+        if msg.event == 1: #start
             self.delete_model_proxy(self.model_name)
             self.obstacle_present = False
         

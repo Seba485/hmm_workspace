@@ -149,22 +149,16 @@ class traversability_node:
             
             #matrix
             left_vect = prob_vector * np.array([1.4, 1, 1])
-            if sum(left_vect!=0):
-                left_vect = left_vect/sum(left_vect) #first row
-            else:
-                left_vect = np.zeros(3)
+            left_vect = left_vect/sum(left_vect) #first row
+
 
             front_vect = prob_vector
-            if sum(front_vect!=0):
-                front_vect = front_vect/sum(front_vect) #second row
-            else:
-                front_vect = np.zeros(3)
+            front_vect = front_vect/sum(front_vect) #second row
+
             
             right_vect = prob_vector * np.array([1, 1, 1.4])
-            if sum(right_vect!=0):
-                right_vect = right_vect/sum(right_vect) #last row
-            else:
-                right_vect = np.zeros(3)
+            right_vect = right_vect/sum(right_vect) #last row
+
 
             self.traversability_matrix = np.vstack((left_vect,front_vect,right_vect))
             print_vect = np.vstack((np.array(["sx", "c", "dx"]),np.around(self.traversability_matrix,3)))

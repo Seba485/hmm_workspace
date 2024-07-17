@@ -8,7 +8,7 @@
 		<arg name="eval_type" default="2"/> <!-- 1->1 direction free, 2->2 direction free -->
 		
 		<!--<arg name="thresholds"   default='[0.9, 0.9]'/>-->
-		<arg name="bar_th"   default='[0.9, 0.85, 0.9]'/>
+		<arg name="bar_th"   default='[0.85, 0.75, 0.9]'/>
 		<arg name="n_class"      default='3'/>
 		<arg name="classes"      default='[771, 783, 773]'/> <!--both feet, rest, both hand-->
 		 <arg name="ref_class" default="771"/> <!-- class that turn left -->
@@ -30,7 +30,7 @@
 			
 	<!-- processing arguments -->
 		<arg name="lap_path"      default='$(env HOME)/Desktop/laplacian16.dat'/> <!--lapalcian filter: lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
-		<arg name="decoder_path"  default='$(env HOME)/Desktop/d6_bhbf_20240712.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
+		<arg name="decoder_path"  default='$(env HOME)/Desktop/d6_bhbf_20240717.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
 		<arg name="n_channels"    default='16'/>
 		<arg name="eog_threshold" default='43.0'/> 
 
@@ -40,7 +40,7 @@
 
 	<!-- protocol arguments -->
 		<arg name="subject"   default="d6"/>
-		<arg name="task"      default="mi_bfbh_hmm"/>
+		<arg name="task"      default="mi_bfrtbh_T_2"/>
 		<arg name="extra"     default=""/>
 			
 	<!-- Protocol parameters -->
@@ -102,7 +102,7 @@
 	
 	<!--inserisci qui il nodo del hmm-->
 	
-    <node name="traversability" pkg='hmm_sim' type='traversability.py' output="screen">
+    <node name="traversability" pkg='hmm_sim' type='traversability.py'>
         <param name="f"  value="$(arg framerate)"/>
         <param name="traversability_mode" value="$(arg traversability_mode)"/>
         <param name="costmap_2d_topic" value="$(arg costmap_2d_topic)"/>

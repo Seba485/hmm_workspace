@@ -5,7 +5,7 @@
 	
 	<!-- Feedback arguments -->
 		<arg name="modality" 	 default='evaluation'/>
-		<arg name="thresholds"   default='[0.75, 0.75]'/>
+		<arg name="thresholds"   default='[0.7, 0.8]'/>
 		<arg name="n_class"      default='2'/>
 		<arg name="classes"      default='[773, 771]'/>
 		<arg name="trials"       default='[10, 10]'/>
@@ -17,7 +17,6 @@
 		<arg name="devarg" default='gtec'/>
 		<arg name="framerate"  default='16'/>
 		<arg name="samplerate" default='512'/>
-
 	<!-- recorder -->
 		<arg name="autostart" default='true'/>
 		<arg name="filepath"  default='$(env HOME)/Desktop/' />
