@@ -110,7 +110,7 @@ bool bar_feedback::configure(void){
 	ros::param::param("~show_on_rest", this->show_on_rest_, true);
 
 	// Getting duration parameters
-	ros::param::param("~duration/begin", 		   this->duration_.begin, 		    5000);
+	ros::param::param("~duration/begin", 		   this->duration_.begin, 		    8000);
 	ros::param::param("~duration/start", 		   this->duration_.start, 		    1000);
 	ros::param::param("~duration/fixation", 	   this->duration_.fixation, 	    2000);
 	ros::param::param("~duration/cue", 			   this->duration_.cue, 		    1000);
@@ -325,6 +325,9 @@ void bar_feedback::run_evaluation(void){ //the evaluation can support also the e
 	// Begin
 	this->sleep(this->duration_.begin);
 
+	/* std::vector<int> classes_vect = {};
+	std::vector<int> trial_dur = {};
+	for(int i; i<classes_vect.size(); i++){ */
     for(auto it = this->trialsequence_.begin(); it != this->trialsequence_.end(); ++it) { // for all the trial in the sequence
 		
 		// Getting trial information
@@ -332,6 +335,10 @@ void bar_feedback::run_evaluation(void){ //the evaluation can support also the e
 		trialclass     = (*it).classid; //eventcue of the trial
 		trialduration  = (*it).duration; //duration of the trial
 		targethit      = this->class_code_.None; 
+
+		/* trialnumber = i+1;
+		trialclass = classes_vect[i];
+		trialduration = trial_dur[i]; */
 
 		ROS_INFO("Trial %d/%d (class: %d | duration: %d ms)", trialnumber, this->trialsequence_.size(), trialclass, trialduration);
 		this->setevent(Events::Start);
@@ -353,21 +360,21 @@ void bar_feedback::run_evaluation(void){ //the evaluation can support also the e
 		this->setevent(trialclass);
 		this->show_cue(trialclass);
 
-				//publish in hot encoded format the class of cue in hardpredicted.data variable of the NeuroOutput message
-				//for the obstacle_spawner.py node (gazebo simulation)
-				std::vector<int> cue_hot_encoding = {0, 0, 0}; //sx, rest, dx
-				if( trialclass== this->class_code_.FirstClass) {
-					cue_hot_encoding[0] = 1;
-				} else if( trialclass == this->class_code_.SecondClass) {
-					cue_hot_encoding[2] = 1;
-				} else if( trialclass == this->class_code_.ThirdClass) {
-					cue_hot_encoding[1] = 1;
-				}
-				this->cue_class_.hardpredict.data = cue_hot_encoding;
-				this->pub_cue_class.publish(this->cue_class_);
+		//publish in hot encoded format the class of cue in hardpredicted.data variable of the NeuroOutput message
+		//for the obstacle_spawner.py node (gazebo simulation)
+		std::vector<int> cue_hot_encoding = {0, 0, 0}; //sx, rest, dx
+		if( trialclass== this->class_code_.FirstClass) {
+			cue_hot_encoding[0] = 1;
+		} else if( trialclass == this->class_code_.SecondClass) {
+			cue_hot_encoding[2] = 1;
+		} else if( trialclass == this->class_code_.ThirdClass) {
+			cue_hot_encoding[1] = 1;
+		}
+		this->cue_class_.hardpredict.data = cue_hot_encoding;
+		this->pub_cue_class.publish(this->cue_class_);
 				
-				this->sleep(this->duration_.cue);
-				this->setevent(trialclass + Events::Off);
+		this->sleep(this->duration_.cue);
+		this->setevent(trialclass + Events::Off);
 		
 		if(ros::ok() == false || this->user_quit_ == true) break;
 
@@ -410,6 +417,7 @@ void bar_feedback::run_evaluation(void){ //the evaluation can support also the e
 			r.sleep();
 			ros::spinOnce();
 		}
+		
 		this->setevent(Events::CFeedback + Events::Off);
 		if(ros::ok() == false || this->user_quit_ == true) break;
 		
@@ -433,7 +441,7 @@ void bar_feedback::run_evaluation(void){ //the evaluation can support also the e
 
 		//for gazebo simulation
 		if (boomevent==Events::Hit){ //command to the neuro_controller
-			this->publish_command_and_wait(this->hard_classification, trialclass);
+			this->publish_command_and_wait(this->hard_classification);
 		}
 
 		this->hide_boom();
@@ -471,21 +479,44 @@ void bar_feedback::run_continuous(void){
 void bar_feedback::run_robot_sim(void){
 	ros::Rate r(512);
 
+	this->setevent(Events::CFeedback); //for reset the integrator
+
 	while(ros::ok() && this->user_quit_==false){
 		std::vector<int> hard_classification = {0, 0, 0};
         this->update();
 
 		if( this->pp_[0]>= this->th_[0]) {
 			hard_classification[0] = 1;
-			this->publish_command_and_wait(hard_classification, this->class_code_.FirstClass);
+			this->show_cue(this->class_code_.FirstClass);
+			this->setevent(Events::CFeedback + Events::Off); //new goal reached
+
+			this->publish_command_and_wait(hard_classification);
+			
+			this->setevent(Events::CFeedback); //for reset the integrator
+			this->reset_pp(); //it has manual built in reset
+			this->hide_cue();
 			
 		} else if( this->pp_[2]>= this->th_[2]) {
 			hard_classification[2] = 1;
-			this->publish_command_and_wait(hard_classification, this->class_code_.SecondClass);
+			this->show_cue(this->class_code_.SecondClass);
+			this->setevent(Events::CFeedback + Events::Off); //new goal reached
+
+			this->publish_command_and_wait(hard_classification);
+
+			this->setevent(Events::CFeedback); //for reset the integrator
+			this->reset_pp(); //it has manual built in reset
+			this->hide_cue();
 			
 		} else if( this->pp_[1]>= this->th_[1]) {
 			hard_classification[1] = 1;
-			this->publish_command_and_wait(hard_classification, this->class_code_.ThirdClass);
+			this->show_cue(this->class_code_.ThirdClass);
+			this->setevent(Events::CFeedback + Events::Off); //new goal reached
+
+			this->publish_command_and_wait(hard_classification);
+
+			this->setevent(Events::CFeedback); //for reset the integrator
+			this->reset_pp(); //it has manual built in reset
+			this->hide_cue();
 			
 		}
 		r.sleep();
@@ -494,23 +525,18 @@ void bar_feedback::run_robot_sim(void){
 
 }
 
-void bar_feedback::publish_command_and_wait(std::vector<int> hard_classification, int class_code){
+void bar_feedback::publish_command_and_wait(std::vector<int> hard_classification){
 	this->bar_hard_.hardpredict.data = hard_classification;
 	this->pub_hard.publish(this->bar_hard_);
 
 	this->sleep(100); //dalay so that the node is able to read the action_status message
 	ros::spinOnce();
 
-	this->show_cue(class_code);
 	ros::Rate r(512);
 	while (this->action_flag_==true){
 		ros::spinOnce();
 		r.sleep();
 	}
-
-	this->setevent(Events::CFeedback); //for reset the integrator
-	this->reset_pp(); //it has manual built in reset
-	this->hide_cue();
 }
 
 /* function called by bar_feedback.cpp */

@@ -5,13 +5,19 @@
 	
 	<!-- Feedback arguments -->
 		<arg name="modality" 	 default='robot_sim'/> <!-- evaluatio, calibration, continuous, robot_sim-->
-		<arg name="bar_th"   default='[0.75, 0.8, 0.9]'/>
+
+		<rosparam param="modality" subst_value="True">$(arg modality)</rosparam>
+
+		<arg name="bar_th"   default='[0.8, 0.75, 0.8]'/>
 		<arg name="n_class"      default='3'/>
 		<arg name="classes"      default='[771, 783, 773]'/> <!--both feet, rest, both hand-->
-		 <arg name="ref_class" default="771"/> <!-- class that turn left -->
+		 <arg name="ref_class" default="773"/> <!-- class that turn left -->
 		<arg name="classes_name" default='[first class, rest, second class]'/>
 		<arg name="trials"       default='[7, 7, 7]'/>
 		<arg name="show_on_rest" default='True'/>
+
+		<rosparam param="ref_class" subst_value="True">$(arg ref_class)</rosparam>
+		<rosparam param="classes" subst_value="True">$(arg classes)</rosparam>
 
 	<!-- acquisition arguments -->
 		
@@ -21,13 +27,15 @@
 		<arg name="framerate"  default='16'/>
 		<arg name="samplerate" default='512'/>
 
+		<rosparam param="framerate" subst_value="True">$(arg framerate)</rosparam>
+
 	<!-- recorder -->
 		<arg name="autostart" default='true'/>
 		<arg name="filepath"  default='$(env HOME)/Desktop/' /> <!--where the files are saved-->
 			
 	<!-- processing arguments -->
 		<arg name="lap_path"      default='$(env HOME)/Desktop/laplacian16.dat'/> <!--lapalcian filter: lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
-		<arg name="decoder_path"  default='$(env HOME)/Desktop/d6_bhbf_20240712.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
+		<arg name="decoder_path"  default='$(env HOME)/Desktop/c7_bhbf_20240718.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
 		<arg name="n_channels"    default='16'/>
 		<arg name="eog_threshold" default='43.0'/> 
 
@@ -36,15 +44,27 @@
 		<arg name="alpha" 	    	 default='0.96'/> <!--peso diminuito da 0.98 a 0.95-->
 
 	<!-- protocol arguments -->
-		<arg name="subject"   default="d6"/>
-		<arg name="task"      default="mi_bfbh_corridor"/>
-		<arg name="extra"     default=""/>
+		<arg name="subject"   default="c7"/>
+		<arg name="task"      default="mi_bfrsbh"/>
+		<arg name="extra"     default="corridor"/>
 			
 	<!-- Protocol parameters -->
 		<rosparam param="/protocol/subject"	 subst_value="True">$(arg subject)</rosparam>
 		<rosparam param="/protocol/modality" subst_value="True">$(arg modality)</rosparam>
 		<rosparam param="/protocol/task"	 subst_value="True">$(arg task)</rosparam>
 		<rosparam param="/protocol/extra"	 subst_value="True">$(arg extra)</rosparam>
+	
+	<!-- traversability -->
+    <arg name="traversability_mode" default="real"/> <!-- null -->    <!-- real -->
+    <arg name="max_distance" default="1.5"/>
+    <arg name="odom_topic" default="/odometry/filtered"/>
+    <arg name="costmap_2d_topic" default="/move_base/local_costmap/costmap"/>
+
+
+    <!-- robot controller -->
+    <arg name="move_base_status" default="move_base/status"/>
+    <arg name="controller_topic" default="/move_base_simple/goal"/>
+    <arg name="hard_class_topic" default="/bar_feedback/hard_prediction"/>
 
 	<!-- aquisition node -->
 	<node name="acquisition" pkg="rosneuro_acquisition" type="acquisition" output="screen" >
@@ -66,18 +86,6 @@
 		<param name="~decoder_path" value="$(arg decoder_path)"/>
 		<param name="~n_channels" value="$(arg n_channels)"/>
 	</node>
-	
-	<!-- traversability -->
-    <arg name="traversability_mode" default="real"/> <!-- null -->    <!-- real -->
-    <arg name="max_distance" default="1.5"/>
-    <arg name="odom_topic" default="/odometry/filtered"/>
-    <arg name="costmap_2d_topic" default="/move_base/local_costmap/costmap"/>
-
-
-    <!-- robot controller -->
-    <arg name="move_base_status" default="move_base/status"/>
-    <arg name="controller_topic" default="/move_base_simple/goal"/>
-    <arg name="hard_class_topic" default="/bar_feedback/hard_prediction"/>
 
 	<!--input rosneuro_msg neurooutput in "neuroprediction" topic
 		# NeuroOutput Message
@@ -100,8 +108,7 @@
 	
 	<!--inserisci qui il nodo del hmm-->
 	
-    <node name="traversability" pkg='hmm_sim' type='traversability.py' output='screen'>
-        <param name="f"  value="$(arg framerate)"/>
+    <node name="traversability" pkg='hmm_sim' type='traversability.py'>
         <param name="traversability_mode" value="$(arg traversability_mode)"/>
         <param name="costmap_2d_topic" value="$(arg costmap_2d_topic)"/>
         <param name="odom_topic" value="$(arg odom_topic)"/>
@@ -109,11 +116,8 @@
     </node>
 
     <node name="hmm" pkg='hmm_sim' type='hmm.py'> 
-		<param name="f"  value="$(arg framerate)"/>
-		<param name="ref_class" value="$(arg ref_class)"/>
         <param name="n_class" value="$(arg n_class)"/>
         <param name="dt" type="double" value="1.0" />
-		<param name="classes" value="$(arg classes)"/>
 		<param name="classes_name" value="$(arg classes_name)"/>
     </node>
 	<!--output rosneuro_msg neurooutput pubblicato su "/hmm/neuroprediction"-->
@@ -134,10 +138,7 @@
 	<!-- bar_feedback node -->
 	<node name="bar_feedback" pkg="hmm_sim" type="bar_feedback" output="screen">
 		<param name="sub_name" type="string" value="/integrator/neuroprediction"/>
-		<param name="ref_class" value="$(arg ref_class)"/>
-		<rosparam param="modality" subst_value="True">$(arg modality)</rosparam>
 		<rosparam param="bar_th" subst_value="True">$(arg bar_th)</rosparam>
-		<rosparam param="classes" subst_value="True">$(arg classes)</rosparam>
 		<rosparam param="trials" subst_value="True">$(arg trials)</rosparam>
 	</node>
 	

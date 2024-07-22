@@ -5,9 +5,9 @@
 	
 	<!-- Feedback arguments -->
 		<arg name="modality" 	 default='evaluation'/>
-		<arg name="thresholds"   default='[0.7, 0.8]'/>
+		<arg name="thresholds"   default='[0.75, 0.75]'/>
 		<arg name="n_class"      default='2'/>
-		<arg name="classes"      default='[773, 771]'/>
+		<arg name="classes"      default='[771, 773]'/>
 		<arg name="trials"       default='[10, 10]'/>
 		<arg name="show_on_rest" default='True'/>
 
@@ -19,11 +19,11 @@
 		<arg name="samplerate" default='512'/>
 	<!-- recorder -->
 		<arg name="autostart" default='true'/>
-		<arg name="filepath"  default='$(env HOME)/Desktop/' />
+		<arg name="filepath"  default='$(env HOME)/Desktop/'/>
 			
 	<!-- processing arguments -->
 		<arg name="lap_path"      default='$(env HOME)/Desktop/laplacian16.dat'/> <!--lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
-		<arg name="decoder_path"  default='$(env HOME)/Desktop/d6_bhbf_20240712.smr.dat'/>
+		<arg name="decoder_path"  default='$(env HOME)/Desktop/c7_bhbf_20240718.smr.dat'/>
 		<arg name="n_channels"    default='16'/>
 		<arg name="eog_threshold" default='43.0'/> 
 
@@ -32,9 +32,9 @@
 		<arg name="alpha" 	    	 default='0.98'/>
 
 	<!-- protocol arguments -->
-		<arg name="subject"   default="d6"/>
-		<arg name="task"      default="mi_bfbh"/>
-		<arg name="extra"     default=""/>
+		<arg name="subject"   default="c7"/>
+		<arg name="task"      default="mi_bhbf"/>
+		<arg name="extra"     default="binary"/>
 			
 	<!-- Protocol parameters -->
 		<rosparam param="/protocol/subject"	 subst_value="True">$(arg subject)</rosparam>

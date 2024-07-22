@@ -70,7 +70,7 @@ namespace rosneuro {
             protected:
                 void on_receive_neuro_data(const rosneuro_msgs::NeuroOutput& msg);
                 void on_receive_robot_status(const hmm_sim::action_status& msg);
-                void publish_command_and_wait(std::vector<int> hard_classification, int class_code);
+                void publish_command_and_wait(std::vector<int> hard_classification);
                 void update(void);
                 void setup_scene(void);
                 virtual void on_keyboard_event(const neurodraw::KeyboardEvent& event);

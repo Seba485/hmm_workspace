@@ -1,0 +1,7 @@
+---
+bool            result
+
+string device_model
+string device_id
+
+NeuroFrame frame

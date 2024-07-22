@@ -4,18 +4,19 @@
 	<!-- for testig the framework efficacy with in the gazebo enviroment (commenting the neuro_controller node the robot will still) -->
 	
 	<!-- Feedback arguments -->
-		<arg name="modality" 	 default='evaluation'/> <!-- evaluatio, calibration, continuous -->
+		<arg name="modality" 	 default='evaluation'/> 
+		<!-- continuous (no control), calibration, evaluation (classic evaluation + discrete control of the robot), robot_sim (continuous control of the robot)-->
 		<rosparam param="modality" subst_value="True">$(arg modality)</rosparam>
 
 		<arg name="eval_type" default="2"/> <!-- 1->1 direction free, 2->2 direction free -->
 		
 		<!--<arg name="thresholds"   default='[0.9, 0.9]'/>-->
-		<arg name="bar_th"   default='[0.85, 0.75, 0.9]'/>
+		<arg name="bar_th"   default='[0.85, 0.75, 0.85]'/>
 		<arg name="n_class"      default='3'/>
 		<arg name="classes"      default='[771, 783, 773]'/> <!--both feet, rest, both hand-->
-		<arg name="ref_class" default="771"/> <!-- class that turn left -->
+		<arg name="ref_class" default="773"/> <!-- class that turn left -->
 		<arg name="classes_name" default='[first class, rest, second class]'/>
-		<arg name="trials"       default='[7, 7, 7]'/>
+		<arg name="trials"       default='[10, 10, 10]'/>
 		<arg name="show_on_rest" default='True'/>
 
 		<rosparam param="ref_class" subst_value="True">$(arg ref_class)</rosparam>
@@ -37,7 +38,7 @@
 			
 	<!-- processing arguments -->
 		<arg name="lap_path"      default='$(env HOME)/Desktop/laplacian16.dat'/> <!--lapalcian filter: lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
-		<arg name="decoder_path"  default='$(env HOME)/Desktop/d6_bhbf_20240717.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
+		<arg name="decoder_path"  default='$(env HOME)/Desktop/c7_bhbf_20240718.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
 		<arg name="n_channels"    default='16'/>
 		<arg name="eog_threshold" default='43.0'/> 
 
@@ -46,9 +47,9 @@
 		<arg name="alpha" 	    	 default='0.96'/> <!--peso diminuito da 0.98 a 0.90-->
 
 	<!-- protocol arguments -->
-		<arg name="subject"   default="d6"/>
+		<arg name="subject"   default="c7"/>
 		<arg name="task"      default="mi_bfrtbh"/>
-		<arg name="extra"     default="T_2"/>
+		<arg name="extra"     default="T_2"/> <!-- no_T (traversability set tu null), T_1 (eval_type set to 1), T_2 (eval_type set to 2) -->  
 			
 	<!-- Protocol parameters -->
 		<rosparam param="/protocol/subject"	 subst_value="True">$(arg subject)</rosparam>
@@ -57,7 +58,7 @@
 		<rosparam param="/protocol/extra"	 subst_value="True">$(arg extra)</rosparam>
 
 	<!-- traversability node -->
-		<arg name="traversability_mode" default="real"/> <!-- null -->    <!-- real -->
+		<arg name="traversability_mode" default="null"/> <!-- null -->    <!-- real -->
 		<arg name="max_distance" default="2"/>
 		<arg name="odom_topic" default="/odometry/filtered"/>
 		<arg name="costmap_2d_topic" default="/move_base/local_costmap/costmap"/>
