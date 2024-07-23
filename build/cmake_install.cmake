@@ -131,6 +131,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/sebastiano/hmm_workspace/build/gtest/cmake_install.cmake")
+  include("/home/sebastiano/hmm_workspace/build/rosneuro_msgs/cmake_install.cmake")
   include("/home/sebastiano/hmm_workspace/build/rosneuro_feedback_wheel/cmake_install.cmake")
   include("/home/sebastiano/hmm_workspace/build/hmm_sim/cmake_install.cmake")
   include("/home/sebastiano/hmm_workspace/build/rosneuro_integrator/cmake_install.cmake")

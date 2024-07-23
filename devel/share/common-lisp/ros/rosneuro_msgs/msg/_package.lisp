@@ -1,0 +1,21 @@
+(cl:defpackage rosneuro_msgs-msg
+  (:use )
+  (:export
+   "<NEURODATAFLOAT>"
+   "NEURODATAFLOAT"
+   "<NEURODATAINFO>"
+   "NEURODATAINFO"
+   "<NEURODATAINT32>"
+   "NEURODATAINT32"
+   "<NEURODECODER>"
+   "NEURODECODER"
+   "<NEUROEVENT>"
+   "NEUROEVENT"
+   "<NEUROFRAME>"
+   "NEUROFRAME"
+   "<NEUROHEADER>"
+   "NEUROHEADER"
+   "<NEUROOUTPUT>"
+   "NEUROOUTPUT"
+  ))
+

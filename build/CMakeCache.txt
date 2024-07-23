@@ -616,8 +616,14 @@ rosneuro_integrator_exponential_LIB_DEPENDS:STATIC=general;rosneuro_integrator;g
 //Value Computed by CMake
 rosneuro_integrator_exponential_SOURCE_DIR:STATIC=/home/sebastiano/hmm_workspace/src/rosneuro_integrator_exponential
 
+//Value Computed by CMake
+rosneuro_msgs_BINARY_DIR:STATIC=/home/sebastiano/hmm_workspace/build/rosneuro_msgs
+
 //The directory containing a CMake configuration file for rosneuro_msgs.
-rosneuro_msgs_DIR:PATH=/opt/ros/noetic/share/rosneuro_msgs/cmake
+rosneuro_msgs_DIR:PATH=/home/sebastiano/hmm_workspace/devel/share/rosneuro_msgs/cmake
+
+//Value Computed by CMake
+rosneuro_msgs_SOURCE_DIR:STATIC=/home/sebastiano/hmm_workspace/src/rosneuro_msgs
 
 //Value Computed by CMake
 rosneuro_processing_BINARY_DIR:STATIC=/home/sebastiano/hmm_workspace/build/rosneuro_processing-master
@@ -818,7 +824,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=12
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

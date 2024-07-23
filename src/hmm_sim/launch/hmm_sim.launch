@@ -9,13 +9,18 @@
     <arg name="n_class" default="3"/>
 	<arg name="classes_name" default='[first class, rest, second class]' />
 
+    <rosparam param="ref_class" subst_value="True">$(arg ref_class)</rosparam>
+    <rosparam param="classes" subst_value="True">$(arg classes)</rosparam>
+    <rosparam param="framerate" subst_value="True">$(arg framerate)</rosparam>
+
     <!-- bar feedback -->
-    <arg name="modality" 	 default="robot_sim"/> <!-- continuous (no control), calibration, evaluation (classic evaluation + discrete control of the robot), robot_sim (continuous control of the robot)-->
+    <arg name="modality" 	 default="continuous"/> <!-- continuous (no control), calibration, evaluation (classic evaluation + discrete control of the robot), robot_sim (continuous control of the robot)-->
+    <rosparam param="modality" subst_value="True">$(arg modality)</rosparam>
     <arg name="trials"       default='[10, 10, 10]'/>
     <arg name="bar_th"   default='[0.5, 0.5, 0.5]'/><!--threshold for classification-->
 
     <!-- traversability -->
-    <arg name="traversability_mode" default="real"/> <!-- null -->    <!-- real -->
+    <arg name="traversability_mode" default="null"/> <!-- null -->    <!-- real -->
     <arg name="max_distance" default="3"/>
     <arg name="odom_topic" default="/odometry/filtered"/>
     <arg name="costmap_2d_topic" default="/move_base/local_costmap/costmap"/>
@@ -34,7 +39,6 @@
     </node> 
     
     <node name="traversability" pkg='hmm_sim' type='traversability.py' output="screen">
-        <param name="f"  value="$(arg framerate)"/>
         <param name="traversability_mode" value="$(arg traversability_mode)"/>
         <param name="costmap_2d_topic" value="$(arg costmap_2d_topic)"/>
         <param name="odom_topic" value="$(arg odom_topic)"/>
@@ -43,10 +47,7 @@
 
 
     <node name="hmm" pkg='hmm_sim' type='hmm.py'>
-        <param name="f"  value="$(arg framerate)"/>
-        <param name="ref_class" value="$(arg ref_class)"/>
         <param name="n_class" value="$(arg n_class)"/>
-        <param name="classes" value="$(arg classes)"/>
 		<param name="classes_name" value="$(arg classes_name)"/>
         <param name="dt" type="double" value="1.0" />
     </node>
@@ -63,15 +64,12 @@
     <!-- if the modality is set to continuous no messages are published onn the event/bus so the integrator will never reset -->
     <node name="bar_feedback" pkg='hmm_sim' type='bar_feedback' output='screen'>
         <param name="sub_name" type="string" value="/integrator/neuroprediction"/>
-        <param name="ref_class" value="$(arg ref_class)"/>
-        <rosparam param="modality" subst_value="True">$(arg modality)</rosparam>
 		<rosparam param="bar_th" subst_value="True">$(arg bar_th)</rosparam>
-		<rosparam param="classes" subst_value="True">$(arg classes)</rosparam>
 		<rosparam param="trials" subst_value="True">$(arg trials)</rosparam>
     </node>
     
     <!-- work with roslaunch wheelchair_iaslab_gazebo room.launch -->
-    <node pkg="robot_controller" type="neuro_controller.py" name="neuro_controller" output='screen'>
+    <!-- <node pkg="robot_controller" type="neuro_controller.py" name="neuro_controller" output='screen'>
         <param name="hard_class_topic" value="$(arg hard_class_topic)"/>
         <param name="odom_topic" value="$(arg odom_topic)"/>
         <param name="move_base_status" value="$(arg move_base_status)"/>
@@ -82,7 +80,7 @@
     <node pkg="hmm_sim" type="obstacle_spawner.py" name="obstacle_spawner" output='screen'>
         <param name="odom_topic" value="$(arg odom_topic)"/>
 
-    </node>
+    </node> -->
 
 
 

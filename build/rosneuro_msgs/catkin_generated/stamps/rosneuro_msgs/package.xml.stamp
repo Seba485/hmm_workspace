@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rosneuro_msgs</name>
+  <version>1.5.0</version>
+  <description>ROSNeuro messages package</description>
+  <author email="luca.tonin@unipd.it">Luca Tonin</author>
+  <maintainer email="luca.tonin@unipd.it">Luca Tonin</maintainer>
+
+  <license>GPLv3</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  
+  <depend>std_msgs</depend>
+  <depend>message_generation</depend>
+
+  <exec_depend>message_runtime</exec_depend>
+
+</package>
