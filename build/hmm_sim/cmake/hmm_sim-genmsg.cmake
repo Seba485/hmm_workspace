@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "hmm_sim: 3 messages, 0 services")
+message(STATUS "hmm_sim: 4 messages, 0 services")
 
 set(MSG_I_FLAGS "-Ihmm_sim:/home/sebastiano/hmm_workspace/src/hmm_sim/msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg")
 
@@ -19,17 +19,22 @@ add_custom_target(hmm_sim_generate_messages ALL)
 
 get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg" NAME_WE)
 add_custom_target(_hmm_sim_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "hmm_sim" "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg" "std_msgs/MultiArrayDimension:std_msgs/Float32MultiArray:std_msgs/MultiArrayLayout"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "hmm_sim" "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg" "std_msgs/Float32MultiArray:std_msgs/MultiArrayDimension:std_msgs/MultiArrayLayout"
 )
 
 get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg" NAME_WE)
 add_custom_target(_hmm_sim_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "hmm_sim" "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg" "std_msgs/MultiArrayDimension:std_msgs/Float32MultiArray:std_msgs/MultiArrayLayout"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "hmm_sim" "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg" "std_msgs/Float32MultiArray:std_msgs/MultiArrayDimension:std_msgs/MultiArrayLayout"
 )
 
 get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/action_status.msg" NAME_WE)
 add_custom_target(_hmm_sim_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "hmm_sim" "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/action_status.msg" "std_msgs/Bool"
+)
+
+get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg" NAME_WE)
+add_custom_target(_hmm_sim_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "hmm_sim" "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg" "std_msgs/Int32"
 )
 
 #
@@ -41,19 +46,25 @@ add_custom_target(_hmm_sim_generate_messages_check_deps_${_filename}
 _generate_msg_cpp(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/hmm_sim
 )
 _generate_msg_cpp(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/hmm_sim
 )
 _generate_msg_cpp(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/action_status.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/hmm_sim
+)
+_generate_msg_cpp(hmm_sim
+  "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Int32.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/hmm_sim
 )
 
@@ -77,6 +88,8 @@ get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg
 add_dependencies(hmm_sim_generate_messages_cpp _hmm_sim_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/action_status.msg" NAME_WE)
 add_dependencies(hmm_sim_generate_messages_cpp _hmm_sim_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg" NAME_WE)
+add_dependencies(hmm_sim_generate_messages_cpp _hmm_sim_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(hmm_sim_gencpp)
@@ -90,19 +103,25 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS hmm_sim_generate_messages_cpp)
 _generate_msg_eus(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/hmm_sim
 )
 _generate_msg_eus(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/hmm_sim
 )
 _generate_msg_eus(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/action_status.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/hmm_sim
+)
+_generate_msg_eus(hmm_sim
+  "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Int32.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/hmm_sim
 )
 
@@ -126,6 +145,8 @@ get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg
 add_dependencies(hmm_sim_generate_messages_eus _hmm_sim_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/action_status.msg" NAME_WE)
 add_dependencies(hmm_sim_generate_messages_eus _hmm_sim_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg" NAME_WE)
+add_dependencies(hmm_sim_generate_messages_eus _hmm_sim_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(hmm_sim_geneus)
@@ -139,19 +160,25 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS hmm_sim_generate_messages_eus)
 _generate_msg_lisp(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/hmm_sim
 )
 _generate_msg_lisp(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/hmm_sim
 )
 _generate_msg_lisp(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/action_status.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/hmm_sim
+)
+_generate_msg_lisp(hmm_sim
+  "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Int32.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/hmm_sim
 )
 
@@ -175,6 +202,8 @@ get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg
 add_dependencies(hmm_sim_generate_messages_lisp _hmm_sim_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/action_status.msg" NAME_WE)
 add_dependencies(hmm_sim_generate_messages_lisp _hmm_sim_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg" NAME_WE)
+add_dependencies(hmm_sim_generate_messages_lisp _hmm_sim_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(hmm_sim_genlisp)
@@ -188,19 +217,25 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS hmm_sim_generate_messages_lisp)
 _generate_msg_nodejs(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/hmm_sim
 )
 _generate_msg_nodejs(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/hmm_sim
 )
 _generate_msg_nodejs(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/action_status.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/hmm_sim
+)
+_generate_msg_nodejs(hmm_sim
+  "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Int32.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/hmm_sim
 )
 
@@ -224,6 +259,8 @@ get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg
 add_dependencies(hmm_sim_generate_messages_nodejs _hmm_sim_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/action_status.msg" NAME_WE)
 add_dependencies(hmm_sim_generate_messages_nodejs _hmm_sim_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg" NAME_WE)
+add_dependencies(hmm_sim_generate_messages_nodejs _hmm_sim_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(hmm_sim_gennodejs)
@@ -237,19 +274,25 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS hmm_sim_generate_messages_nodejs)
 _generate_msg_py(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/hmm_sim
 )
 _generate_msg_py(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/hmm_sim
 )
 _generate_msg_py(hmm_sim
   "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/action_status.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/noetic/share/std_msgs/cmake/../msg/Bool.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/hmm_sim
+)
+_generate_msg_py(hmm_sim
+  "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Int32.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/hmm_sim
 )
 
@@ -272,6 +315,8 @@ add_dependencies(hmm_sim_generate_messages_py _hmm_sim_generate_messages_check_d
 get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg" NAME_WE)
 add_dependencies(hmm_sim_generate_messages_py _hmm_sim_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/action_status.msg" NAME_WE)
+add_dependencies(hmm_sim_generate_messages_py _hmm_sim_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg" NAME_WE)
 add_dependencies(hmm_sim_generate_messages_py _hmm_sim_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

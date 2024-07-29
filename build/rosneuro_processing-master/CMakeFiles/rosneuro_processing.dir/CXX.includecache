@@ -230,6 +230,14 @@ wtkprocessing/Pwelch.hpp
 wtkprocessing/Gaussian.hpp
 -
 
+/home/sebastiano/hmm_workspace/src/rosneuro_processing-master/include/rosneuro_processing/SmrPositiveOutput.h
+ros/ros.h
+-
+rosneuro_msgs/NeuroEvent.h
+/home/sebastiano/hmm_workspace/src/rosneuro_processing-master/include/rosneuro_processing/rosneuro_msgs/NeuroEvent.h
+rosneuro_msgs/NeuroOutput.h
+/home/sebastiano/hmm_workspace/src/rosneuro_processing-master/include/rosneuro_processing/rosneuro_msgs/NeuroOutput.h
+
 /home/sebastiano/hmm_workspace/src/rosneuro_processing-master/src/EogBci.cpp
 rosneuro_processing/EogBci.hpp
 /home/sebastiano/hmm_workspace/src/rosneuro_processing-master/src/rosneuro_processing/EogBci.hpp
@@ -237,6 +245,10 @@ rosneuro_processing/EogBci.hpp
 /home/sebastiano/hmm_workspace/src/rosneuro_processing-master/src/SmrBci.cpp
 rosneuro_processing/SmrBci.hpp
 /home/sebastiano/hmm_workspace/src/rosneuro_processing-master/src/rosneuro_processing/SmrBci.hpp
+
+/home/sebastiano/hmm_workspace/src/rosneuro_processing-master/src/SmrPositiveOutput.cpp
+rosneuro_processing/SmrPositiveOutput.h
+/home/sebastiano/hmm_workspace/src/rosneuro_processing-master/src/rosneuro_processing/SmrPositiveOutput.h
 
 /opt/ros/noetic/include/dynamic_reconfigure/BoolParameter.h
 string

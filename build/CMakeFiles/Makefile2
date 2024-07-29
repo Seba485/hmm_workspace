@@ -158,6 +158,7 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 
 # Recursive "all" directory target.
 hmm_sim/all: hmm_sim/CMakeFiles/hmm_sim.dir/all
+hmm_sim/all: hmm_sim/CMakeFiles/ext_neurodraw.dir/all
 hmm_sim/all: hmm_sim/CMakeFiles/bar_feedback.dir/all
 hmm_sim/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all
 
@@ -171,21 +172,23 @@ hmm_sim/preinstall:
 # Recursive "clean" directory target.
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/clean
-hmm_sim/clean: hmm_sim/CMakeFiles/bar_feedback.dir/clean
-hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_genpy.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/clean
+hmm_sim/clean: hmm_sim/CMakeFiles/ext_neurodraw.dir/clean
+hmm_sim/clean: hmm_sim/CMakeFiles/bar_feedback.dir/clean
+hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/clean
+hmm_sim/clean: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_gencpp.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/_catkin_empty_exported_target.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/clean
+hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/clean
+hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_geneus.dir/clean
 hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/clean
-hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/clean
-hmm_sim/clean: hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/clean
 
 .PHONY : hmm_sim/clean
 
@@ -544,7 +547,7 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googlemock/CMakeFiles/gmoc
 gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=8 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=13,14 "Built target gmock_main"
 .PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -571,12 +574,12 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/clean:
 gtest/googlemock/CMakeFiles/gmock.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=6,7 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=12 "Built target gmock"
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 gtest/googlemock/CMakeFiles/gmock.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/rule
@@ -598,12 +601,12 @@ gtest/googlemock/CMakeFiles/gmock.dir/clean:
 gtest/googletest/CMakeFiles/gtest_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=11,12 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=17 "Built target gtest_main"
 .PHONY : gtest/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 gtest/googletest/CMakeFiles/gtest_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : gtest/googletest/CMakeFiles/gtest_main.dir/rule
@@ -625,7 +628,7 @@ gtest/googletest/CMakeFiles/gtest_main.dir/clean:
 gtest/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=9,10 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=15,16 "Built target gtest"
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -657,7 +660,7 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_genpy.dir/all: rosneuro_msgs/CMakeFiles/r
 
 # Build rule for subdir invocation for target.
 rosneuro_msgs/CMakeFiles/rosneuro_msgs_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_msgs/CMakeFiles/rosneuro_msgs_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_msgs/CMakeFiles/rosneuro_msgs_genpy.dir/rule
@@ -688,12 +691,12 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_py.dir/all: rosneuro_ms
 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_py.dir/all: rosneuro_msgs/CMakeFiles/_rosneuro_msgs_generate_messages_check_deps_GetAcquisitionInfo.dir/all
 	$(MAKE) -f rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_py.dir/build.make rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_py.dir/depend
 	$(MAKE) -f rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_py.dir/build.make rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=77,78,79,80,81,82,83,84,85,86 "Built target rosneuro_msgs_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=80,81,82,83,84,85,86,87,88 "Built target rosneuro_msgs_generate_messages_py"
 .PHONY : rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_py.dir/rule
@@ -751,7 +754,7 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_lisp.dir/all: rosneuro_
 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_lisp.dir/all: rosneuro_msgs/CMakeFiles/_rosneuro_msgs_generate_messages_check_deps_GetAcquisitionInfo.dir/all
 	$(MAKE) -f rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_lisp.dir/build.make rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_lisp.dir/depend
 	$(MAKE) -f rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_lisp.dir/build.make rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=61,62,63,64,65,66,67,68 "Built target rosneuro_msgs_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=65,66,67,68,69,70,71,72 "Built target rosneuro_msgs_generate_messages_lisp"
 .PHONY : rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -787,12 +790,12 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_nodejs.dir/all: rosneur
 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_nodejs.dir/all: rosneuro_msgs/CMakeFiles/_rosneuro_msgs_generate_messages_check_deps_GetAcquisitionInfo.dir/all
 	$(MAKE) -f rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_nodejs.dir/build.make rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_nodejs.dir/depend
 	$(MAKE) -f rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_nodejs.dir/build.make rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=69,70,71,72,73,74,75,76 "Built target rosneuro_msgs_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=73,74,75,76,77,78,79 "Built target rosneuro_msgs_generate_messages_nodejs"
 .PHONY : rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_nodejs.dir/rule
@@ -904,7 +907,7 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages.dir/all: rosneuro_msgs/
 
 # Build rule for subdir invocation for target.
 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 39
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages.dir/rule
@@ -1066,7 +1069,7 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_gencpp.dir/all: rosneuro_msgs/CMakeFiles/
 
 # Build rule for subdir invocation for target.
 rosneuro_msgs/CMakeFiles/rosneuro_msgs_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_msgs/CMakeFiles/rosneuro_msgs_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_msgs/CMakeFiles/rosneuro_msgs_gencpp.dir/rule
@@ -1120,7 +1123,7 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_gennodejs.dir/all: rosneuro_msgs/CMakeFil
 
 # Build rule for subdir invocation for target.
 rosneuro_msgs/CMakeFiles/rosneuro_msgs_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_msgs/CMakeFiles/rosneuro_msgs_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_msgs/CMakeFiles/rosneuro_msgs_gennodejs.dir/rule
@@ -1259,12 +1262,12 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_cpp.dir/all: rosneuro_m
 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_cpp.dir/all: rosneuro_msgs/CMakeFiles/_rosneuro_msgs_generate_messages_check_deps_GetAcquisitionInfo.dir/all
 	$(MAKE) -f rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_cpp.dir/build.make rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_cpp.dir/depend
 	$(MAKE) -f rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_cpp.dir/build.make rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=44,45,46,47,48,49,50,51 "Built target rosneuro_msgs_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=50,51,52,53,54,55,56 "Built target rosneuro_msgs_generate_messages_cpp"
 .PHONY : rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_cpp.dir/rule
@@ -1376,12 +1379,12 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_eus.dir/all: rosneuro_m
 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_eus.dir/all: rosneuro_msgs/CMakeFiles/_rosneuro_msgs_generate_messages_check_deps_GetAcquisitionInfo.dir/all
 	$(MAKE) -f rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_eus.dir/build.make rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_eus.dir/depend
 	$(MAKE) -f rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_eus.dir/build.make rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=52,53,54,55,56,57,58,59,60 "Built target rosneuro_msgs_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=57,58,59,60,61,62,63,64 "Built target rosneuro_msgs_generate_messages_eus"
 .PHONY : rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_eus.dir/rule
@@ -1489,7 +1492,7 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_geneus.dir/all: rosneuro_msgs/CMakeFiles/
 
 # Build rule for subdir invocation for target.
 rosneuro_msgs/CMakeFiles/rosneuro_msgs_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_msgs/CMakeFiles/rosneuro_msgs_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_msgs/CMakeFiles/rosneuro_msgs_geneus.dir/rule
@@ -1673,12 +1676,12 @@ rosneuro_feedback_wheel/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel_gencfg.dir/all:
 	$(MAKE) -f rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel_gencfg.dir/build.make rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel_gencfg.dir/depend
 	$(MAKE) -f rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel_gencfg.dir/build.make rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel_gencfg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=37,38 "Built target rosneuro_feedback_wheel_gencfg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=44 "Built target rosneuro_feedback_wheel_gencfg"
 .PHONY : rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel_gencfg.dir/all
 
 # Build rule for subdir invocation for target.
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel_gencfg.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel_gencfg.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel_gencfg.dir/rule
@@ -1726,12 +1729,12 @@ rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/all: rosneuro_fee
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/all: rosneuro_feedback_wheel/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/all
 	$(MAKE) -f rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/build.make rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/depend
 	$(MAKE) -f rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/build.make rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=32,33,34,35,36 "Built target rosneuro_feedback_wheel"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=39,40,41,42,43 "Built target rosneuro_feedback_wheel"
 .PHONY : rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/all
 
 # Build rule for subdir invocation for target.
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 50
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 45
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/rule
@@ -1866,7 +1869,7 @@ rosneuro_feedback_wheel/CMakeFiles/trainingwheel.dir/all: rosneuro_feedback_whee
 
 # Build rule for subdir invocation for target.
 rosneuro_feedback_wheel/CMakeFiles/trainingwheel.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 52
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 47
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_feedback_wheel/CMakeFiles/trainingwheel.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_feedback_wheel/CMakeFiles/trainingwheel.dir/rule
@@ -1893,7 +1896,7 @@ rosneuro_feedback_wheel/CMakeFiles/controlwheel.dir/all: rosneuro_feedback_wheel
 
 # Build rule for subdir invocation for target.
 rosneuro_feedback_wheel/CMakeFiles/controlwheel.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 52
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 47
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_feedback_wheel/CMakeFiles/controlwheel.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_feedback_wheel/CMakeFiles/controlwheel.dir/rule
@@ -1942,7 +1945,7 @@ rosneuro_feedback_wheel/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.di
 hmm_sim/CMakeFiles/hmm_sim.dir/all:
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim.dir/build.make hmm_sim/CMakeFiles/hmm_sim.dir/depend
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim.dir/build.make hmm_sim/CMakeFiles/hmm_sim.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=13,14 "Built target hmm_sim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=18,19 "Built target hmm_sim"
 .PHONY : hmm_sim/CMakeFiles/hmm_sim.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1968,11 +1971,12 @@ hmm_sim/CMakeFiles/hmm_sim.dir/clean:
 # All Build rule for target.
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/all: rosneuro_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/all
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/depend
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=26,27,28,29 "Built target hmm_sim_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=33,34,35,36 "Built target hmm_sim_generate_messages_py"
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1991,65 +1995,6 @@ hmm_sim_generate_messages_py: hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.di
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/clean:
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/clean
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/clean
-
-#=============================================================================
-# Target rules for target hmm_sim/CMakeFiles/bar_feedback.dir
-
-# All Build rule for target.
-hmm_sim/CMakeFiles/bar_feedback.dir/all: rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/all
-hmm_sim/CMakeFiles/bar_feedback.dir/all: hmm_sim/CMakeFiles/hmm_sim.dir/all
-	$(MAKE) -f hmm_sim/CMakeFiles/bar_feedback.dir/build.make hmm_sim/CMakeFiles/bar_feedback.dir/depend
-	$(MAKE) -f hmm_sim/CMakeFiles/bar_feedback.dir/build.make hmm_sim/CMakeFiles/bar_feedback.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=1 "Built target bar_feedback"
-.PHONY : hmm_sim/CMakeFiles/bar_feedback.dir/all
-
-# Build rule for subdir invocation for target.
-hmm_sim/CMakeFiles/bar_feedback.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 53
-	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/bar_feedback.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
-.PHONY : hmm_sim/CMakeFiles/bar_feedback.dir/rule
-
-# Convenience name for target.
-bar_feedback: hmm_sim/CMakeFiles/bar_feedback.dir/rule
-
-.PHONY : bar_feedback
-
-# clean rule for target.
-hmm_sim/CMakeFiles/bar_feedback.dir/clean:
-	$(MAKE) -f hmm_sim/CMakeFiles/bar_feedback.dir/build.make hmm_sim/CMakeFiles/bar_feedback.dir/clean
-.PHONY : hmm_sim/CMakeFiles/bar_feedback.dir/clean
-
-#=============================================================================
-# Target rules for target hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir
-
-# All Build rule for target.
-hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/all
-hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all
-hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/all
-hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all
-hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/depend
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num= "Built target hmm_sim_generate_messages"
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all
-
-# Build rule for subdir invocation for target.
-hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 15
-	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/rule
-
-# Convenience name for target.
-hmm_sim_generate_messages: hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/rule
-
-.PHONY : hmm_sim_generate_messages
-
-# clean rule for target.
-hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/clean:
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/clean
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/clean
 
 #=============================================================================
 # Target rules for target hmm_sim/CMakeFiles/hmm_sim_genpy.dir
@@ -2084,16 +2029,17 @@ hmm_sim/CMakeFiles/hmm_sim_genpy.dir/clean:
 # All Build rule for target.
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all: rosneuro_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/all
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/depend
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=24,25 "Built target hmm_sim_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=30,31,32 "Built target hmm_sim_generate_messages_nodejs"
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/rule
@@ -2107,6 +2053,92 @@ hmm_sim_generate_messages_nodejs: hmm_sim/CMakeFiles/hmm_sim_generate_messages_n
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/clean:
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/clean
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target hmm_sim/CMakeFiles/ext_neurodraw.dir
+
+# All Build rule for target.
+hmm_sim/CMakeFiles/ext_neurodraw.dir/all:
+	$(MAKE) -f hmm_sim/CMakeFiles/ext_neurodraw.dir/build.make hmm_sim/CMakeFiles/ext_neurodraw.dir/depend
+	$(MAKE) -f hmm_sim/CMakeFiles/ext_neurodraw.dir/build.make hmm_sim/CMakeFiles/ext_neurodraw.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=4,5,6,7,8,9 "Built target ext_neurodraw"
+.PHONY : hmm_sim/CMakeFiles/ext_neurodraw.dir/all
+
+# Build rule for subdir invocation for target.
+hmm_sim/CMakeFiles/ext_neurodraw.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/ext_neurodraw.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
+.PHONY : hmm_sim/CMakeFiles/ext_neurodraw.dir/rule
+
+# Convenience name for target.
+ext_neurodraw: hmm_sim/CMakeFiles/ext_neurodraw.dir/rule
+
+.PHONY : ext_neurodraw
+
+# clean rule for target.
+hmm_sim/CMakeFiles/ext_neurodraw.dir/clean:
+	$(MAKE) -f hmm_sim/CMakeFiles/ext_neurodraw.dir/build.make hmm_sim/CMakeFiles/ext_neurodraw.dir/clean
+.PHONY : hmm_sim/CMakeFiles/ext_neurodraw.dir/clean
+
+#=============================================================================
+# Target rules for target hmm_sim/CMakeFiles/bar_feedback.dir
+
+# All Build rule for target.
+hmm_sim/CMakeFiles/bar_feedback.dir/all: rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/all
+hmm_sim/CMakeFiles/bar_feedback.dir/all: hmm_sim/CMakeFiles/hmm_sim.dir/all
+	$(MAKE) -f hmm_sim/CMakeFiles/bar_feedback.dir/build.make hmm_sim/CMakeFiles/bar_feedback.dir/depend
+	$(MAKE) -f hmm_sim/CMakeFiles/bar_feedback.dir/build.make hmm_sim/CMakeFiles/bar_feedback.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=1 "Built target bar_feedback"
+.PHONY : hmm_sim/CMakeFiles/bar_feedback.dir/all
+
+# Build rule for subdir invocation for target.
+hmm_sim/CMakeFiles/bar_feedback.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 48
+	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/bar_feedback.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
+.PHONY : hmm_sim/CMakeFiles/bar_feedback.dir/rule
+
+# Convenience name for target.
+bar_feedback: hmm_sim/CMakeFiles/bar_feedback.dir/rule
+
+.PHONY : bar_feedback
+
+# clean rule for target.
+hmm_sim/CMakeFiles/bar_feedback.dir/clean:
+	$(MAKE) -f hmm_sim/CMakeFiles/bar_feedback.dir/build.make hmm_sim/CMakeFiles/bar_feedback.dir/clean
+.PHONY : hmm_sim/CMakeFiles/bar_feedback.dir/clean
+
+#=============================================================================
+# Target rules for target hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir
+
+# All Build rule for target.
+hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_py.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/depend
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num= "Built target hmm_sim_generate_messages"
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all
+
+# Build rule for subdir invocation for target.
+hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 17
+	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/rule
+
+# Convenience name for target.
+hmm_sim_generate_messages: hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/rule
+
+.PHONY : hmm_sim_generate_messages
+
+# clean rule for target.
+hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/clean:
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/clean
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages.dir/clean
 
 #=============================================================================
 # Target rules for target hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir
@@ -2134,6 +2166,33 @@ _hmm_sim_generate_messages_check_deps_classifier_output: hmm_sim/CMakeFiles/_hmm
 hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/clean:
 	$(MAKE) -f hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/build.make hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/clean
 .PHONY : hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/clean
+
+#=============================================================================
+# Target rules for target hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir
+
+# All Build rule for target.
+hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/all:
+	$(MAKE) -f hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/build.make hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/depend
+	$(MAKE) -f hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/build.make hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num= "Built target _hmm_sim_generate_messages_check_deps_targethit_msg"
+.PHONY : hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/all
+
+# Build rule for subdir invocation for target.
+hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
+.PHONY : hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/rule
+
+# Convenience name for target.
+_hmm_sim_generate_messages_check_deps_targethit_msg: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/rule
+
+.PHONY : _hmm_sim_generate_messages_check_deps_targethit_msg
+
+# clean rule for target.
+hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/clean:
+	$(MAKE) -f hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/build.make hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/clean
+.PHONY : hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/clean
 
 #=============================================================================
 # Target rules for target hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir
@@ -2174,7 +2233,7 @@ hmm_sim/CMakeFiles/hmm_sim_gencpp.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_m
 
 # Build rule for subdir invocation for target.
 hmm_sim/CMakeFiles/hmm_sim_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/hmm_sim_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_gencpp.dir/rule
@@ -2249,16 +2308,17 @@ hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/clean
 # All Build rule for target.
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/all: rosneuro_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/all
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/depend
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=15,16 "Built target hmm_sim_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=20,21,22 "Built target hmm_sim_generate_messages_cpp"
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/rule
@@ -2274,6 +2334,64 @@ hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/clean:
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_cpp.dir/clean
 
 #=============================================================================
+# Target rules for target hmm_sim/CMakeFiles/hmm_sim_genlisp.dir
+
+# All Build rule for target.
+hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/depend
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num= "Built target hmm_sim_genlisp"
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/all
+
+# Build rule for subdir invocation for target.
+hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/rule
+
+# Convenience name for target.
+hmm_sim_genlisp: hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/rule
+
+.PHONY : hmm_sim_genlisp
+
+# clean rule for target.
+hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/clean:
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/clean
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/clean
+
+#=============================================================================
+# Target rules for target hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir
+
+# All Build rule for target.
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all: rosneuro_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/all
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/depend
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=23,24,25,26 "Built target hmm_sim_generate_messages_eus"
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+hmm_sim_generate_messages_eus: hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/rule
+
+.PHONY : hmm_sim_generate_messages_eus
+
+# clean rule for target.
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/clean:
+	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/clean
+.PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/clean
+
+#=============================================================================
 # Target rules for target hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir
 
 # All Build rule for target.
@@ -2285,7 +2403,7 @@ hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/all: hmm_sim/CMakeFiles/hmm_sim_generat
 
 # Build rule for subdir invocation for target.
 hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_gennodejs.dir/rule
@@ -2333,11 +2451,12 @@ hmm_sim/CMakeFiles/hmm_sim_geneus.dir/clean:
 # All Build rule for target.
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all: rosneuro_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/all
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_targethit_msg.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir/all
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/all
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/depend
 	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=21,22,23 "Built target hmm_sim_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=27,28,29 "Built target hmm_sim_generate_messages_lisp"
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2358,75 +2477,18 @@ hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/clean:
 .PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/clean
 
 #=============================================================================
-# Target rules for target hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir
-
-# All Build rule for target.
-hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all: rosneuro_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_classifier_output.dir/all
-hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_traversability_output.dir/all
-hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all: hmm_sim/CMakeFiles/_hmm_sim_generate_messages_check_deps_action_status.dir/all
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/depend
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=17,18,19,20 "Built target hmm_sim_generate_messages_eus"
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-hmm_sim_generate_messages_eus: hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/rule
-
-.PHONY : hmm_sim_generate_messages_eus
-
-# clean rule for target.
-hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/clean:
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/build.make hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/clean
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target hmm_sim/CMakeFiles/hmm_sim_genlisp.dir
-
-# All Build rule for target.
-hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/all: hmm_sim/CMakeFiles/hmm_sim_generate_messages_lisp.dir/all
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/depend
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num= "Built target hmm_sim_genlisp"
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/all
-
-# Build rule for subdir invocation for target.
-hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/rule
-
-# Convenience name for target.
-hmm_sim_genlisp: hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/rule
-
-.PHONY : hmm_sim_genlisp
-
-# clean rule for target.
-hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/clean:
-	$(MAKE) -f hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/build.make hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/clean
-.PHONY : hmm_sim/CMakeFiles/hmm_sim_genlisp.dir/clean
-
-#=============================================================================
 # Target rules for target rosneuro_integrator/CMakeFiles/integrator.dir
 
 # All Build rule for target.
 rosneuro_integrator/CMakeFiles/integrator.dir/all: rosneuro_integrator/CMakeFiles/rosneuro_integrator.dir/all
 	$(MAKE) -f rosneuro_integrator/CMakeFiles/integrator.dir/build.make rosneuro_integrator/CMakeFiles/integrator.dir/depend
 	$(MAKE) -f rosneuro_integrator/CMakeFiles/integrator.dir/build.make rosneuro_integrator/CMakeFiles/integrator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=30,31 "Built target integrator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=37,38 "Built target integrator"
 .PHONY : rosneuro_integrator/CMakeFiles/integrator.dir/all
 
 # Build rule for subdir invocation for target.
 rosneuro_integrator/CMakeFiles/integrator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 48
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 44
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_integrator/CMakeFiles/integrator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_integrator/CMakeFiles/integrator.dir/rule
@@ -2467,12 +2529,12 @@ rosneuro_integrator/CMakeFiles/rosneuro_integrator.dir/all: rosneuro_msgs/CMakeF
 rosneuro_integrator/CMakeFiles/rosneuro_integrator.dir/all: rosneuro_msgs/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f rosneuro_integrator/CMakeFiles/rosneuro_integrator.dir/build.make rosneuro_integrator/CMakeFiles/rosneuro_integrator.dir/depend
 	$(MAKE) -f rosneuro_integrator/CMakeFiles/rosneuro_integrator.dir/build.make rosneuro_integrator/CMakeFiles/rosneuro_integrator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=39,40,41 "Built target rosneuro_integrator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=45,46,47 "Built target rosneuro_integrator"
 .PHONY : rosneuro_integrator/CMakeFiles/rosneuro_integrator.dir/all
 
 # Build rule for subdir invocation for target.
 rosneuro_integrator/CMakeFiles/rosneuro_integrator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 46
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 42
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_integrator/CMakeFiles/rosneuro_integrator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_integrator/CMakeFiles/rosneuro_integrator.dir/rule
@@ -2521,12 +2583,12 @@ rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential.dir/a
 rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential.dir/all: rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential_gencfg.dir/all
 	$(MAKE) -f rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential.dir/build.make rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential.dir/depend
 	$(MAKE) -f rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential.dir/build.make rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=42 "Built target rosneuro_integrator_exponential"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=48 "Built target rosneuro_integrator_exponential"
 .PHONY : rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential.dir/all
 
 # Build rule for subdir invocation for target.
 rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 48
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 44
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential.dir/rule
@@ -2548,7 +2610,7 @@ rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential.dir/c
 rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential_gencfg.dir/all:
 	$(MAKE) -f rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential_gencfg.dir/build.make rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential_gencfg.dir/depend
 	$(MAKE) -f rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential_gencfg.dir/build.make rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential_gencfg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=43 "Built target rosneuro_integrator_exponential_gencfg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=49 "Built target rosneuro_integrator_exponential_gencfg"
 .PHONY : rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential_gencfg.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2575,7 +2637,7 @@ rosneuro_integrator_exponential/CMakeFiles/rosneuro_integrator_exponential_gencf
 rosneuro_processing-master/CMakeFiles/rosneuro_processing_gencfg.dir/all:
 	$(MAKE) -f rosneuro_processing-master/CMakeFiles/rosneuro_processing_gencfg.dir/build.make rosneuro_processing-master/CMakeFiles/rosneuro_processing_gencfg.dir/depend
 	$(MAKE) -f rosneuro_processing-master/CMakeFiles/rosneuro_processing_gencfg.dir/build.make rosneuro_processing-master/CMakeFiles/rosneuro_processing_gencfg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=91 "Built target rosneuro_processing_gencfg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=92 "Built target rosneuro_processing_gencfg"
 .PHONY : rosneuro_processing-master/CMakeFiles/rosneuro_processing_gencfg.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2627,12 +2689,12 @@ rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/all: rosneuro_feed
 rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/all: rosneuro_feedback_wheel/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/all
 	$(MAKE) -f rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/build.make rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/depend
 	$(MAKE) -f rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/build.make rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=87,88,89,90 "Built target rosneuro_processing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=89,90,91 "Built target rosneuro_processing"
 .PHONY : rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/all
 
 # Build rule for subdir invocation for target.
 rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 47
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 42
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/rule
@@ -2655,12 +2717,12 @@ rosneuro_processing-master/CMakeFiles/fakeprocessing.dir/all: rosneuro_processin
 rosneuro_processing-master/CMakeFiles/fakeprocessing.dir/all: rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/all
 	$(MAKE) -f rosneuro_processing-master/CMakeFiles/fakeprocessing.dir/build.make rosneuro_processing-master/CMakeFiles/fakeprocessing.dir/depend
 	$(MAKE) -f rosneuro_processing-master/CMakeFiles/fakeprocessing.dir/build.make rosneuro_processing-master/CMakeFiles/fakeprocessing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=4,5 "Built target fakeprocessing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=10,11 "Built target fakeprocessing"
 .PHONY : rosneuro_processing-master/CMakeFiles/fakeprocessing.dir/all
 
 # Build rule for subdir invocation for target.
 rosneuro_processing-master/CMakeFiles/fakeprocessing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 50
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 45
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_processing-master/CMakeFiles/fakeprocessing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_processing-master/CMakeFiles/fakeprocessing.dir/rule
@@ -2683,12 +2745,12 @@ rosneuro_processing-master/CMakeFiles/test_processing.dir/all: rosneuro_processi
 rosneuro_processing-master/CMakeFiles/test_processing.dir/all: rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/all
 	$(MAKE) -f rosneuro_processing-master/CMakeFiles/test_processing.dir/build.make rosneuro_processing-master/CMakeFiles/test_processing.dir/depend
 	$(MAKE) -f rosneuro_processing-master/CMakeFiles/test_processing.dir/build.make rosneuro_processing-master/CMakeFiles/test_processing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=95,96 "Built target test_processing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=96 "Built target test_processing"
 .PHONY : rosneuro_processing-master/CMakeFiles/test_processing.dir/all
 
 # Build rule for subdir invocation for target.
 rosneuro_processing-master/CMakeFiles/test_processing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 50
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 44
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_processing-master/CMakeFiles/test_processing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_processing-master/CMakeFiles/test_processing.dir/rule
@@ -2711,12 +2773,12 @@ rosneuro_processing-master/CMakeFiles/smr_positive_output.dir/all: rosneuro_proc
 rosneuro_processing-master/CMakeFiles/smr_positive_output.dir/all: rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/all
 	$(MAKE) -f rosneuro_processing-master/CMakeFiles/smr_positive_output.dir/build.make rosneuro_processing-master/CMakeFiles/smr_positive_output.dir/depend
 	$(MAKE) -f rosneuro_processing-master/CMakeFiles/smr_positive_output.dir/build.make rosneuro_processing-master/CMakeFiles/smr_positive_output.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=92 "Built target smr_positive_output"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=93 "Built target smr_positive_output"
 .PHONY : rosneuro_processing-master/CMakeFiles/smr_positive_output.dir/all
 
 # Build rule for subdir invocation for target.
 rosneuro_processing-master/CMakeFiles/smr_positive_output.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 49
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 44
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_processing-master/CMakeFiles/smr_positive_output.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_processing-master/CMakeFiles/smr_positive_output.dir/rule
@@ -2744,7 +2806,7 @@ rosneuro_processing-master/CMakeFiles/test_smrbci.dir/all: rosneuro_processing-m
 
 # Build rule for subdir invocation for target.
 rosneuro_processing-master/CMakeFiles/test_smrbci.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 50
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 45
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_processing-master/CMakeFiles/test_smrbci.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_processing-master/CMakeFiles/test_smrbci.dir/rule
@@ -2767,12 +2829,12 @@ rosneuro_processing-master/CMakeFiles/test_eogbci.dir/all: rosneuro_processing-m
 rosneuro_processing-master/CMakeFiles/test_eogbci.dir/all: rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/all
 	$(MAKE) -f rosneuro_processing-master/CMakeFiles/test_eogbci.dir/build.make rosneuro_processing-master/CMakeFiles/test_eogbci.dir/depend
 	$(MAKE) -f rosneuro_processing-master/CMakeFiles/test_eogbci.dir/build.make rosneuro_processing-master/CMakeFiles/test_eogbci.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=93,94 "Built target test_eogbci"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=94,95 "Built target test_eogbci"
 .PHONY : rosneuro_processing-master/CMakeFiles/test_eogbci.dir/all
 
 # Build rule for subdir invocation for target.
 rosneuro_processing-master/CMakeFiles/test_eogbci.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 50
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 45
 	$(MAKE) -f CMakeFiles/Makefile2 rosneuro_processing-master/CMakeFiles/test_eogbci.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastiano/hmm_workspace/build/CMakeFiles 0
 .PHONY : rosneuro_processing-master/CMakeFiles/test_eogbci.dir/rule

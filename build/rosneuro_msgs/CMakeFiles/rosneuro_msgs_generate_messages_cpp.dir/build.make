@@ -92,19 +92,19 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_cpp: /home/sebastiano/h
 
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroFrame.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroFrame.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg
-/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroFrame.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
-/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroFrame.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
-/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroFrame.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroFrame.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroFrame.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
+/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroFrame.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
+/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroFrame.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
+/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroFrame.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
+/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroFrame.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroFrame.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from rosneuro_msgs/NeuroFrame.msg"
 	cd /home/sebastiano/hmm_workspace/src/rosneuro_msgs && /home/sebastiano/hmm_workspace/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg -Irosneuro_msgs:/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rosneuro_msgs -o /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroEvent.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroEvent.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroEvent.msg
-/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroEvent.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroEvent.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
+/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroEvent.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroEvent.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from rosneuro_msgs/NeuroEvent.msg"
 	cd /home/sebastiano/hmm_workspace/src/rosneuro_msgs && /home/sebastiano/hmm_workspace/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroEvent.msg -Irosneuro_msgs:/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rosneuro_msgs -o /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -117,24 +117,24 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_cpp: /home/sebastiano/h
 
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroOutput.msg
-/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
-/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
-/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
+/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
+/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
+/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg
+/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from rosneuro_msgs/NeuroOutput.msg"
 	cd /home/sebastiano/hmm_workspace/src/rosneuro_msgs && /home/sebastiano/hmm_workspace/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroOutput.msg -Irosneuro_msgs:/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rosneuro_msgs -o /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/GetAcquisitionInfo.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/GetAcquisitionInfo.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv
-/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/GetAcquisitionInfo.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
-/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/GetAcquisitionInfo.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/GetAcquisitionInfo.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
-/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/GetAcquisitionInfo.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/GetAcquisitionInfo.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/GetAcquisitionInfo.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
+/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/GetAcquisitionInfo.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
+/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/GetAcquisitionInfo.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
+/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/GetAcquisitionInfo.h: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg
+/home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/GetAcquisitionInfo.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/GetAcquisitionInfo.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/GetAcquisitionInfo.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from rosneuro_msgs/GetAcquisitionInfo.srv"

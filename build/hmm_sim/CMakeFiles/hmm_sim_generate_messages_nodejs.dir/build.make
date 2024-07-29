@@ -56,20 +56,21 @@ include hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/progress.make
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs: /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/classifier_output.js
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs: /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/traversability_output.js
 hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs: /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/action_status.js
+hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs: /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/targethit_msg.js
 
 
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/classifier_output.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/classifier_output.js: /home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/classifier_output.js: /opt/ros/noetic/share/std_msgs/msg/MultiArrayDimension.msg
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/classifier_output.js: /opt/ros/noetic/share/std_msgs/msg/Float32MultiArray.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/classifier_output.js: /opt/ros/noetic/share/std_msgs/msg/MultiArrayDimension.msg
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/classifier_output.js: /opt/ros/noetic/share/std_msgs/msg/MultiArrayLayout.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from hmm_sim/classifier_output.msg"
 	cd /home/sebastiano/hmm_workspace/build/hmm_sim && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg -Ihmm_sim:/home/sebastiano/hmm_workspace/src/hmm_sim/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p hmm_sim -o /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg
 
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/traversability_output.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/traversability_output.js: /home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/traversability_output.js: /opt/ros/noetic/share/std_msgs/msg/MultiArrayDimension.msg
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/traversability_output.js: /opt/ros/noetic/share/std_msgs/msg/Float32MultiArray.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/traversability_output.js: /opt/ros/noetic/share/std_msgs/msg/MultiArrayDimension.msg
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/traversability_output.js: /opt/ros/noetic/share/std_msgs/msg/MultiArrayLayout.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from hmm_sim/traversability_output.msg"
 	cd /home/sebastiano/hmm_workspace/build/hmm_sim && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg -Ihmm_sim:/home/sebastiano/hmm_workspace/src/hmm_sim/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p hmm_sim -o /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg
@@ -80,10 +81,17 @@ hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs: /home/sebastiano/hmm_worksp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from hmm_sim/action_status.msg"
 	cd /home/sebastiano/hmm_workspace/build/hmm_sim && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/sebastiano/hmm_workspace/src/hmm_sim/msg/action_status.msg -Ihmm_sim:/home/sebastiano/hmm_workspace/src/hmm_sim/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p hmm_sim -o /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg
 
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/targethit_msg.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/targethit_msg.js: /home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/targethit_msg.js: /opt/ros/noetic/share/std_msgs/msg/Int32.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from hmm_sim/targethit_msg.msg"
+	cd /home/sebastiano/hmm_workspace/build/hmm_sim && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg -Ihmm_sim:/home/sebastiano/hmm_workspace/src/hmm_sim/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p hmm_sim -o /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg
+
 hmm_sim_generate_messages_nodejs: hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs
 hmm_sim_generate_messages_nodejs: /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/classifier_output.js
 hmm_sim_generate_messages_nodejs: /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/traversability_output.js
 hmm_sim_generate_messages_nodejs: /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/action_status.js
+hmm_sim_generate_messages_nodejs: /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/hmm_sim/msg/targethit_msg.js
 hmm_sim_generate_messages_nodejs: hmm_sim/CMakeFiles/hmm_sim_generate_messages_nodejs.dir/build.make
 
 .PHONY : hmm_sim_generate_messages_nodejs

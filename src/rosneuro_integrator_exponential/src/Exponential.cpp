@@ -47,7 +47,11 @@ Eigen::VectorXf Exponential::apply(const Eigen::VectorXf& input) {
 
 	this->data_ = this->data_ * this->alpha_ + input * (1 - this->alpha_);
 
-	/*Eigen::VectorXf vec = this->data_; //to check framework output
+	/* Eigen::VectorXf vec = this->data_; //to check framework output
+	int a = 0;
+	if(std::abs(vec.sum()-1)<0.01){
+		a = 1;
+	}
 	std::stringstream oss;
     oss << "[";
     for (size_t i = 0; i < vec.size(); i++) {
@@ -60,7 +64,7 @@ Eigen::VectorXf Exponential::apply(const Eigen::VectorXf& input) {
 	std::string str_vect = oss.str();
 	const char * str_vect_ = str_vect.c_str();
 
-	ROS_INFO("%s", str_vect_);*/
+	ROS_INFO("%s nomalized: %d", str_vect_, a); */
 
 	return this->data_;
 }

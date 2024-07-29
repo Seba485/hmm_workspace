@@ -9,6 +9,8 @@
     (:file "_package_action_status" :depends-on ("_package"))
     (:file "classifier_output" :depends-on ("_package_classifier_output"))
     (:file "_package_classifier_output" :depends-on ("_package"))
+    (:file "targethit_msg" :depends-on ("_package_targethit_msg"))
+    (:file "_package_targethit_msg" :depends-on ("_package"))
     (:file "traversability_output" :depends-on ("_package_traversability_output"))
     (:file "_package_traversability_output" :depends-on ("_package"))
   ))

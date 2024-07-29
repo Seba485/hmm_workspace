@@ -23,7 +23,7 @@
 			
 	<!-- processing arguments -->
 		<arg name="lap_path"      default='$(env HOME)/Desktop/laplacian16.dat'/> <!--lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
-		<arg name="decoder_path"  default='$(env HOME)/Desktop/c7_bhbf_20240718.smr.dat'/>
+		<arg name="decoder_path"  default='$(env HOME)/Desktop/h4_bhbf_20240725.smr.dat'/>
 		<arg name="n_channels"    default='16'/>
 		<arg name="eog_threshold" default='43.0'/> 
 
@@ -32,7 +32,7 @@
 		<arg name="alpha" 	    	 default='0.98'/>
 
 	<!-- protocol arguments -->
-		<arg name="subject"   default="c7"/>
+		<arg name="subject"   default="h4"/>
 		<arg name="task"      default="mi_bhbf"/>
 		<arg name="extra"     default="binary"/>
 			

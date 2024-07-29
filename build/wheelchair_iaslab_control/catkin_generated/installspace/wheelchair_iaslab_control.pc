@@ -1,8 +1,0 @@
-prefix=/home/sebastiano/hmm_workspace/install
-
-Name: wheelchair_iaslab_control
-Description: Description of wheelchair_iaslab_control
-Version: 0.0.1
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

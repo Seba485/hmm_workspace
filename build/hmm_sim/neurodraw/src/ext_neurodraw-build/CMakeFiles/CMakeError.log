@@ -1,22 +1,22 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_2a4be/fast && make[3]: Entering directory '/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_2a4be.dir/build.make CMakeFiles/cmTC_2a4be.dir/build
+Run Build Command(s):/usr/bin/make cmTC_00e5d/fast && make[3]: Entering directory '/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_00e5d.dir/build.make CMakeFiles/cmTC_00e5d.dir/build
 make[4]: Entering directory '/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2a4be.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_2a4be.dir/src.c.o   -c /home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_2a4be
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a4be.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_2a4be.dir/src.c.o  -o cmTC_2a4be 
-/usr/bin/ld: CMakeFiles/cmTC_2a4be.dir/src.c.o: in function `main':
+Building C object CMakeFiles/cmTC_00e5d.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_00e5d.dir/src.c.o   -c /home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_00e5d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00e5d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_00e5d.dir/src.c.o  -o cmTC_00e5d 
+/usr/bin/ld: CMakeFiles/cmTC_00e5d.dir/src.c.o: in function `main':
 src.c:(.text+0x46): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[4]: *** [CMakeFiles/cmTC_2a4be.dir/build.make:87: cmTC_2a4be] Error 1
+make[4]: *** [CMakeFiles/cmTC_00e5d.dir/build.make:87: cmTC_00e5d] Error 1
 make[4]: Leaving directory '/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-build/CMakeFiles/CMakeTmp'
-make[3]: *** [Makefile:121: cmTC_2a4be/fast] Error 2
+make[3]: *** [Makefile:121: cmTC_00e5d/fast] Error 2
 make[3]: Leaving directory '/home/sebastiano/hmm_workspace/build/hmm_sim/neurodraw/src/ext_neurodraw-build/CMakeFiles/CMakeTmp'
 
 

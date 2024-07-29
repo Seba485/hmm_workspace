@@ -163,6 +163,13 @@ rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrBci.cpp.o: 
 rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrBci.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcDecl.h
 rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrBci.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcValue.h
 
+rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroDataFloat.h
+rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroDataInfo.h
+rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroDataInt32.h
+rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroDecoder.h
+rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroEvent.h
+rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroHeader.h
+rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h
 rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /home/sebastiano/hmm_workspace/src/rosneuro_processing-master/include/rosneuro_processing/SmrPositiveOutput.h
 rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /home/sebastiano/hmm_workspace/src/rosneuro_processing-master/src/SmrPositiveOutput.cpp
 rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /opt/ros/noetic/include/ros/advertise_options.h
@@ -221,13 +228,6 @@ rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOut
 rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /opt/ros/noetic/include/ros/wall_timer.h
 rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /opt/ros/noetic/include/ros/wall_timer_options.h
 rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /opt/ros/noetic/include/rosconsole/macros_generated.h
-rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDataFloat.h
-rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDataInfo.h
-rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDataInt32.h
-rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDecoder.h
-rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroEvent.h
-rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroHeader.h
-rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroOutput.h
 rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /opt/ros/noetic/include/std_msgs/Header.h
 rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcDecl.h
 rosneuro_processing-master/CMakeFiles/rosneuro_processing.dir/src/SmrPositiveOutput.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcValue.h

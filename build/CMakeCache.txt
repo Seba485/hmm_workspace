@@ -451,9 +451,6 @@ gennodejs_DIR:PATH=/opt/ros/noetic/share/gennodejs/cmake
 //The directory containing a CMake configuration file for genpy.
 genpy_DIR:PATH=/opt/ros/noetic/share/genpy/cmake
 
-//The directory containing a CMake configuration file for geometry_msg.
-geometry_msg_DIR:PATH=geometry_msg_DIR-NOTFOUND
-
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/noetic/share/geometry_msgs/cmake
 
@@ -504,24 +501,10 @@ gtest_hide_internal_symbols:BOOL=OFF
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
 
 //Value Computed by CMake
-hmm_input_BINARY_DIR:STATIC=/home/sebastiano/hmm_workspace/build/hmm_simulation
-
-//Value Computed by CMake
-hmm_input_SOURCE_DIR:STATIC=/home/sebastiano/hmm_workspace/src/hmm_simulation
-
-//Value Computed by CMake
 hmm_sim_BINARY_DIR:STATIC=/home/sebastiano/hmm_workspace/build/hmm_sim
-
-hmm_sim_DIR:PATH=
 
 //Value Computed by CMake
 hmm_sim_SOURCE_DIR:STATIC=/home/sebastiano/hmm_workspace/src/hmm_sim
-
-//Value Computed by CMake
-hmm_simulation_BINARY_DIR:STATIC=/home/sebastiano/hmm_workspace/build/hmm_simulation
-
-//Value Computed by CMake
-hmm_simulation_SOURCE_DIR:STATIC=/home/sebastiano/hmm_workspace/src/hmm_simulation
 
 //Path to a library.
 lib:FILEPATH=/opt/ros/noetic/lib/libxmlrpcpp.so
@@ -537,9 +520,6 @@ message_runtime_DIR:PATH=/opt/ros/noetic/share/message_runtime/cmake
 
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/noetic/share/nav_msgs/cmake
-
-//The directory containing a CMake configuration file for neurodraw.
-neurodraw_DIR:PATH=neurodraw_DIR-NOTFOUND
 
 //Value Computed by CMake
 occupancy_grid_python_BINARY_DIR:STATIC=/home/sebastiano/hmm_workspace/build/occupancy_grid_python-master
@@ -573,9 +553,6 @@ roscpp_traits_DIR:PATH=/opt/ros/noetic/share/roscpp_traits/cmake
 
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/noetic/share/rosgraph_msgs/cmake
-
-//The directory containing a CMake configuration file for roslaunch.
-roslaunch_DIR:PATH=/opt/ros/noetic/share/roslaunch/cmake
 
 //The directory containing a CMake configuration file for roslib.
 roslib_DIR:PATH=/opt/ros/noetic/share/roslib/cmake
@@ -643,35 +620,11 @@ rospy_DIR:PATH=/opt/ros/noetic/share/rospy/cmake
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/noetic/share/rostime/cmake
 
-//The directory containing a CMake configuration file for sensor_msg.
-sensor_msg_DIR:PATH=sensor_msg_DIR-NOTFOUND
-
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/noetic/share/sensor_msgs/cmake
 
-//The directory containing a CMake configuration file for std_msg.
-std_msg_DIR:PATH=std_msg_DIR-NOTFOUND
-
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
-
-//Value Computed by CMake
-wheelchair_iaslab_control_BINARY_DIR:STATIC=/home/sebastiano/hmm_workspace/build/wheelchair_iaslab_control
-
-//Value Computed by CMake
-wheelchair_iaslab_control_SOURCE_DIR:STATIC=/home/sebastiano/hmm_workspace/src/wheelchair_iaslab_control
-
-//Value Computed by CMake
-wheelchair_iaslab_gazebo_BINARY_DIR:STATIC=/home/sebastiano/hmm_workspace/build/wheelchair_iaslab_gazebo
-
-//Value Computed by CMake
-wheelchair_iaslab_gazebo_SOURCE_DIR:STATIC=/home/sebastiano/hmm_workspace/src/wheelchair_iaslab_gazebo
-
-//Value Computed by CMake
-wheelchair_iaslab_init_BINARY_DIR:STATIC=/home/sebastiano/hmm_workspace/build/wheelchair_iaslab_init
-
-//Value Computed by CMake
-wheelchair_iaslab_init_SOURCE_DIR:STATIC=/home/sebastiano/hmm_workspace/src/wheelchair_iaslab_init
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/noetic/share/xmlrpcpp/cmake

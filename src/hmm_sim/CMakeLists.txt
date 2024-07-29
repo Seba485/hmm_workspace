@@ -83,6 +83,7 @@ add_message_files(
    classifier_output.msg
    traversability_output.msg
    action_status.msg
+   targethit_msg.msg
 )
 
 ## Generate services in the 'srv' folder

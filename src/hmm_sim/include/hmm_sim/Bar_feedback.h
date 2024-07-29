@@ -22,6 +22,7 @@
 
 #include <rosneuro_msgs/NeuroOutput.h>
 #include <rosneuro_msgs/NeuroEvent.h>
+#include <hmm_sim/targethit_msg.h>
 #include <hmm_sim/action_status.h>
 
 namespace rosneuro {
@@ -108,11 +109,13 @@ namespace rosneuro {
                 ros::Publisher      pub_event;
                 ros::Publisher      pub_hard;
                 ros::Publisher      pub_cue_class;
+                ros::Publisher      pub_targethit;
 
                 rosneuro_msgs::NeuroEvent  event_msg_;
                 rosneuro_msgs::NeuroOutput inputmsg_;
                 rosneuro_msgs::NeuroOutput bar_hard_;
                 rosneuro_msgs::NeuroOutput cue_class_;
+                hmm_sim::targethit_msg   targethit_msg_;
 
 
                 neurodraw::Line*         zero_line_;

@@ -42,6 +42,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/classifier_output.msg"
     "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/traversability_output.msg"
     "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/action_status.msg"
+    "/home/sebastiano/hmm_workspace/src/hmm_sim/msg/targethit_msg.msg"
     )
 endif()
 

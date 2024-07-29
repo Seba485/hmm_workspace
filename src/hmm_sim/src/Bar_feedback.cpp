@@ -8,6 +8,7 @@ bar_feedback::bar_feedback(void) : param_nh_("~"){ //costructor
         this->pub_event = this->nh_.advertise<rosneuro_msgs::NeuroEvent>("/events/bus", 1);
 		this->pub_hard = this->nh_.advertise<rosneuro_msgs::NeuroOutput>("/bar_feedback/hard_prediction", 1);
 		this->pub_cue_class = this->nh_.advertise<rosneuro_msgs::NeuroOutput>("/bar_feedback/cue_class", 1);
+		this->pub_targethit = this->nh_.advertise<hmm_sim::targethit_msg>("/bar_feedback/targhethit",1); 
 
         ros::param::get("~sub_name", this->sub_name_);
 		this->sub_bar_ = this->nh_.subscribe(this->sub_name_, 1, &bar_feedback::on_receive_neuro_data, this);
@@ -420,6 +421,10 @@ void bar_feedback::run_evaluation(void){ //the evaluation can support also the e
 		
 		this->setevent(Events::CFeedback + Events::Off);
 		if(ros::ok() == false || this->user_quit_ == true) break;
+
+		//publish the targhet hit and save it into a rosbag --> only way to build a confusion matrix
+		this->targethit_msg_.data.data = targethit;
+		this->pub_targethit.publish(this->targethit_msg_);
 		
 
 		// Boom: if the target hit is the rigth one

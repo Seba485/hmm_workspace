@@ -5,6 +5,13 @@ rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/Autopilot.cpp
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/Autopilot.cpp.o: /home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/src/Autopilot.cpp
 
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_feedback_wheel/ControlWheelConfig.h
+rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroDataFloat.h
+rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroDataInfo.h
+rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroDataInt32.h
+rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroDecoder.h
+rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroEvent.h
+rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroHeader.h
+rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/ControlWheel.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/SingleWheel.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/src/ControlWheel.cpp
@@ -79,13 +86,6 @@ rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /opt/ros/noetic/include/ros/wall_timer.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /opt/ros/noetic/include/ros/wall_timer_options.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /opt/ros/noetic/include/rosconsole/macros_generated.h
-rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDataFloat.h
-rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDataInfo.h
-rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDataInt32.h
-rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDecoder.h
-rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroEvent.h
-rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroHeader.h
-rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroOutput.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /opt/ros/noetic/include/std_msgs/Header.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcDecl.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/ControlWheel.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcValue.h
@@ -151,6 +151,13 @@ rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/SingleWheel.c
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/SingleWheel.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcValue.h
 
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_feedback_wheel/TrainingWheelConfig.h
+rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroDataFloat.h
+rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroDataInfo.h
+rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroDataInt32.h
+rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroDecoder.h
+rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroEvent.h
+rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroHeader.h
+rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /home/sebastiano/hmm_workspace/devel/include/rosneuro_msgs/NeuroOutput.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/Autopilot.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/SingleWheel.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /home/sebastiano/hmm_workspace/src/rosneuro_feedback_wheel/include/rosneuro_feedback_wheel/TrainingWheel.h
@@ -227,13 +234,6 @@ rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /opt/ros/noetic/include/ros/wall_timer.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /opt/ros/noetic/include/ros/wall_timer_options.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /opt/ros/noetic/include/rosconsole/macros_generated.h
-rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDataFloat.h
-rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDataInfo.h
-rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDataInt32.h
-rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroDecoder.h
-rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroEvent.h
-rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroHeader.h
-rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /opt/ros/noetic/include/rosneuro_msgs/NeuroOutput.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /opt/ros/noetic/include/std_msgs/Header.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcDecl.h
 rosneuro_feedback_wheel/CMakeFiles/rosneuro_feedback_wheel.dir/src/TrainingWheel.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcValue.h
