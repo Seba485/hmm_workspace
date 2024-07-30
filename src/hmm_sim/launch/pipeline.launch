@@ -25,8 +25,8 @@
 	<!-- acquisition arguments -->
 		
 		<arg name="plugin" default='rosneuro::EGDDevice'/>
-		<!-- <arg name="devarg" default='$(env HOME)/Desktop/data.gdf'/> --> <!--gdf file-->
-		<arg name="devarg" default='gtec'/>
+		<arg name="devarg" default='$(env HOME)/Desktop/data.gdf'/> <!--gdf file-->
+		<!-- <arg name="devarg" default='gtec'/> -->
 		<arg name="framerate"  default='16'/>
 		<arg name="samplerate" default='512'/>
 
@@ -38,7 +38,7 @@
 			
 	<!-- processing arguments -->
 		<arg name="lap_path"      default='$(env HOME)/Desktop/laplacian16.dat'/> <!--lapalcian filter: lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
-		<arg name="decoder_path"  default='$(env HOME)/Desktop/h4_bhbf_20240724.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
+		<arg name="decoder_path"  default='$(env HOME)/Desktop/c7_bhbf_20240725.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
 		<arg name="n_channels"    default='16'/>
 		<arg name="eog_threshold" default='43.0'/> 
 
@@ -58,7 +58,7 @@
 		<rosparam param="/protocol/extra"	 subst_value="True">$(arg extra)</rosparam>
 
 	<!-- traversability node -->
-		<arg name="traversability_mode" default="real"/> <!-- null -->    <!-- real -->
+		<arg name="traversability_mode" default="null"/> <!-- null -->    <!-- real -->
 		<arg name="max_distance" default="2"/>
 		<arg name="odom_topic" default="/odometry/filtered"/>
 		<arg name="costmap_2d_topic" default="/move_base/local_costmap/costmap"/>

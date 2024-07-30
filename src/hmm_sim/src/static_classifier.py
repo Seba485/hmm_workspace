@@ -59,4 +59,4 @@ if __name__ == '__main__':
 
         rate.sleep() 
     
-    rospy.signal_shutdown('Finished simolated data')
+    rospy.signal_shutdown('Finished simulated data')

@@ -2,10 +2,9 @@
 import rospy
 from rosneuro_msgs.msg import *
 from hmm_sim.msg import *
-import csv
+import signal
 import os
 from time import gmtime, strftime
-import numpy as np
 
 if __name__ == "__main__":
     # Initialize your node
@@ -23,9 +22,15 @@ if __name__ == "__main__":
     #ros bag
     # Start the recording process
     bag_file = root+"Rosbag."+date_string+"."+modality+"."+subject+"."+task+"."+extra+".bag"
-    topics = "/smrbci/neuroprediction /hmm/neuroprediction /integrator/neuroprediction /traversability_output_topic"
+    topics = "/smrbci/neuroprediction /hmm/neuroprediction /integrator/neuroprediction /traversability_output_topic /bar_feedback/targhethit"
     record_command = f'rosbag record -O {bag_file} {topics}'
 
-    os.popen(record_command)
+    process = os.popen(record_command)
 
     rospy.loginfo("Data_recorder has started")
+
+    while not rospy.is_shutdown():
+        pass
+
+    os.kill(process.pid, signal.SIGINT)  # Send the SIGINT signal to terminate the process
+    print("Recording stopped")
