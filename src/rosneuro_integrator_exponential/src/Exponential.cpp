@@ -25,6 +25,7 @@ bool Exponential::configure(int n_class) {
 		this->has_rejection_ = false;
 	} else {
 		this->setrejection(rejection);
+
 	}
 
 	// Bind dynamic reconfigure callback

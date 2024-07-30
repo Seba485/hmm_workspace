@@ -88,18 +88,18 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_nodejs: /home/sebastian
 
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroFrame.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroFrame.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroFrame.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroFrame.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroFrame.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroFrame.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroFrame.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroFrame.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroFrame.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroFrame.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroFrame.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from rosneuro_msgs/NeuroFrame.msg"
 	cd /home/sebastiano/hmm_workspace/build/rosneuro_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg -Irosneuro_msgs:/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rosneuro_msgs -o /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg
 
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroEvent.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroEvent.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroEvent.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroEvent.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroEvent.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroEvent.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from rosneuro_msgs/NeuroEvent.msg"
 	cd /home/sebastiano/hmm_workspace/build/rosneuro_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroEvent.msg -Irosneuro_msgs:/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rosneuro_msgs -o /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg
 
@@ -110,23 +110,23 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_nodejs: /home/sebastian
 
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroOutput.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroOutput.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroOutput.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroOutput.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroOutput.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroOutput.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroOutput.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroOutput.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroOutput.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroOutput.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroOutput.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroOutput.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroOutput.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg/NeuroOutput.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Javascript code from rosneuro_msgs/NeuroOutput.msg"
 	cd /home/sebastiano/hmm_workspace/build/rosneuro_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroOutput.msg -Irosneuro_msgs:/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rosneuro_msgs -o /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/msg
 
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/srv/GetAcquisitionInfo.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/srv/GetAcquisitionInfo.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/srv/GetAcquisitionInfo.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/srv/GetAcquisitionInfo.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/srv/GetAcquisitionInfo.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/srv/GetAcquisitionInfo.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
-/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/srv/GetAcquisitionInfo.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg
 /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/srv/GetAcquisitionInfo.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/srv/GetAcquisitionInfo.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/srv/GetAcquisitionInfo.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/srv/GetAcquisitionInfo.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/srv/GetAcquisitionInfo.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
+/home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/srv/GetAcquisitionInfo.js: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Javascript code from rosneuro_msgs/GetAcquisitionInfo.srv"
 	cd /home/sebastiano/hmm_workspace/build/rosneuro_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv -Irosneuro_msgs:/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rosneuro_msgs -o /home/sebastiano/hmm_workspace/devel/share/gennodejs/ros/rosneuro_msgs/srv
 

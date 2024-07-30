@@ -1,0 +1,5 @@
+<library path="lib/libexponential_smoother">
+  <class type="rosneuro::integrator::Exponential_smoother" base_class_type="rosneuro::integrator::GenericIntegrator">
+    <description>This a generic exponential smoother.</description>
+  </class>
+</library>

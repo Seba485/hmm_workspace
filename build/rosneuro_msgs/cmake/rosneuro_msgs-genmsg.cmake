@@ -39,12 +39,12 @@ add_custom_target(_rosneuro_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg" NAME_WE)
 add_custom_target(_rosneuro_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rosneuro_msgs" "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg" "rosneuro_msgs/NeuroDataInt32:rosneuro_msgs/NeuroHeader:rosneuro_msgs/NeuroDataInfo:rosneuro_msgs/NeuroDataFloat:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rosneuro_msgs" "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg" "std_msgs/Header:rosneuro_msgs/NeuroDataInfo:rosneuro_msgs/NeuroHeader:rosneuro_msgs/NeuroDataInt32:rosneuro_msgs/NeuroDataFloat"
 )
 
 get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroEvent.msg" NAME_WE)
 add_custom_target(_rosneuro_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rosneuro_msgs" "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroEvent.msg" "rosneuro_msgs/NeuroHeader:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rosneuro_msgs" "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroEvent.msg" "std_msgs/Header:rosneuro_msgs/NeuroHeader"
 )
 
 get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg" NAME_WE)
@@ -54,12 +54,12 @@ add_custom_target(_rosneuro_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroOutput.msg" NAME_WE)
 add_custom_target(_rosneuro_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rosneuro_msgs" "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroOutput.msg" "rosneuro_msgs/NeuroDataInt32:rosneuro_msgs/NeuroHeader:rosneuro_msgs/NeuroDataInfo:rosneuro_msgs/NeuroDataFloat:rosneuro_msgs/NeuroDecoder:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rosneuro_msgs" "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroOutput.msg" "std_msgs/Header:rosneuro_msgs/NeuroDataInfo:rosneuro_msgs/NeuroHeader:rosneuro_msgs/NeuroDataInt32:rosneuro_msgs/NeuroDecoder:rosneuro_msgs/NeuroDataFloat"
 )
 
 get_filename_component(_filename "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv" NAME_WE)
 add_custom_target(_rosneuro_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rosneuro_msgs" "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv" "rosneuro_msgs/NeuroHeader:rosneuro_msgs/NeuroDataInfo:rosneuro_msgs/NeuroDataFloat:rosneuro_msgs/NeuroDataInt32:rosneuro_msgs/NeuroFrame:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "rosneuro_msgs" "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv" "std_msgs/Header:rosneuro_msgs/NeuroDataInfo:rosneuro_msgs/NeuroHeader:rosneuro_msgs/NeuroFrame:rosneuro_msgs/NeuroDataInt32:rosneuro_msgs/NeuroDataFloat"
 )
 
 #
@@ -95,13 +95,13 @@ _generate_msg_cpp(rosneuro_msgs
 _generate_msg_cpp(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rosneuro_msgs
 )
 _generate_msg_cpp(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroEvent.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rosneuro_msgs
 )
 _generate_msg_cpp(rosneuro_msgs
@@ -113,7 +113,7 @@ _generate_msg_cpp(rosneuro_msgs
 _generate_msg_cpp(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroOutput.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rosneuro_msgs
 )
 
@@ -121,7 +121,7 @@ _generate_msg_cpp(rosneuro_msgs
 _generate_srv_cpp(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/rosneuro_msgs
 )
 
@@ -192,13 +192,13 @@ _generate_msg_eus(rosneuro_msgs
 _generate_msg_eus(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/rosneuro_msgs
 )
 _generate_msg_eus(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroEvent.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/rosneuro_msgs
 )
 _generate_msg_eus(rosneuro_msgs
@@ -210,7 +210,7 @@ _generate_msg_eus(rosneuro_msgs
 _generate_msg_eus(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroOutput.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/rosneuro_msgs
 )
 
@@ -218,7 +218,7 @@ _generate_msg_eus(rosneuro_msgs
 _generate_srv_eus(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/rosneuro_msgs
 )
 
@@ -289,13 +289,13 @@ _generate_msg_lisp(rosneuro_msgs
 _generate_msg_lisp(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rosneuro_msgs
 )
 _generate_msg_lisp(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroEvent.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rosneuro_msgs
 )
 _generate_msg_lisp(rosneuro_msgs
@@ -307,7 +307,7 @@ _generate_msg_lisp(rosneuro_msgs
 _generate_msg_lisp(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroOutput.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rosneuro_msgs
 )
 
@@ -315,7 +315,7 @@ _generate_msg_lisp(rosneuro_msgs
 _generate_srv_lisp(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/rosneuro_msgs
 )
 
@@ -386,13 +386,13 @@ _generate_msg_nodejs(rosneuro_msgs
 _generate_msg_nodejs(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/rosneuro_msgs
 )
 _generate_msg_nodejs(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroEvent.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/rosneuro_msgs
 )
 _generate_msg_nodejs(rosneuro_msgs
@@ -404,7 +404,7 @@ _generate_msg_nodejs(rosneuro_msgs
 _generate_msg_nodejs(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroOutput.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/rosneuro_msgs
 )
 
@@ -412,7 +412,7 @@ _generate_msg_nodejs(rosneuro_msgs
 _generate_srv_nodejs(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/rosneuro_msgs
 )
 
@@ -483,13 +483,13 @@ _generate_msg_py(rosneuro_msgs
 _generate_msg_py(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rosneuro_msgs
 )
 _generate_msg_py(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroEvent.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rosneuro_msgs
 )
 _generate_msg_py(rosneuro_msgs
@@ -501,7 +501,7 @@ _generate_msg_py(rosneuro_msgs
 _generate_msg_py(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroOutput.msg"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rosneuro_msgs
 )
 
@@ -509,7 +509,7 @@ _generate_msg_py(rosneuro_msgs
 _generate_srv_py(rosneuro_msgs
   "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv"
   "${MSG_I_FLAGS}"
-  "/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg;/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/rosneuro_msgs
 )
 

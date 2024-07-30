@@ -22,7 +22,7 @@
 		<arg name="filepath"  default='$(env HOME)/Desktop/' />
 			
 	<!-- protocol arguments -->
-		<arg name="subject"   default="h4"/>
+		<arg name="subject"   default="c7"/>
 		<arg name="task"      default="mi_bfrtbh"/>
 		<arg name="extra"     default=""/> 
 

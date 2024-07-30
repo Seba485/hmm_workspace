@@ -1,0 +1,8 @@
+prefix=/home/sebastiano/hmm_workspace/devel
+
+Name: exponential_smoother
+Description: Description of exponential_smoother
+Version: 0.0.0
+Cflags: -I/home/sebastiano/hmm_workspace/src/exponential_smoother/include
+Libs: -L${prefix}/lib -lexponential_smoother
+Requires: roscpp std_msgs pluginlib rosneuro_msgs rosneuro_integrator

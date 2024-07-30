@@ -90,18 +90,18 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_py: /home/sebastiano/hm
 
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroFrame.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroFrame.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroFrame.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroFrame.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroFrame.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroFrame.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroFrame.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroFrame.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroFrame.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroFrame.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroFrame.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG rosneuro_msgs/NeuroFrame"
 	cd /home/sebastiano/hmm_workspace/build/rosneuro_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg -Irosneuro_msgs:/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rosneuro_msgs -o /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg
 
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroEvent.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroEvent.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroEvent.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroEvent.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroEvent.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroEvent.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG rosneuro_msgs/NeuroEvent"
 	cd /home/sebastiano/hmm_workspace/build/rosneuro_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroEvent.msg -Irosneuro_msgs:/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rosneuro_msgs -o /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg
 
@@ -112,23 +112,23 @@ rosneuro_msgs/CMakeFiles/rosneuro_msgs_generate_messages_py: /home/sebastiano/hm
 
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroOutput.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroOutput.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroOutput.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroOutput.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroOutput.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroOutput.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroOutput.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroOutput.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroOutput.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroOutput.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroOutput.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroOutput.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroOutput.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDecoder.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg/_NeuroOutput.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python from MSG rosneuro_msgs/NeuroOutput"
 	cd /home/sebastiano/hmm_workspace/build/rosneuro_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroOutput.msg -Irosneuro_msgs:/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rosneuro_msgs -o /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/msg
 
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/srv/_GetAcquisitionInfo.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/srv/_GetAcquisitionInfo.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/srv/_GetAcquisitionInfo.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/srv/_GetAcquisitionInfo.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/srv/_GetAcquisitionInfo.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/srv/_GetAcquisitionInfo.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
-/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/srv/_GetAcquisitionInfo.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg
 /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/srv/_GetAcquisitionInfo.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/srv/_GetAcquisitionInfo.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInfo.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/srv/_GetAcquisitionInfo.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroHeader.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/srv/_GetAcquisitionInfo.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroFrame.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/srv/_GetAcquisitionInfo.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataInt32.msg
+/home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/srv/_GetAcquisitionInfo.py: /home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg/NeuroDataFloat.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sebastiano/hmm_workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python code from SRV rosneuro_msgs/GetAcquisitionInfo"
 	cd /home/sebastiano/hmm_workspace/build/rosneuro_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv -Irosneuro_msgs:/home/sebastiano/hmm_workspace/src/rosneuro_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p rosneuro_msgs -o /home/sebastiano/hmm_workspace/devel/lib/python3/dist-packages/rosneuro_msgs/srv
 

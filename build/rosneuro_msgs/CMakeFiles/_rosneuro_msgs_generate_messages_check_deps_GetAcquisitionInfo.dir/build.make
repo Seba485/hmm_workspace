@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/sebastiano/hmm_workspace/build
 include rosneuro_msgs/CMakeFiles/_rosneuro_msgs_generate_messages_check_deps_GetAcquisitionInfo.dir/progress.make
 
 rosneuro_msgs/CMakeFiles/_rosneuro_msgs_generate_messages_check_deps_GetAcquisitionInfo:
-	cd /home/sebastiano/hmm_workspace/build/rosneuro_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py rosneuro_msgs /home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv rosneuro_msgs/NeuroHeader:rosneuro_msgs/NeuroDataInfo:rosneuro_msgs/NeuroDataFloat:rosneuro_msgs/NeuroDataInt32:rosneuro_msgs/NeuroFrame:std_msgs/Header
+	cd /home/sebastiano/hmm_workspace/build/rosneuro_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py rosneuro_msgs /home/sebastiano/hmm_workspace/src/rosneuro_msgs/srv/GetAcquisitionInfo.srv std_msgs/Header:rosneuro_msgs/NeuroDataInfo:rosneuro_msgs/NeuroHeader:rosneuro_msgs/NeuroFrame:rosneuro_msgs/NeuroDataInt32:rosneuro_msgs/NeuroDataFloat
 
 _rosneuro_msgs_generate_messages_check_deps_GetAcquisitionInfo: rosneuro_msgs/CMakeFiles/_rosneuro_msgs_generate_messages_check_deps_GetAcquisitionInfo
 _rosneuro_msgs_generate_messages_check_deps_GetAcquisitionInfo: rosneuro_msgs/CMakeFiles/_rosneuro_msgs_generate_messages_check_deps_GetAcquisitionInfo.dir/build.make

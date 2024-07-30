@@ -25,7 +25,7 @@ def hmm_state(data, state, classes):
             overall_lh *= A*math.exp(-B*x) + A_1*math.exp(-B_1*x)
     elif state==classes[1]: #third class (rest)
         A = 10 
-        B = 40
+        B = 20
         A_1 = 5 
         B_1 = 8
         for x in data:

@@ -1143,6 +1143,19 @@ rosneuro_integrator/fast:
 .PHONY : rosneuro_integrator/fast
 
 #=============================================================================
+# Target rules for targets named exponential_smoother
+
+# Build rule for target.
+exponential_smoother: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 exponential_smoother
+.PHONY : exponential_smoother
+
+# fast build rule for target.
+exponential_smoother/fast:
+	$(MAKE) -f exponential_smoother/CMakeFiles/exponential_smoother.dir/build.make exponential_smoother/CMakeFiles/exponential_smoother.dir/build
+.PHONY : exponential_smoother/fast
+
+#=============================================================================
 # Target rules for targets named rosneuro_integrator_exponential
 
 # Build rule for target.
@@ -1672,6 +1685,7 @@ help:
 	@echo "... hmm_sim_generate_messages_lisp"
 	@echo "... integrator"
 	@echo "... rosneuro_integrator"
+	@echo "... exponential_smoother"
 	@echo "... rosneuro_integrator_exponential"
 	@echo "... rosneuro_integrator_exponential_gencfg"
 	@echo "... rosneuro_processing_gencfg"

@@ -14,6 +14,7 @@
                 "/home/sebastiano/hmm_workspace/src/rosneuro_integrator/include/**",
                 "/home/sebastiano/hmm_workspace/src/rosneuro_integrator_exponential/include/**",
                 "/home/sebastiano/hmm_workspace/src/rosneuro_integrator_exponential/include/**",
+                "/home/sebastiano/hmm_workspace/src/exponential_smoother/include/**",
                 "/home/sebastiano/hmm_workspace/src/rosneuro_processing-master/include/**",
                 "${workspaceFolder}/src/rosneuro_feedback_wheel/include/**",
                 "${workspaceFolder}/devel/include"
