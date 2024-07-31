@@ -8,7 +8,7 @@ bar_feedback::bar_feedback(void) : param_nh_("~"){ //costructor
         this->pub_event = this->nh_.advertise<rosneuro_msgs::NeuroEvent>("/events/bus", 1);
 		this->pub_hard = this->nh_.advertise<rosneuro_msgs::NeuroOutput>("/bar_feedback/hard_prediction", 1);
 		this->pub_cue_class = this->nh_.advertise<rosneuro_msgs::NeuroOutput>("/bar_feedback/cue_class", 1);
-		this->pub_targethit = this->nh_.advertise<hmm_sim::targethit_msg>("/bar_feedback/targhethit",1); 
+		this->pub_targethit = this->nh_.advertise<hmm_sim::targethit_msg>("/bar_feedback/targethit",1); 
 
         ros::param::get("~sub_name", this->sub_name_);
 		this->sub_bar_ = this->nh_.subscribe(this->sub_name_, 1, &bar_feedback::on_receive_neuro_data, this);

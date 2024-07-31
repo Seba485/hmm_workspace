@@ -22,7 +22,7 @@ if __name__ == "__main__":
     #ros bag
     # Start the recording process
     bag_file = root+"Rosbag."+date_string+"."+modality+"."+subject+"."+task+"."+extra+".bag"
-    topics = "/smrbci/neuroprediction /hmm/neuroprediction /integrator/neuroprediction /traversability_output_topic /bar_feedback/targhethit"
+    topics = "/smrbci/neuroprediction /hmm/neuroprediction /integrator/neuroprediction /traversability_output_topic /bar_feedback/targethit"
     record_command = f'rosbag record -O {bag_file} {topics}'
 
     process = os.popen(record_command)
