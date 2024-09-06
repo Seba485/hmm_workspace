@@ -7,11 +7,9 @@
 		<arg name="modality" 	 default='evaluation'/> 
 		<!-- continuous (no control), calibration, evaluation (classic evaluation + discrete control of the robot), robot_sim (continuous control of the robot)-->
 		<rosparam param="modality" subst_value="True">$(arg modality)</rosparam>
-
-		<arg name="eval_type" default="2"/> <!-- 1->1 direction free, 2->2 direction free -->
 		
 		<!--<arg name="thresholds"   default='[0.9, 0.9]'/>-->
-		<arg name="bar_th"   default='[0.85, 0.8, 0.85]'/>
+		<arg name="bar_th"   default='[0.75, 0.8, 0.85]'/>
 		<arg name="n_class"      default='3'/>
 		<arg name="classes"      default='[773, 783, 771]'/> <!--both hand, rest, both feet -->
 		<arg name="ref_class" default="771"/> <!-- class that turn left -->
@@ -22,10 +20,22 @@
 		<rosparam param="ref_class" subst_value="True">$(arg ref_class)</rosparam>
 		<rosparam param="classes" subst_value="True">$(arg classes)</rosparam>
 
+	<!-- traversability node -->
+		<arg name="eval_type" default="1"/> <!-- 1->1 direction free, 2->2 direction free -->
+		<arg name="traversability_mode" default="null"/> <!-- null -->    <!-- real -->
+		<arg name="max_distance" default="2"/>
+		<arg name="odom_topic" default="/odometry/filtered"/>
+		<arg name="costmap_2d_topic" default="/move_base/local_costmap/costmap"/>
+
+	<!-- protocol arguments -->
+		<arg name="subject"   default="g2"/>
+		<arg name="task"      default="mi_bfrtbh"/>
+		<arg name="extra"     default="no_T"/> <!-- no_T (traversability set tu null), T_1 (eval_type set to 1), T_2 (eval_type set to 2) -->  
+
 	<!-- acquisition arguments -->
 		
 		<arg name="plugin" default='rosneuro::EGDDevice'/>
-		<!-- <arg name="devarg" default='$(env HOME)/Desktop/data.gdf'/> --> <!--gdf file-->
+		<!-- <arg name="devarg" default='$(env HOME)/Desktop/data.gdf'/>  --><!--gdf file-->
 		<arg name="devarg" default='gtec'/>
 		<arg name="framerate"  default='16'/>
 		<arg name="samplerate" default='512'/>
@@ -38,30 +48,19 @@
 			
 	<!-- processing arguments -->
 		<arg name="lap_path"      default='$(env HOME)/Desktop/laplacian16.dat'/> <!--lapalcian filter: lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
-		<arg name="decoder_path"  default='$(env HOME)/Desktop/g2_bhbf_20240731.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
+		<arg name="decoder_path"  default='$(env HOME)/Desktop/g2_bhbf_20240827.smr.dat'/> <!--classifier trained with eegc3_smr_train of cnbismr-train-new folder and saved with wc_save_classifier of wtk-master folder-->
 		<arg name="n_channels"    default='16'/>
 		<arg name="eog_threshold" default='43.0'/> 
 
 	<!-- control framework arguments -->
 		<arg name="integratorplugin"   default="rosneuro::integrator::Exponential_smoother"/> 
 		<arg name="alpha" 	    	 default='0.96'/> <!--peso diminuito da 0.98 a 0.90-->
-
-	<!-- protocol arguments -->
-		<arg name="subject"   default="g2"/>
-		<arg name="task"      default="mi_bfrtbh"/>
-		<arg name="extra"     default="T_2"/> <!-- no_T (traversability set tu null), T_1 (eval_type set to 1), T_2 (eval_type set to 2) -->  
 			
 	<!-- Protocol parameters -->
 		<rosparam param="/protocol/subject"	 subst_value="True">$(arg subject)</rosparam>
 		<rosparam param="/protocol/modality" subst_value="True">$(arg modality)</rosparam>
 		<rosparam param="/protocol/task"	 subst_value="True">$(arg task)</rosparam>
 		<rosparam param="/protocol/extra"	 subst_value="True">$(arg extra)</rosparam>
-
-	<!-- traversability node -->
-		<arg name="traversability_mode" default="real"/> <!-- null -->    <!-- real -->
-		<arg name="max_distance" default="2"/>
-		<arg name="odom_topic" default="/odometry/filtered"/>
-		<arg name="costmap_2d_topic" default="/move_base/local_costmap/costmap"/>
 
 	<!-- robot controller -->
 		<arg name="move_base_status" default="/move_base/status"/>

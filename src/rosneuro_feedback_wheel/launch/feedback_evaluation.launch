@@ -5,7 +5,7 @@
 	
 	<!-- Feedback arguments -->
 		<arg name="modality" 	 default='evaluation'/>
-		<arg name="thresholds"   default='[0.75, 0.75]'/>
+		<arg name="thresholds"   default='[0.7, 0.7]'/>
 		<arg name="n_class"      default='2'/>
 		<arg name="classes"      default='[771, 773]'/>
 		<arg name="trials"       default='[10, 10]'/>
@@ -23,7 +23,7 @@
 			
 	<!-- processing arguments -->
 		<arg name="lap_path"      default='$(env HOME)/Desktop/laplacian16.dat'/> <!--lapmask_antneuro_32.dat  lapmask_gtec_16.dat-->
-		<arg name="decoder_path"  default='$(env HOME)/Desktop/g2_bhbf_20240731.smr.dat'/>
+		<arg name="decoder_path"  default='$(env HOME)/Desktop/g2_bhbf_20240827.smr.dat'/>
 		<arg name="n_channels"    default='16'/>
 		<arg name="eog_threshold" default='43.0'/> 
 

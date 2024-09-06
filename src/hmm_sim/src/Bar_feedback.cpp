@@ -63,9 +63,9 @@ bool bar_feedback::configure(void){
 	// insert the clases code in the structure
 	this->class_code_.None = 0;
 	this->class_code_.TimeOut = -1;
-	this->class_code_.FirstClass = this->classes_[ref_idx];
+	this->class_code_.FirstClass = this->classes_[this->ref_idx];
 	this->class_code_.SecondClass = this->classes_[this->other_idx];
-	this->class_code_.ThirdClass = this->classes_[rest_idx];
+	this->class_code_.ThirdClass = this->classes_[this->rest_idx];
 
 	// Getting threshold
 	if(this->param_nh_.getParam("bar_th", this->th_) == false) {
@@ -75,6 +75,7 @@ bool bar_feedback::configure(void){
 		ROS_ERROR("There has to be one treshold per class");
 		return false;
 	}
+
 
 	// Getting trials per class
 	if(this->param_nh_.getParam("trials", this->trials_per_class_) == false) {
@@ -398,15 +399,15 @@ void bar_feedback::run_evaluation(void){ //the evaluation can support also the e
 			this->hard_classification = {0, 0, 0};  //for the neuro_controller (gazebo simulation)
             this->update();
 
-            if( this->pp_[0]>= this->th_[0]) {
+            if( this->pp_[0]>= this->th_[this->ref_idx]) {
                 targethit = this->class_code_.FirstClass;
 				this->hard_classification[0] = 1;
                 break;
-            } else if( this->pp_[2]>= this->th_[2]) {
+            } else if( this->pp_[2]>= this->th_[this->other_idx]) {
                 targethit = this->class_code_.SecondClass;
 				this->hard_classification[2] = 1;
                 break;
-            } else if( this->pp_[1]>= this->th_[1]) {
+            } else if( this->pp_[1]>= this->th_[this->rest_idx]) {
                 targethit = this->class_code_.ThirdClass;
 				this->hard_classification[1] = 1;
                 break;
@@ -490,7 +491,7 @@ void bar_feedback::run_robot_sim(void){
 		std::vector<int> hard_classification = {0, 0, 0};
         this->update();
 
-		if( this->pp_[0]>= this->th_[0]) {
+		if( this->pp_[0]>= this->th_[this->ref_idx]) {
 			hard_classification[0] = 1;
 			this->show_cue(this->class_code_.FirstClass);
 			this->setevent(Events::CFeedback + Events::Off); //new goal reached
@@ -501,7 +502,7 @@ void bar_feedback::run_robot_sim(void){
 			this->reset_pp(); //it has manual built in reset
 			this->hide_cue();
 			
-		} else if( this->pp_[2]>= this->th_[2]) {
+		} else if( this->pp_[2]>= this->th_[this->other_idx]) {
 			hard_classification[2] = 1;
 			this->show_cue(this->class_code_.SecondClass);
 			this->setevent(Events::CFeedback + Events::Off); //new goal reached
@@ -512,7 +513,7 @@ void bar_feedback::run_robot_sim(void){
 			this->reset_pp(); //it has manual built in reset
 			this->hide_cue();
 			
-		} else if( this->pp_[1]>= this->th_[1]) {
+		} else if( this->pp_[1]>= this->th_[this->rest_idx]) {
 			hard_classification[1] = 1;
 			this->show_cue(this->class_code_.ThirdClass);
 			this->setevent(Events::CFeedback + Events::Off); //new goal reached
