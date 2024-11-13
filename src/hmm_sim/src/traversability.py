@@ -2,7 +2,7 @@
 import rospy
 import numpy as np
 import math
-from hmm_sim.msg import traversability_output #inport the custom message
+from hmm_sim.msg import traversability_output #import the custom message
 from nav_msgs.msg import Odometry
 from sensor_msgs.msg import LaserScan 
 import tf
@@ -34,8 +34,8 @@ class traversability_node:
         self.orientation = 0.0
 
         self.front_angle = np.array([-30*math.pi/180, 30*math.pi/180])
-        self.right_angle = np.array([-100*math.pi/180, -45*math.pi/180])
-        self.left_angle = np.array([45*math.pi/180, 100*math.pi/180])
+        self.right_angle = np.array([-100*math.pi/180, -30*math.pi/180])
+        self.left_angle = np.array([30*math.pi/180, 100*math.pi/180])
 
         #self.direction_denied = np.ones(3)
         
@@ -144,8 +144,7 @@ class traversability_node:
                 #if a direction is strongly occupied 1-occupacy_prob is really low and further kill the reverce occupacy probability
                 #viceversa if a direction is mostly free the 1-occupacy region is near 1 (or equal to 1) and do not modify the reverce occupacy probability
 
-                #put to zero the closed directions
-                #prob_vector = prob_vector * self.direction_denied
+                #prob_vector = prob_vector/sum(prob_vector)
             
             #matrix
             left_vect = prob_vector * np.array([1.4, 1, 1])
